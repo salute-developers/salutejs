@@ -1,0 +1,35 @@
+{
+  "name": "@salutejs/storage-adapter-firebase",
+  "version": "0.25.0",
+  "description": "Firebase database adapter for Salute family",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "homepage": "https://github.com/salute-developers/salutejs#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/salute-developers/salutejs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/salute-developers/salutejs/issues"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "prepare": "npm run build",
+    "build": "rm -rf dist && tsc",
+    "lint": "eslint --ext .js,.ts ./src"
+  },
+  "devDependencies": {
+    "typescript": "4.1.3"
+  },
+  "dependencies": {
+    "firebase-admin": "9.2.0",
+    "@salutejs/scenario": "0.25.0"
+  },
+  "gitHead": "70298e562f327c87c550171469ad7a55e0d88cf6"
+}

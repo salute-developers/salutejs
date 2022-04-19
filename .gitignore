@@ -1,0 +1,28 @@
+### to bypass npm auth
+.npmrc
+
+##### OS FILES
+.DS_Store
+.history
+
+##### Editors
+.*.swp
+.idea
+.vscode
+.vs
+*.iml
+*.sublime-project
+*.sublime-workspace
+
+##### BUILD
+node_modules/
+dist/
+
+##### ENV
+.env
+
+##### next.js
+.next
+
+##### vercel
+.vercel

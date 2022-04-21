@@ -51,7 +51,7 @@ export interface Inference {
 
 export interface SaluteCommand {
     type: string;
-    payload?: { [key: string]: unknown };
+    payload?: any;
 }
 
 export type SaluteRequestVariable = Record<string, string | string[] | undefined>;
@@ -152,12 +152,35 @@ export interface Recognizer {
     inference: (options: { req: SaluteRequest; res: SaluteResponse; session: SaluteSession }) => void;
 }
 
+export interface ScenarioSchemaValue<
+    Rq extends SaluteRequest = SaluteRequest,
+    Sh extends SaluteHandler = SaluteHandler
+> {
+    match: (req: Rq) => boolean;
+    schema?: string;
+    handle: Sh;
+    children?: ScenarioSchema<Rq>;
+}
+
+export class ScenarioSchemaItem<Request extends SaluteRequest, Handler extends SaluteHandler>
+    implements ScenarioSchemaValue<Request, Handler> {
+    constructor({ match, schema, handle, children }: ScenarioSchemaValue<Request, Handler>) {
+        this.match = match;
+        this.schema = schema;
+        this.handle = handle;
+        this.children = children;
+    }
+
+    match: (req: Request) => boolean;
+
+    schema?: string;
+
+    handle: Handler;
+
+    children?: ScenarioSchema;
+}
+
 export type ScenarioSchema<Rq extends SaluteRequest = SaluteRequest, Sh extends SaluteHandler = SaluteHandler> = Record<
     string,
-    {
-        match: (req: Rq) => boolean;
-        schema?: string;
-        handle: Sh;
-        children?: ScenarioSchema<Rq>;
-    }
+    ScenarioSchemaValue<Rq, Sh>
 >;

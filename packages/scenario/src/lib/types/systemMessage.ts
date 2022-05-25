@@ -673,6 +673,25 @@ export interface AppInfo {
      * Объединённое значение полей projectId, applicationId и appversionId.
      */
     frontendStateId?: string;
+    appearance?: Appearance;
+    [k: string]: unknown;
+}
+/**
+ * UI-информация отображения аппа
+ */
+export interface Appearance {
+    header: HeaderAppearance;
+    [k: string]: unknown;
+}
+/**
+ * UI-информация отображения header'a аппа
+ */
+export interface HeaderAppearance {
+    /**
+     * Текст header'a
+     */
+    title: string;
+    icon?: ImageAddress;
     [k: string]: unknown;
 }
 /**

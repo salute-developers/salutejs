@@ -2,6 +2,7 @@
   "name": "chatapp-brain",
   "private": "true",
   "version": "1.24.0",
+  "author": "Salute Frontend Team <salute.developers@gmail.com>",
   "main": "index.js",
   "scripts": {
     "start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' ./src/index.ts"

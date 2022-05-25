@@ -2,6 +2,7 @@
   "name": "payment-chatapp",
   "private": "true",
   "version": "0.23.0",
+  "author": "Salute Frontend Team <salute.developers@gmail.com>",
   "main": "src/index.js",
   "scripts": {
     "start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' ./src/index.ts"

@@ -2,6 +2,7 @@
   "name": "@salutejs/storage-adapter-firebase",
   "version": "0.25.0",
   "description": "Firebase database adapter for Salute family",
+  "author": "Salute Frontend Team <salute.developers@gmail.com>",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "homepage": "https://github.com/salute-developers/salutejs#readme",

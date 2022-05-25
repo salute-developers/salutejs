@@ -2,6 +2,7 @@
   "name": "@salutejs/recognizer-smartapp-brain",
   "version": "0.25.0",
   "description": "SmartApp Brain recognizer for SaluteJS",
+  "author": "Salute Frontend Team <salute.developers@gmail.com>",
   "bin": {
     "brain": "bin/brain.js"
   },

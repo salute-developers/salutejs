@@ -2,6 +2,7 @@
   "name": "salutejs",
   "private": true,
   "description": "Tiny helpers to make scenario for Salute Assistants family on Nodejs",
+  "author": "Salute Frontend Team <salute.developers@gmail.com>",
   "main": "dist/index.d.ts",
   "scripts": {
     "release": "auto shipit",

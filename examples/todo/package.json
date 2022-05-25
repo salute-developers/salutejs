@@ -2,6 +2,7 @@
   "name": "todo-app",
   "private": "true",
   "version": "0.22.0",
+  "author": "Salute Frontend Team <salute.developers@gmail.com>",
   "main": "index.js",
   "scripts": {
     "dev": "next dev",

@@ -22,15 +22,14 @@
   },
   "homepage": "https://github.com/salute-developers/salutejs#readme",
   "devDependencies": {
-    "@auto-it/conventional-commits": "10.29.3",
-    "@auto-it/npm": "10.29.3",
-    "@auto-it/slack": "10.29.3",
+    "@auto-it/conventional-commits": "10.36.5",
+    "@auto-it/npm": "10.36.5",
     "@commitlint/cli": "11.0.0",
     "@commitlint/config-conventional": "11.0.0",
     "@types/jest": "26.0.22",
     "@typescript-eslint/eslint-plugin": "4.14.2",
     "@typescript-eslint/parser": "4.14.2",
-    "auto": "10.29.3",
+    "auto": "10.36.5",
     "eslint": "7.19.0",
     "eslint-config-airbnb-base": "14.2.1",
     "eslint-config-prettier": "7.2.0",
@@ -54,8 +53,7 @@
           "setRcToken": false
         }
       ],
-      "conventional-commits",
-      "slack"
+      "conventional-commits"
     ]
   }
 }

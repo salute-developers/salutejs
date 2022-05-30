@@ -5,13 +5,13 @@
   "author": "Salute Frontend Team <salute.developers@gmail.com>",
   "main": "dist/index.d.ts",
   "scripts": {
-    "release": "auto shipit",
     "test": "lerna run test",
     "lint": "lerna run lint",
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build",
     "build:w": "lerna run build:w",
-    "ci:prepare": "npm ci && npm run bootstrap"
+    "ci:prepare": "npm ci && npm run bootstrap",
+    "release": "auto shipit"
   },
   "repository": {
     "type": "git",

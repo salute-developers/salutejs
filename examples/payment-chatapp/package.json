@@ -1,15 +1,15 @@
 {
   "name": "payment-chatapp",
   "private": "true",
-  "version": "0.23.0",
+  "version": "0.24.0",
   "author": "Salute Frontend Team <salute.developers@gmail.com>",
   "main": "src/index.js",
   "scripts": {
     "start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' ./src/index.ts"
   },
   "dependencies": {
-    "@salutejs/scenario": "0.25.0",
-    "@salutejs/storage-adapter-memory": "0.25.0",
+    "@salutejs/scenario": "0.26.0",
+    "@salutejs/storage-adapter-memory": "0.26.0",
     "dotenv": "8.2.0",
     "express": "4.17.1"
   },

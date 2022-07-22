@@ -103,6 +103,7 @@ export type NLPResponseGDPD = NLPResponseBody<
     SharedResponsePayload & ProfileDataPayloadFieldsType
 >;
 
+// Ответ, который получает NLP от навыка
 export type NLPResponse =
     | NLPResponseATU
     | NLPResponseE

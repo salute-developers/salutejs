@@ -1,3 +1,16 @@
+# v0.26.1 (Mon Jul 25 2022)
+
+#### 🐛 Bug Fix
+
+- fix: Сделано обязательным поле device в NLPRequest [#12](https://github.com/salute-developers/salutejs/pull/12) ([@ivan-ushatsky](https://github.com/ivan-ushatsky))
+- fix: Сделано обязательным поле device в NLPRequest ([@ivan-ushatsky](https://github.com/ivan-ushatsky))
+
+#### Authors: 1
+
+- Ivan Ushatsky ([@ivan-ushatsky](https://github.com/ivan-ushatsky))
+
+---
+
 # v0.26.0 (Mon May 30 2022)
 
 #### 🚀 Enhancement

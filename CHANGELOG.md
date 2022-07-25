@@ -1,3 +1,16 @@
+# (Mon Jul 25 2022)
+
+#### 🐛 Bug Fix
+
+- `@salutejs/scenario@0.26.1`
+  - fix: Сделано обязательным поле device в NLPRequest [#12](https://github.com/salute-developers/salutejs/pull/12) ([@ivan-ushatsky](https://github.com/ivan-ushatsky))
+
+#### Authors: 1
+
+- Ivan Ushatsky ([@ivan-ushatsky](https://github.com/ivan-ushatsky))
+
+---
+
 # (Mon May 30 2022)
 
 #### 🚀 Enhancement

@@ -14,10 +14,8 @@ export interface NLPRequestBody<T, P> extends Pick<SystemMessage, 'sessionId' | 
     payload: P;
 }
 
-export type SharedRequestPayload = Pick<
-    SystemMessagePayload,
-    'device' | 'app_info' | 'projectName' | 'strategies' | 'character'
->;
+export type SharedRequestPayload = Pick<SystemMessagePayload, 'app_info' | 'projectName' | 'strategies' | 'character'> &
+    Required<Pick<SystemMessagePayload, 'device'>>;
 
 export type MTSPayload = SharedRequestPayload &
     Pick<
@@ -144,4 +142,5 @@ export type NLPRequestTPD = NLPRequestBody<
     }
 >;
 
+// Запрос, который получает навык от NLP
 export type NLPRequest = NLPRequestRA | NLPRequestСA | NLPRequestMTS | NLPRequestSA | NLPRequestTPD;

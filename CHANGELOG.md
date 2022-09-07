@@ -1,3 +1,16 @@
+# (Wed Sep 07 2022)
+
+#### 🐛 Bug Fix
+
+- `@salutejs/scenario@0.26.2`
+  - Типизация discovery_card [#13](https://github.com/salute-developers/salutejs/pull/13) ([@sasha-tlt](https://github.com/sasha-tlt))
+
+#### Authors: 1
+
+- Alexander Salmin ([@sasha-tlt](https://github.com/sasha-tlt))
+
+---
+
 # (Mon Jul 25 2022)
 
 #### 🐛 Bug Fix

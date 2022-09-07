@@ -1787,7 +1787,9 @@ export interface DiscoveryCard {
      * Ячейки с контентом карточки
      */
     cells: {
-        [k: string]: unknown;
+        top_cell?: CellView;
+        middle_cell?: CellView;
+        bottom_cell?: CellView;
     };
     background_image?: FlexibleImageView;
     /**

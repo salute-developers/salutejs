@@ -1,13 +1,13 @@
 import { useReducer, useState, useRef, useEffect, FormEvent } from 'react';
 import {
-    AssistantCharacterType,
     AssistantAppState,
     AssistantClientCustomizedCommand,
     AssistantNavigationCommand,
     AssistantSmartAppData,
+    CharacterId,
     createAssistant,
     createSmartappDebugger,
-} from '@sberdevices/assistant-client';
+} from '@salutejs/client';
 import {
     Card,
     CardContent,
@@ -30,7 +30,9 @@ if (process.browser) {
 }
 
 const IS_DEVELOPMENT = process.env.NODE_ENV === 'development';
+// eslint-disable-next-line prefer-destructuring
 const NEXT_PUBLIC_DEV_TOKEN = process.env.NEXT_PUBLIC_DEV_TOKEN;
+// eslint-disable-next-line prefer-destructuring
 const NEXT_PUBLIC_DEV_PHRASE = process.env.NEXT_PUBLIC_DEV_PHRASE;
 
 interface TodoCommand extends AssistantSmartAppData {
@@ -42,7 +44,7 @@ const IndexPage = () => {
         notes: [{ id: 'uinmh', title: 'купить хлеб', completed: false }],
     });
 
-    const [character, setCharacter] = useState<AssistantCharacterType>('sber' as const);
+    const [character, setCharacter] = useState<CharacterId>('sber' as const);
     const [note, setNote] = useState('');
 
     const assistantStateRef = useRef<AssistantAppState>({});

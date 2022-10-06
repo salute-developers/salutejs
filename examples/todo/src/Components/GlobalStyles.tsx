@@ -1,6 +1,6 @@
 import { FC, useMemo } from 'react';
 import { createGlobalStyle } from 'styled-components';
-import type { AssistantCharacterType } from '@sberdevices/assistant-client';
+import type { CharacterId } from '@salutejs/client';
 import { darkJoy, darkEva, darkSber } from '@sberdevices/plasma-tokens/themes';
 import { text, background, gradient } from '@sberdevices/plasma-tokens';
 
@@ -41,7 +41,7 @@ const DocStyles = createGlobalStyle`
   }
 `;
 
-export const GlobalStyles: FC<{ character: AssistantCharacterType }> = ({ character }) => {
+export const GlobalStyles: FC<{ character: CharacterId }> = ({ character }) => {
     const Theme = useMemo(() => themes[character], [character]);
 
     return (

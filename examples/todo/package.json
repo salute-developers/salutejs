@@ -7,13 +7,14 @@
   "scripts": {
     "dev": "next dev",
     "start": "next start",
+    "build": "next build",
     "test": "jest",
     "publish": "vercel --prod"
   },
   "dependencies": {
+    "@salutejs/client": "1.6.2",
     "@salutejs/scenario": "0.26.2",
     "@salutejs/storage-adapter-memory": "0.6.0",
-    "@sberdevices/assistant-client": "2.14.0",
     "@sberdevices/plasma-icons": "1.4.0",
     "@sberdevices/plasma-tokens": "1.1.0",
     "@sberdevices/plasma-ui": "1.6.2",

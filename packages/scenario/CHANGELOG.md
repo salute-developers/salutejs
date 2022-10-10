@@ -1,3 +1,16 @@
+# v0.26.3 (Mon Oct 10 2022)
+
+#### 🐛 Bug Fix
+
+- Заполнять поле framework_type в ответе [#15](https://github.com/salute-developers/salutejs/pull/15) ([@sasha-tlt](https://github.com/sasha-tlt))
+- fix: Заполнять поле framework_type в ответе ([@sasha-tlt](https://github.com/sasha-tlt))
+
+#### Authors: 1
+
+- Alexander Salmin ([@sasha-tlt](https://github.com/sasha-tlt))
+
+---
+
 # v0.26.2 (Wed Sep 07 2022)
 
 #### 🐛 Bug Fix

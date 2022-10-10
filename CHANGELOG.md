@@ -1,3 +1,17 @@
+# (Mon Oct 10 2022)
+
+#### 🐛 Bug Fix
+
+- chore: Актулизировать examples/todo [#16](https://github.com/salute-developers/salutejs/pull/16) ([@sasha-tlt](https://github.com/sasha-tlt))
+- `@salutejs/scenario@0.26.3`
+  - Заполнять поле framework_type в ответе [#15](https://github.com/salute-developers/salutejs/pull/15) ([@sasha-tlt](https://github.com/sasha-tlt))
+
+#### Authors: 1
+
+- Alexander Salmin ([@sasha-tlt](https://github.com/sasha-tlt))
+
+---
+
 # (Wed Sep 07 2022)
 
 #### 🐛 Bug Fix

@@ -49,6 +49,7 @@ export interface ATUPayload
      */
     finished: boolean;
     app_info?: AppInfo;
+    framework_type?: string;
 }
 
 /** ANSWER_TO_USER Response */

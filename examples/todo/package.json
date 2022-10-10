@@ -1,7 +1,7 @@
 {
   "name": "todo-app",
   "private": "true",
-  "version": "0.23.2",
+  "version": "0.23.3",
   "author": "Salute Frontend Team <salute.developers@gmail.com>",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@salutejs/client": "1.6.2",
-    "@salutejs/scenario": "0.26.2",
+    "@salutejs/scenario": "0.26.3",
     "@salutejs/storage-adapter-memory": "0.6.0",
     "@sberdevices/plasma-icons": "1.4.0",
     "@sberdevices/plasma-tokens": "1.1.0",

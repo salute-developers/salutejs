@@ -1,6 +1,6 @@
 {
   "name": "@salutejs/scenario",
-  "version": "0.26.2",
+  "version": "0.26.3",
   "description": "Tiny helpers to make scenario for Salute family",
   "author": "Salute Frontend Team <salute.developers@gmail.com>",
   "main": "dist/index.js",

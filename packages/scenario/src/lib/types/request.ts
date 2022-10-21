@@ -15,19 +15,12 @@ export interface NLPRequestBody<T, P> extends Pick<SystemMessage, 'sessionId' | 
 }
 
 export type SharedRequestPayload = Pick<SystemMessagePayload, 'app_info' | 'projectName' | 'strategies' | 'character'> &
-    Required<Pick<SystemMessagePayload, 'device'>>;
+    Required<Pick<SystemMessagePayload, 'device' | 'new_session'>>;
 
 export type MTSPayload = SharedRequestPayload &
     Pick<
         SystemMessagePayload,
-        | 'intent'
-        | 'original_intent'
-        | 'intent_meta'
-        | 'meta'
-        | 'selected_item'
-        | 'new_session'
-        | 'annotations'
-        | 'message'
+        'intent' | 'original_intent' | 'intent_meta' | 'meta' | 'selected_item' | 'annotations' | 'message'
     >;
 
 /** MESSAGE_TO_SKILL */

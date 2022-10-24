@@ -1,3 +1,21 @@
+# (Mon Oct 24 2022)
+
+#### 🚀 Enhancement
+
+- `@salutejs/scenario@0.27.0`
+  - Поддержать NOTHING_FOUND и ERROR [#18](https://github.com/salute-developers/salutejs/pull/18) ([@sasha-tlt](https://github.com/sasha-tlt))
+
+#### 🐛 Bug Fix
+
+- `@salutejs/scenario@0.27.0`
+  - new_session приходит в каждом сообщении [#19](https://github.com/salute-developers/salutejs/pull/19) ([@sasha-tlt](https://github.com/sasha-tlt))
+
+#### Authors: 1
+
+- Alexander Salmin ([@sasha-tlt](https://github.com/sasha-tlt))
+
+---
+
 # (Mon Oct 10 2022)
 
 #### 🐛 Bug Fix

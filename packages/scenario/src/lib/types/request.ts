@@ -14,7 +14,10 @@ export interface NLPRequestBody<T, P> extends Pick<SystemMessage, 'sessionId' | 
     payload: P;
 }
 
-export type SharedRequestPayload = Pick<SystemMessagePayload, 'app_info' | 'projectName' | 'strategies' | 'character'> &
+export type SharedRequestPayload = Pick<
+    SystemMessagePayload,
+    'app_info' | 'projectName' | 'strategies' | 'character' | 'feature_launcher' | 'meta'
+> &
     Required<Pick<SystemMessagePayload, 'device' | 'new_session'>>;
 
 export type MTSPayload = SharedRequestPayload &

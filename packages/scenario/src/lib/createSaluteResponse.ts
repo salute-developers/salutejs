@@ -208,7 +208,7 @@ export const createSaluteResponse = (req: NLPRequest): SaluteResponse => {
             message.payload.intent = intent;
         },
         setPronounceText: (text: string, options: { ssml?: boolean } = { ssml: false }) => {
-            if (message.messageName !== 'ANSWER_TO_USER') {
+            if (message.messageName !== 'ANSWER_TO_USER' && message.messageName !== 'POLICY_RUN_APP') {
                 throw new Error('Wrong message type');
             }
 

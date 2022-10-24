@@ -100,6 +100,8 @@ export interface SaluteResponse {
     getDetailedProfileData: () => void;
     openDeepLink: (deepLink: string) => void;
     overrideFrontendEndpoint: (frontendEndpoint: string) => void;
+    error: (status: { code: number; description?: string }) => void;
+    nothingFound: () => void;
     readonly message: NLPResponse;
 }
 

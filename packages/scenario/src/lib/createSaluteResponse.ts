@@ -71,6 +71,32 @@ export const createSaluteResponse = (req: NLPRequest): SaluteResponse => {
         };
     };
 
+    const error = ({ code, description }: { code: number; description?: string }) => {
+        message = {
+            messageId,
+            sessionId,
+            uuid,
+            messageName: 'ERROR',
+            payload: {
+                device: payload.device,
+                code,
+                description,
+            },
+        };
+    };
+
+    const nothingFound = () => {
+        message = {
+            messageId,
+            sessionId,
+            uuid,
+            messageName: 'NOTHING_FOUND',
+            payload: {
+                device: payload.device,
+            },
+        };
+    };
+
     return {
         appendBubble: (
             bubble: string,
@@ -172,6 +198,8 @@ export const createSaluteResponse = (req: NLPRequest): SaluteResponse => {
         getProfileData,
         chooseProfileData,
         getDetailedProfileData,
+        error,
+        nothingFound,
         setIntent: (intent: string) => {
             if (message.messageName !== 'ANSWER_TO_USER') {
                 throw new Error('Wrong message type');

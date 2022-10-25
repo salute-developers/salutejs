@@ -577,6 +577,7 @@ export interface SystemMessagePayload {
     new_session?: boolean;
     annotations?: Annotations;
     message: Message;
+    feature_launcher?: Record<string, unknown>;
     server_action?: {
         type?: string;
         payload?: unknown;

@@ -55,7 +55,9 @@ export interface ATUPayload
 /** ANSWER_TO_USER Response */
 export type NLPResponseATU = NLPResponseBody<Extract<NLPResponseType, 'ANSWER_TO_USER'>, ATUPayload>;
 
-export interface PRAPayload extends SharedResponsePayload {
+export interface PRAPayload
+    extends SharedResponsePayload,
+        Pick<SystemMessagePayload, 'pronounceText' | 'pronounceTextType'> {
     server_action: {
         app_info:
             | {

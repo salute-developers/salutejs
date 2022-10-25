@@ -1,3 +1,16 @@
+# v0.27.1 (Tue Oct 25 2022)
+
+#### 🐛 Bug Fix
+
+- Доработки типов запроса/ответа [#21](https://github.com/salute-developers/salutejs/pull/21) ([@sasha-tlt](https://github.com/sasha-tlt))
+- fix: Доработки типов запроса/ответа ([@sasha-tlt](https://github.com/sasha-tlt))
+
+#### Authors: 1
+
+- Alexander Salmin ([@sasha-tlt](https://github.com/sasha-tlt))
+
+---
+
 # v0.27.0 (Mon Oct 24 2022)
 
 #### 🚀 Enhancement

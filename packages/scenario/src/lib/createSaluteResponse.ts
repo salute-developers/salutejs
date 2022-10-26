@@ -123,7 +123,7 @@ export const createSaluteResponse = (req: NLPRequest): SaluteResponse => {
 
             message.payload.items.push({ card });
         },
-        appendCommand: <T extends SaluteCommand>(command: T) => {
+        appendCommand: <T = SaluteCommand>(command: T) => {
             if (message.messageName !== 'ANSWER_TO_USER') {
                 throw new Error('Wrong message type');
             }

@@ -82,7 +82,7 @@ export interface SaluteRequest<V = SaluteRequestVariable, S = AppState, A = { pa
 export interface SaluteResponse {
     appendBubble: (bubble: string, options?: { expand_policy?: Bubble['expand_policy']; markdown?: boolean }) => void;
     appendCard: (card: Card) => void;
-    appendCommand: <T extends SaluteCommand>(command: T) => void;
+    appendCommand: <T = SaluteCommand>(command: T) => void;
     /** @deprecated */
     appendItem: (command: any) => void;
     appendError: (error: SmartAppErrorCommand['smart_app_error']) => void;

@@ -1,3 +1,16 @@
+# (Thu Oct 27 2022)
+
+#### 🐛 Bug Fix
+
+- `@salutejs/scenario@0.27.2`
+  - Не только type/payload в appendCommand [#22](https://github.com/salute-developers/salutejs/pull/22) ([@sasha-tlt](https://github.com/sasha-tlt))
+
+#### Authors: 1
+
+- Alexander Salmin ([@sasha-tlt](https://github.com/sasha-tlt))
+
+---
+
 # (Tue Oct 25 2022)
 
 #### 🐛 Bug Fix

@@ -1,3 +1,16 @@
+# v0.27.2 (Thu Oct 27 2022)
+
+#### 🐛 Bug Fix
+
+- Не только type/payload в appendCommand [#22](https://github.com/salute-developers/salutejs/pull/22) ([@sasha-tlt](https://github.com/sasha-tlt))
+- fix: не только type/payload в appendCommand ([@sasha-tlt](https://github.com/sasha-tlt))
+
+#### Authors: 1
+
+- Alexander Salmin ([@sasha-tlt](https://github.com/sasha-tlt))
+
+---
+
 # v0.27.1 (Tue Oct 25 2022)
 
 #### 🐛 Bug Fix

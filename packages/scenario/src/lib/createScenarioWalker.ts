@@ -134,8 +134,10 @@ export const createScenarioWalker = ({
             return;
         }
 
-        await systemScenario.RUN_APP(saluteHandlerOpts, dispatch);
-        return;
+        if (req.request.messageName !== 'MESSAGE_TO_SKILL') {
+            await systemScenario.RUN_APP(saluteHandlerOpts, dispatch);
+            return;
+        }
     }
 
     if (req.systemIntent === 'close_app') {

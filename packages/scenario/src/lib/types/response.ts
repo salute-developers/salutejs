@@ -30,14 +30,9 @@ export interface ATUPayload
     extends SharedResponsePayload,
         Pick<
             SystemMessagePayload,
-            | 'auto_listening'
-            | 'pronounceText'
-            | 'pronounceTextType'
-            | 'emotion'
-            | 'suggestions'
-            | 'intent'
-            | 'asr_hints'
+            'auto_listening' | 'pronounceText' | 'pronounceTextType' | 'emotion' | 'suggestions' | 'asr_hints'
         > {
+    intent?: string;
     /** Список команд и элементов интерфейса смартапа */
     items: ATUItemsType[];
     /**

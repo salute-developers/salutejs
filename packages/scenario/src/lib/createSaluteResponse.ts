@@ -15,7 +15,6 @@ export const createSaluteResponse = (req: NLPRequest): SaluteResponse => {
             projectName: payload.projectName,
             items: [],
             finished: false,
-            intent: 'scenario',
             framework_type: 'salutejs',
         },
     };

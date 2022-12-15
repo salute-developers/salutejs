@@ -1,3 +1,16 @@
+# (Thu Dec 15 2022)
+
+#### 🚀 Enhancement
+
+- `@salutejs/scenario@0.28.0`
+  - Опциональное поле intent в ответе [#24](https://github.com/salute-developers/salutejs/pull/24) ([@sasha-tlt](https://github.com/sasha-tlt))
+
+#### Authors: 1
+
+- Alexander Salmin ([@sasha-tlt](https://github.com/sasha-tlt))
+
+---
+
 # (Thu Oct 27 2022)
 
 #### 🐛 Bug Fix

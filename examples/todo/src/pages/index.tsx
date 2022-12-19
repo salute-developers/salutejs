@@ -117,6 +117,24 @@ const IndexPage = () => {
         };
     }, [appState]);
 
+    useEffect(() => {
+        assistantRef.current.setHeaderButtons?.([
+            {
+                icon_address: {
+                    type: 'url',
+                    hash: '1add19855fcd158ece0fd52c7fb13750',
+                    url: 'https://cdn.sberdevices.ru/VA/images/prime/okko.png',
+                },
+                actions: [
+                    {
+                        type: 'deep_link',
+                        deep_link: 'https://ru.wikipedia.org/wiki/Ривз,_Киану',
+                    },
+                ],
+            },
+        ]);
+    }, []);
+
     const doneNote = (title: string) => {
         assistantRef.current?.sendAction({ type: 'done', payload: { note: title } });
     };

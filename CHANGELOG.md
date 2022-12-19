@@ -1,3 +1,15 @@
+# (Mon Dec 19 2022)
+
+#### 🚀 Enhancement
+
+- feat: добавил setHeaderButtons в todo example [#25](https://github.com/salute-developers/salutejs/pull/25) ([@soulko](https://github.com/soulko))
+
+#### Authors: 1
+
+- Anton Kostenko ([@soulko](https://github.com/soulko))
+
+---
+
 # (Thu Dec 15 2022)
 
 #### 🚀 Enhancement

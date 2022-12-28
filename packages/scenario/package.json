@@ -21,6 +21,7 @@
     "access": "public"
   },
   "scripts": {
+    "generate-system-message": "node ./scripts/generate-system-message.js",
     "prepare": "npm run build",
     "build": "rm -rf dist && tsc",
     "build:w": "rm -rf dist && tsc -w",
@@ -29,6 +30,7 @@
   },
   "devDependencies": {
     "@types/node-fetch": "2.5.10",
+    "json-schema-to-typescript": "11.0.2",
     "typescript": "4.1.3"
   },
   "dependencies": {

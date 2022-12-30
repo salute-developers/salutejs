@@ -1,7 +1,7 @@
 {
   "name": "chatapp-brain",
   "private": "true",
-  "version": "1.27.0",
+  "version": "1.28.0",
   "author": "Salute Frontend Team <salute.developers@gmail.com>",
   "main": "index.js",
   "scripts": {
@@ -9,9 +9,9 @@
   },
   "description": "",
   "dependencies": {
-    "@salutejs/recognizer-smartapp-brain": "0.28.0",
-    "@salutejs/scenario": "0.28.0",
-    "@salutejs/storage-adapter-memory": "0.28.0",
+    "@salutejs/recognizer-smartapp-brain": "0.29.0",
+    "@salutejs/scenario": "0.29.0",
+    "@salutejs/storage-adapter-memory": "0.29.0",
     "dotenv": "8.2.0",
     "express": "4.17.1"
   },

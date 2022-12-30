@@ -1,3 +1,16 @@
+# v0.29.0 (Fri Dec 30 2022)
+
+#### 🚀 Enhancement
+
+- feat: Обновлён SystemMessage [#27](https://github.com/salute-developers/salutejs/pull/27) ([@ivan-ushatsky](https://github.com/ivan-ushatsky))
+- feat: Обновлён SystemMessage ([@ivan-ushatsky](https://github.com/ivan-ushatsky))
+
+#### Authors: 1
+
+- Ivan Ushatsky ([@ivan-ushatsky](https://github.com/ivan-ushatsky))
+
+---
+
 # v0.28.0 (Thu Dec 15 2022)
 
 #### 🚀 Enhancement

@@ -1,3 +1,18 @@
+# (Fri Dec 30 2022)
+
+#### 🚀 Enhancement
+
+- feat: добавил setHeaderButtons в todo example [#25](https://github.com/salute-developers/salutejs/pull/25) ([@soulko](https://github.com/soulko))
+- `@salutejs/scenario@0.29.0`
+  - feat: Обновлён SystemMessage [#27](https://github.com/salute-developers/salutejs/pull/27) ([@ivan-ushatsky](https://github.com/ivan-ushatsky))
+
+#### Authors: 2
+
+- Anton Kostenko ([@soulko](https://github.com/soulko))
+- Ivan Ushatsky ([@ivan-ushatsky](https://github.com/ivan-ushatsky))
+
+---
+
 # (Mon Dec 19 2022)
 
 #### 🚀 Enhancement

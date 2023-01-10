@@ -24,165 +24,10 @@ export type SystemMessageName =
  */
 export type AppType = 'DIALOG' | 'WEB_APP' | 'APK' | 'CHAT_APP' | 'EMBEDDED_APP';
 /**
- * Операционная система устройства.
- */
-export type PlatformType = 'android' | 'ios' | 'web' | 'WEBDBG';
-/**
- * Поверхность, от которой приходит вызов ассистента. Например, приложение СберБанк Онлайн или SberBox.
- */
-export type Surface = 'SBERBOX' | 'COMPANION' | 'STARGATE' | 'SATELLITE' | 'TIME' | 'SBOL' | 'TV' | 'TV_HUAWEI';
-/**
- * Идентификатор канала коммуникации
- */
-export type UserChannel = 'B2C' | 'SBOL' | 'COMPANION_B2C';
-/**
- * Дефолтные каналы для поверхностей
- */
-export const DefaultChannels: Record<Surface, UserChannel> = {
-    SBERBOX: 'B2C',
-    STARGATE: 'B2C',
-    SATELLITE: 'B2C',
-    TIME: 'B2C',
-    TV: 'B2C',
-    TV_HUAWEI: 'B2C',
-    COMPANION: 'COMPANION_B2C',
-    SBOL: 'SBOL',
-};
-/**
- * Идентификатор персонажа, которого выбрал пользователь.
- */
-export type CharacterId = 'sber' | 'eva' | 'joy';
-/**
- * Имя персонажа.
- */
-export type CharacterName = 'Сбер' | 'Афина' | 'Джой';
-export type PermissionType = 'geo' | 'read_contacts' | 'record_audio' | 'push';
-export type PermissionStatus = 'granted' | 'denied_once' | 'denied_permanently';
-/**
- * Список подцензурных категорий, обнаруженных в тексте или реплике пользователя.
- */
-export type CensorClass = 'politicians' | 'obscene' | 'model_response';
-/**
- * Список характеристик эмоциональной окраски текста пользователя.
- */
-export type PhraseEmotions = 'negative' | 'positive' | 'neutral';
-export type ListOfTokenTypesData = {
-    token_type: string;
-    token_value: TokenValue;
-    [k: string]: unknown;
-}[];
-/**
- * Эмоция ассистента, которую он показывает с помощью анимации кнопки.
- */
-export type EmotionId =
-    | 'igrivost'
-    | 'udovolstvie'
-    | 'podavleniye_gneva'
-    | 'smushchennaya_ulibka'
-    | 'simpatiya'
-    | 'oups'
-    | 'laugh'
-    | 'ok_prinyato'
-    | 'bespokoistvo'
-    | 'predvkusheniye'
-    | 'vinovatiy'
-    | 'zhdu_otvet'
-    | 'zadumalsa'
-    | 'neznayu'
-    | 'nedoumenie'
-    | 'nedovolstvo'
-    | 'nesoglasie'
-    | 'pechal'
-    | 'radost'
-    | 'sochuvstvie'
-    | 'strakh'
-    | 'zainteresovannost';
-export type Action =
-    | TextAction
-    | DeepLinkAction
-    | SendContactPhone
-    | ServerAction
-    | StartSmartSearchAction
-    | CopyTextAction
-    | OpenKeyboard
-    | ShareTextAction;
-export type Card =
-    | ListCard
-    | GalleryCard
-    | GridCard
-    | DiscoveryCard
-    | QRCodeCard
-    | SimpleList
-    | WidgetTitleCard
-    | WidgetGallery
-    | WidgetGalleryWithCategories
-    | WidgetSingleCard
-    | WidgetTwoColumns;
-/**
- * Карточка с вертикальным списком ячеек.
- */
-export type ListCard = CardBase & {
-    cells: CellView[];
-    type: 'list_card';
-    actions?: Actions;
-    /**
-     * Id для отправки в метрику
-     */
-    log_id?: string;
-    background_image?: FlexibleImageView;
-    background_color?: SurfaceColor;
-    [k: string]: unknown;
-};
-/**
- * Возможные размеры отступов
- */
-export type Dimension = '0x' | '1x' | '2x' | '3x' | '4x' | '5x' | '6x' | '7x' | '8x' | '9x' | '10x' | '12x' | '16x';
-export type CellView =
-    | LeftRightCellView
-    | HorizontalStackCellView
-    | TextCellView
-    | ButtonCellView
-    | ImageCellView
-    | DetailsCellView
-    | WeatherCellView
-    | RightSideCellView
-    | FlexibleImageCellView
-    | HorizontalCellsView;
-export type LeftView =
-    | SimpleLeftView
-    | FastAnswerLeftView
-    | FlexibleImageLeftRightCellView
-    | ImageTextsLeftCellView
-    | PlasmaButtonCellView;
-/**
  * Адрес графического ресурса, может быть задан в пространстве интернет или в локальном пространстве клиента, url имеет
  * больший приоритет чем local
  */
 export type ImageAddress = Url | Local;
-export interface Url {
-    /**
-     * Тип ресурса.
-     */
-    type: 'url';
-    /**
-     * Адрес картинки в интернете
-     */
-    url: string;
-    /**
-     * Hash катинки в интернете(опционален)
-     */
-    hash?: string;
-    placeholder?: LocalImageIdentificator;
-    [k: string]: unknown;
-}
-export interface Local {
-    /**
-     * Тип ресурса.
-     */
-    type: 'local';
-    identificator: LocalImageIdentificator;
-    [k: string]: unknown;
-}
 /**
  * Адрес картинки в локальном пространстве клиента https://www.figma.com/file/MQHBgPkW4dqXmI2549WioI/Dev?node-id=19%3A9
  */
@@ -360,38 +205,115 @@ export type LocalImageIdentificator =
     | 'wrench'
     | 'yule';
 /**
- * Возможные значения размеров изображения.
+ * Операционная система устройства.
  */
-export type IconSizeDimension = 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
+export type PlatformType = 'android' | 'ios' | 'web' | 'WEBDBG';
 /**
- * Цвет фона см https://www.figma.com/file/yaeE0lLDWMBKKLXuDHgq1p/SmartX-Styles?node-id=19%3A15
+ * Поверхность, от которой приходит вызов ассистента. Например, приложение СберБанк Онлайн или SberBox.
  */
-export type Color =
-    | 'solid_black'
-    | 'solid_white'
-    | 'solid_transparent'
-    | 'solid_disabled'
-    | 'solid_brand'
-    | 'solid_warning'
-    | 'solid_critical'
-    | 'solid_action'
-    | 'secondary'
-    | 'liquid_60'
-    | 'liquid_50'
-    | 'liquid_40'
-    | 'liquid_30'
-    | 'liquid_20'
-    | 'liquid_10'
-    | 'clear_transparent';
+export type Surface = 'SBERBOX' | 'COMPANION' | 'STARGATE' | 'SATELLITE' | 'TIME' | 'SBOL' | 'TV' | 'TV_HUAWEI';
 /**
- * Возможные варианты скругления углов изображения
+ * Идентификатор персонажа, которого выбрал пользователь.
  */
-export type RoundedCorners = 'none' | 'rounded' | 'circle';
-export type Actions = Action[];
+export type CharacterId = 'sber' | 'eva' | 'joy';
 /**
- * Градиенты Plasma, см https://www.figma.com/file/ndmRHZxZo1bD8DuAnRsOtL/%F0%9F%8C%80Plasma-Mobile?node-id=6520%3A119
+ * Имя персонажа.
  */
-export type Gradient = 'gradient_sber' | 'gradient_athena' | 'gradient_joy';
+export type CharacterName = 'Сбер' | 'Афина' | 'Джой';
+export type PermissionType = 'geo' | 'read_contacts' | 'record_audio' | 'push';
+export type PermissionStatus = 'granted' | 'denied_once' | 'denied_permanently';
+/**
+ * Список подцензурных категорий, обнаруженных в тексте или реплике пользователя.
+ */
+export type CensorClass = 'politicians' | 'obscene' | 'model_response';
+/**
+ * Список характеристик эмоциональной окраски текста пользователя.
+ */
+export type PhraseEmotions = 'negative' | 'positive' | 'neutral';
+export type CompositeTokenName =
+    | 'MONEY_TOKEN'
+    | 'PERSON_TOKEN'
+    | 'TIME_DATE_TOKEN'
+    | 'TIME_TIME_TOKEN'
+    | 'PERIOD_TOKEN'
+    | 'RELATIVE_TIME_TOKEN'
+    | 'TIME_DATE_INTERVAL_TOKEN'
+    | 'GEO_TOKEN'
+    | 'ORG_TOKEN';
+export type ListOfTokenTypesData = {
+    token_type: string;
+    token_value: TokenValue;
+    [k: string]: unknown;
+}[];
+/**
+ * Эмоция ассистента, которую он показывает с помощью анимации кнопки.
+ */
+export type EmotionId =
+    | 'igrivost'
+    | 'udovolstvie'
+    | 'podavleniye_gneva'
+    | 'smushchennaya_ulibka'
+    | 'simpatiya'
+    | 'oups'
+    | 'laugh'
+    | 'ok_prinyato'
+    | 'bespokoistvo'
+    | 'predvkusheniye'
+    | 'vinovatiy'
+    | 'zhdu_otvet'
+    | 'zadumalsa'
+    | 'neznayu'
+    | 'nedoumenie'
+    | 'nedovolstvo'
+    | 'nesoglasie'
+    | 'pechal'
+    | 'radost'
+    | 'sochuvstvie'
+    | 'strakh'
+    | 'zainteresovannost';
+export type Action =
+    | TextAction
+    | DeepLinkAction
+    | SendContactPhone
+    | ServerAction
+    | StartSmartSearchAction
+    | CopyTextAction
+    | OpenKeyboard
+    | ShareTextAction;
+export type Card =
+    | DiscoveryCard
+    | ExtendedListCard
+    | GalleryCard
+    | GridCard
+    | ListCard
+    | QRCodeCard
+    | SimpleList
+    | WidgetGallery
+    | WidgetGalleryWithCategories
+    | WidgetSingleCard
+    | WidgetTitleCard
+    | WidgetTwoColumns;
+/**
+ * Карточка со списком ячеек и одной картинкой
+ */
+export type ExtendedListCard = CardBase & {
+    cells: SimpleCellView[];
+    cell_image: ExtendedImageView;
+    type: 'extended_list_card';
+    actions?: Actions;
+    /**
+     * Id для отправки в метрику
+     */
+    log_id?: string;
+    background_image?: FlexibleImageView;
+    background_color?: SurfaceColor;
+    [k: string]: unknown;
+};
+/**
+ * Возможные размеры отступов
+ */
+export type Dimension = '0x' | '1x' | '2x' | '3x' | '4x' | '5x' | '6x' | '7x' | '8x' | '9x' | '10x' | '12x' | '16x';
+export type SimpleCellView = TextCellView | ButtonCellView;
 /**
  * Стиль текста, см https://www.figma.com/file/D0AfmXWT5KBPiWFNg2IZoF/SmartX-Typeface?node-id=0%3A1
  */
@@ -422,38 +344,49 @@ export type Typeface =
  * Цвет текста см https://www.figma.com/file/yaeE0lLDWMBKKLXuDHgq1p/SmartX-Styles?node-id=239%3A64
  */
 export type TypeColor = 'default' | 'secondary' | 'tertiary' | 'inverse' | 'brand' | 'warning' | 'critical' | 'link';
+export type Actions = Action[];
 /**
- * Выравнивание элемента по вертикали.
+ * Выравнивание элемента по горизонтали.
  */
-export type VerticalGravity = 'top' | 'center' | 'bottom';
+export type HorizontalGravity = 'left' | 'center' | 'right';
+/**
+ * Возможные варианты скругления углов изображения
+ */
+export type RoundedCorners = 'none' | 'rounded' | 'circle';
 /**
  * Режим растягивания контента внутри контейнера
  */
 export type ScaleMode = 'scale_aspect_fill' | 'scale_aspect_fit' | 'center' | 'top' | 'bottom';
 /**
- * Выравнивание элемента по горизонтали.
+ * Цвет фона см https://www.figma.com/file/yaeE0lLDWMBKKLXuDHgq1p/SmartX-Styles?node-id=19%3A15
  */
-export type HorizontalGravity = 'left' | 'center' | 'right';
+export type Color =
+    | 'solid_black'
+    | 'solid_white'
+    | 'solid_transparent'
+    | 'solid_disabled'
+    | 'solid_brand'
+    | 'solid_warning'
+    | 'solid_critical'
+    | 'solid_action'
+    | 'secondary'
+    | 'liquid_60'
+    | 'liquid_50'
+    | 'liquid_40'
+    | 'liquid_30'
+    | 'liquid_20'
+    | 'liquid_10'
+    | 'clear_transparent';
+/**
+ * Выравнивание элемента по вертикали.
+ */
+export type VerticalGravity = 'top' | 'center' | 'bottom';
 /**
  * Размер изображения относительно карточки
  */
 export type ContentSize = MatchParentContentSize | FixedContentSize;
 export type ContentWidth = FixedContentWidth | MatchParent | Columns;
 export type ContentHeight = FixedContentHeight | AspectRatio;
-export type RightView =
-    | DisclosureRightView
-    | DetailRightView
-    | RoundButtonCellView
-    | TagCellView
-    | FlexibleImageLeftRightCellView
-    | RightCellArrayView
-    | PlasmaButtonCellView;
-/**
- * Ширина контента в терминах сеток. https://www.figma.com/file/L6AlpyUxFuumKEEbh4ADIh/🤖SD-Styles?node-id=26%3A17
- * https://www.figma.com/file/c6KZ9jIXTB5zEmyTfA2Akv/Message-Based?node-id=1446%3A0
- */
-export type GridContentWidth = 'xsmall' | 'small' | 'premedium' | 'medium' | 'large' | 'xlarge' | 'resizable';
-export type HorizontalCellContentView = VerticalIconTextView | SpacerView;
 /**
  * Набор стилей различных поверхностей и подложек см
  * https://www.figma.com/file/L6AlpyUxFuumKEEbh4ADIh/%F0%9F%8C%80Plasma-Styles?node-id=5367%3A696
@@ -481,6 +414,19 @@ export type GalleryCard = CardBase & {
 };
 export type GalleryItem = MediaGalleryItem | GallerySearchContentItem | GalleryMoreButtonItem;
 /**
+ * Ширина контента в терминах сеток. https://www.figma.com/file/L6AlpyUxFuumKEEbh4ADIh/🤖SD-Styles?node-id=26%3A17
+ * https://www.figma.com/file/c6KZ9jIXTB5zEmyTfA2Akv/Message-Based?node-id=1446%3A0
+ */
+export type GridContentWidth = 'xsmall' | 'small' | 'premedium' | 'medium' | 'large' | 'xlarge' | 'resizable';
+/**
+ * Возможные значения размеров изображения.
+ */
+export type IconSizeDimension = 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
+/**
+ * Градиенты Plasma, см https://www.figma.com/file/ndmRHZxZo1bD8DuAnRsOtL/%F0%9F%8C%80Plasma-Mobile?node-id=6520%3A119
+ */
+export type Gradient = 'gradient_sber' | 'gradient_athena' | 'gradient_joy';
+/**
  * Двумерная карточка (сетка)
  */
 export type GridCard = CardBase & {
@@ -502,19 +448,46 @@ export type GridCard = CardBase & {
 };
 export type GridItem = GreetingGridItem;
 /**
- * Карточка с вертикальным списком ячеек
+ * Карточка с вертикальным списком ячеек.
  */
-export type SimpleList = CardBase & {
-    header: string;
-    footer?: string;
-    items?: SimpleItem[];
-    type: 'simple_list';
+export type ListCard = CardBase & {
+    cells: CellView[];
+    type: 'list_card';
+    actions?: Actions;
+    /**
+     * Id для отправки в метрику
+     */
+    log_id?: string;
+    background_image?: FlexibleImageView;
+    background_color?: SurfaceColor;
     [k: string]: unknown;
 };
-export type SimpleItem = {
-    title: string;
-    body: string;
-};
+export type CellView =
+    | LeftRightCellView
+    | HorizontalStackCellView
+    | TextCellView
+    | ButtonCellView
+    | ImageCellView
+    | DetailsCellView
+    | WeatherCellView
+    | RightSideCellView
+    | FlexibleImageCellView
+    | HorizontalCellsView;
+export type LeftView =
+    | SimpleLeftView
+    | FastAnswerLeftView
+    | FlexibleImageLeftRightCellView
+    | ImageTextsLeftCellView
+    | PlasmaButtonCellView;
+export type RightView =
+    | DisclosureRightView
+    | DetailRightView
+    | RoundButtonCellView
+    | TagCellView
+    | FlexibleImageLeftRightCellView
+    | RightCellArrayView
+    | PlasmaButtonCellView;
+export type HorizontalCellContentView = VerticalIconTextView | SpacerView;
 /**
  * Упорядоченный список категорий с подмассивами из карточек
  *
@@ -661,6 +634,10 @@ export interface SystemMessagePayload {
          * Id для отправки в метрику.
          */
         log_id?: string;
+        /**
+         * Бейдж для отображения доступности оператора для чата с оператором
+         */
+        icon_badge?: 'enabled' | 'disabled';
         [k: string]: unknown;
     }[];
     /**
@@ -758,6 +735,30 @@ export interface HeaderAppearance {
      */
     subtitle?: string;
     icon?: ImageAddress;
+    [k: string]: unknown;
+}
+export interface Url {
+    /**
+     * Тип ресурса.
+     */
+    type: 'url';
+    /**
+     * Адрес картинки в интернете
+     */
+    url: string;
+    /**
+     * Hash катинки в интернете(опционален)
+     */
+    hash?: string;
+    placeholder?: LocalImageIdentificator;
+    [k: string]: unknown;
+}
+export interface Local {
+    /**
+     * Тип ресурса.
+     */
+    type: 'local';
+    identificator: LocalImageIdentificator;
     [k: string]: unknown;
 }
 /**
@@ -1137,16 +1138,6 @@ export interface GrammemInfo {
     animacy?: string;
     [k: string]: unknown;
 }
-export type CompositeTokenName =
-    | 'MONEY_TOKEN'
-    | 'PERSON_TOKEN'
-    | 'TIME_DATE_TOKEN'
-    | 'TIME_TIME_TOKEN'
-    | 'PERIOD_TOKEN'
-    | 'RELATIVE_TIME_TOKEN'
-    | 'TIME_DATE_INTERVAL_TOKEN'
-    | 'GEO_TOKEN'
-    | 'ORG_TOKEN';
 export interface TokenValue {
     adjectival_number?: boolean;
     value: number | string;
@@ -1220,20 +1211,6 @@ export interface DeepLinkAction {
     [k: string]: unknown;
 }
 /**
- * Действие, которое обозначает копирование текста из карточки в буфер обмена.
- */
-export interface CopyTextAction {
-    /**
-     * Тип действия.
-     */
-    type: 'copy_text_to_buffer';
-    /**
-     * Текст, который будет скопирован в буфер обмена.
-     */
-    text: string;
-    [k: string]: unknown;
-}
-/**
  * Действие, которое обозначает отправку номера телефона указанного контакта
  */
 export interface SendContactPhone {
@@ -1278,26 +1255,17 @@ export interface ServerAction {
     [k: string]: unknown;
 }
 /**
- * Запрос поиска от сценария.
+ * Действие, которое обозначает копирование текста из карточки в буфер обмена.
  */
-export interface StartSmartSearchAction {
+export interface CopyTextAction {
     /**
      * Тип действия.
      */
-    type: 'start_smart_search';
+    type: 'copy_text_to_buffer';
     /**
-     * Данные запроса.
+     * Текст, который будет скопирован в буфер обмена.
      */
-    start_smart_search: {
-        /**
-         * Текст запроса, который прислал сценарий.
-         */
-        query: string;
-        /**
-         * Время за которое поиск должен ответить.
-         */
-        timeoutMS?: string;
-    };
+    text: string;
     [k: string]: unknown;
 }
 /**
@@ -1424,91 +1392,15 @@ export interface Paddings {
     bottom?: Dimension;
     [k: string]: unknown;
 }
-export interface LeftRightCellView {
+export interface TextCellView {
     /**
      * Тип ячейки
      */
-    type: 'left_right_cell_view';
-    left: LeftView;
-    right?: RightView;
+    type: 'text_cell_view';
+    content: TextView;
     divider?: DividerView;
-    actions?: Actions;
-    /**
-     * Id для отправки в метрику
-     */
-    log_id?: string;
     paddings?: Paddings;
-    [k: string]: unknown;
-}
-/**
- * Горизонтальный упорядоченный блок содержащий icon и texts
- */
-export interface SimpleLeftView {
-    /**
-     * Тип левого элемента ячейки.
-     */
-    type: 'simple_left_view';
-    icon?: IconView;
-    texts?: VerticalTextsView;
-    icon_vertical_gravity?: VerticalGravity;
-    texts_vertical_gravity?: VerticalGravity;
-    title?: TextView;
-    [k: string]: unknown;
-}
-/**
- * Иконка
- */
-export interface IconView {
-    address: ImageAddress;
-    size: IconSize;
-    margins?: Margins;
-    tint_color?: Color;
-    rounded_corners?: RoundedCorners;
-    actions?: Actions;
-    badge?: BadgeView;
-    /**
-     * Id для отправки в метрику
-     */
-    log_id?: string;
-    [k: string]: unknown;
-}
-/**
- * Размер изображения.
- */
-export interface IconSize {
-    width: IconSizeDimension;
-    height: IconSizeDimension;
-    [k: string]: unknown;
-}
-/**
- * Объект для описания отступов ui компонента.
- */
-export interface Margins {
-    left?: Dimension;
-    top?: Dimension;
-    right?: Dimension;
-    bottom?: Dimension;
-    [k: string]: unknown;
-}
-/**
- * Бейдж для отображения скидок и другой короткой информации
- */
-export interface BadgeView {
-    background?: Gradient;
-    text?: string;
-    text_color?: TypeColor;
-    paddings?: Paddings;
-    [k: string]: unknown;
-}
-/**
- * Вертикальный упорядоченный список содержащий title, subtitle, caption,
- * https://www.figma.com/file/MQHBgPkW4dqXmI2549WioI/Dev?node-id=19%3A5641
- */
-export interface VerticalTextsView {
-    title?: TextView;
-    subtitle?: TextView;
-    caption?: TextView;
-    margins?: Margins;
+    gravity?: HorizontalGravity;
     [k: string]: unknown;
 }
 /**
@@ -1562,37 +1454,116 @@ export interface TextAttribute {
     [k: string]: unknown;
 }
 /**
- * Вертикальный упорядоченный список, состоит из label, icon_and_value
- * https://www.figma.com/file/MQHBgPkW4dqXmI2549WioI/Dev?node-id=227%3A3670
+ * Объект для описания отступов ui компонента.
  */
-export interface FastAnswerLeftView {
-    /**
-     * Тип левого элемента ячейки.
-     */
-    type: 'fast_answer_left_view';
-    label?: TextView;
-    icon_and_value?: IconAndValueView;
-    margins?: Margins;
+export interface Margins {
+    left?: Dimension;
+    top?: Dimension;
+    right?: Dimension;
+    bottom?: Dimension;
     [k: string]: unknown;
 }
 /**
- * Горизонтальный упорядоченный список содержит icon и value,
- * https://www.figma.com/file/MQHBgPkW4dqXmI2549WioI/Dev?node-id=227%3A3670
+ * Divider/Separator. Тонка полоска, разделяющая ячейки
  */
-export interface IconAndValueView {
-    icon?: IconView;
-    value?: TextView;
-    margins?: Margins;
-    required?: ['value'];
+export interface DividerView {
+    /**
+     * Стиль дивайдера.
+     */
+    style: 'default' | 'read_only';
+    /**
+     * Возможные размеры сепаратора/дивайдера
+     * https://www.figma.com/file/sC1HJg3HRcNjaG3rcd4b3V/Templates?node-id=289%3A3210
+     */
+    size: 'd1' | 'd2' | 'd3' | 'd4' | 'd5' | 'd6';
     [k: string]: unknown;
 }
-export interface FlexibleImageLeftRightCellView {
+export interface ButtonCellView {
     /**
      * Тип ячейки
      */
-    type: 'flexible_image_left_right_cell_view';
-    content: FlexibleImageView;
+    type: 'button_cell_view';
+    content: ButtonView;
+    paddings?: Paddings;
+    [k: string]: unknown;
+}
+/**
+ * Кнопки для универсальных карточек
+ */
+export interface ButtonView {
+    /**
+     * Текст кнопки.
+     */
+    text: string;
+    plasma_button?: PlasmaButtonView;
+    typeface?: Typeface;
+    /**
+     * Стиль кнопки.
+     */
+    style?: 'default' | 'transparent';
+    /**
+     * Тип кнопки.
+     */
+    type?: 'accept' | 'disabled' | 'negative';
+    actions: Actions;
+    /**
+     * Id для отправки в метрику
+     */
+    log_id?: string;
     margins?: Margins;
+    paddings?: Paddings;
+    [k: string]: unknown;
+}
+/**
+ * Кнопка, соответствующая дизайну Плазмы. Растягивается по размеру контента
+ */
+export interface PlasmaButtonView {
+    /**
+     * Стиль кнопки из ДС (Плазмы)
+     */
+    style?: 'primary' | 'secondary' | 'warning' | 'checked' | 'critical';
+    /**
+     * Текст, отображаемый на кнопке
+     */
+    text: string;
+    icon?: ImageAddress;
+    rounded_corners?: RoundedCorners;
+    actions: Actions;
+    paddings?: Paddings;
+    /**
+     * Id для отправки в метрику
+     */
+    log_id?: string;
+    [k: string]: unknown;
+}
+/**
+ * Изображение из интернета. Ширина изображения будет соответствовать всей ширине карточке.
+ */
+export interface ExtendedImageView {
+    /**
+     * Адрес изображения в интернет
+     */
+    url: string;
+    /**
+     * Hash катинки в интернете(опционален)
+     */
+    hash?: string;
+    placeholder?: LocalImageIdentificator;
+    scale_mode?: ScaleMode;
+    /**
+     * Высота контейнера под картинку, указывается в платформонезависимых поинтах
+     */
+    height?: number;
+    placeholder_color?: Color;
+    actions?: Actions;
+    /**
+     * Id для отправки в метрику
+     */
+    log_id?: string;
+    /**
+     * соотношение сторон картинки
+     */
+    fixed_ratio?: '16:9' | '3:2' | '4:3' | '1:1' | '3:4' | '9:16';
     [k: string]: unknown;
 }
 /**
@@ -1620,22 +1591,6 @@ export interface FlexibleImageView {
     mask?: 'none' | 'bottom';
     rounded_corners?: RoundedCorners;
     actions?: Action;
-    /**
-     * Id для отправки в метрику
-     */
-    log_id?: string;
-    [k: string]: unknown;
-}
-/**
- * Список ячеек типа right
- */
-export interface RightCellArrayView {
-    type: 'right_cell_array_view';
-    /**
-     * Направление списка (вертикальное или горизонтальное)
-     */
-    orientation?: 'vertical' | 'horizontal';
-    items: RightView[];
     /**
      * Id для отправки в метрику
      */
@@ -1723,6 +1678,231 @@ export interface AspectRatio {
     [k: string]: unknown;
 }
 /**
+ * Элемент галереи состоящий из изображения и двух текстовых полей
+ */
+export interface MediaGalleryItem {
+    /**
+     * Тип элемента галереи
+     */
+    type: 'media_gallery_item';
+    image: ImageView;
+    top_text?: TextView;
+    bottom_text?: TextView;
+    margins?: Margins;
+    actions?: Actions;
+    /**
+     * Id для отправки в метрику
+     */
+    log_id?: string;
+    [k: string]: unknown;
+}
+/**
+ * Изображение из интернета. Ширина изображения будет соответствовать всей ширине карточке.
+ */
+export interface ImageView {
+    /**
+     * Адрес изображения в интернет
+     */
+    url: string;
+    /**
+     * Hash катинки в интернете(опционален)
+     */
+    hash?: string;
+    placeholder?: LocalImageIdentificator;
+    scale_mode?: ScaleMode;
+    /**
+     * Высота контейнера под картинку, указывается в платформонезависимых поинтах
+     */
+    height?: number;
+    placeholder_color?: Color;
+    actions?: Actions;
+    /**
+     * Id для отправки в метрику
+     */
+    log_id?: string;
+    size?: GridContentSize;
+    [k: string]: unknown;
+}
+/**
+ * Размера контента в терминах сеток https://www.figma.com/file/L6AlpyUxFuumKEEbh4ADIh/🤖SD-Styles?node-id=26%3A17
+ */
+export interface GridContentSize {
+    width: GridContentWidth;
+    /**
+     * Отношение высоты контента к ширине
+     */
+    aspect_ratio: number;
+    [k: string]: unknown;
+}
+/**
+ * Элемент карточки галереи с заголовком, ссылкой и описанием
+ */
+export interface GallerySearchContentItem {
+    /**
+     * Тип элемента отдельной карточки
+     */
+    type: 'gallery_search_content_item';
+    title_text: TextView;
+    image?: ImageAddress;
+    link_text: TextView;
+    description_text?: TextView;
+    paddings?: Paddings;
+    actions: Actions;
+    /**
+     * Id для отправки в метрику
+     */
+    log_id?: string;
+    width?: GridContentWidth;
+    [k: string]: unknown;
+}
+/**
+ * Кнопка "Все результаты" в карточке галереи
+ */
+export interface GalleryMoreButtonItem {
+    /**
+     * Тип элемента кнопки всех результатов
+     */
+    type: 'gallery_more_button_item';
+    bottom_text: TextView;
+    icon: IconView;
+    actions: Actions;
+    /**
+     * Id для отправки в метрику
+     */
+    log_id?: string;
+    [k: string]: unknown;
+}
+/**
+ * Иконка
+ */
+export interface IconView {
+    address: ImageAddress;
+    size: IconSize;
+    margins?: Margins;
+    tint_color?: Color;
+    rounded_corners?: RoundedCorners;
+    actions?: Actions;
+    badge?: BadgeView;
+    /**
+     * Id для отправки в метрику
+     */
+    log_id?: string;
+    [k: string]: unknown;
+}
+/**
+ * Размер изображения.
+ */
+export interface IconSize {
+    width: IconSizeDimension;
+    height: IconSizeDimension;
+    [k: string]: unknown;
+}
+/**
+ * Бейдж для отображения скидок и другой короткой информации
+ */
+export interface BadgeView {
+    background?: Gradient;
+    text?: string;
+    text_color?: TypeColor;
+    paddings?: Paddings;
+    [k: string]: unknown;
+}
+/**
+ * Элемент карточки приветствия, состоящий из двух текстовых полей и опционального изображения
+ */
+export interface GreetingGridItem {
+    /**
+     * Тип элемента карточки приветствия
+     */
+    type: 'greeting_grid_item';
+    background_image?: ImageView;
+    top_text: TextView;
+    bottom_text: TextView;
+    paddings?: Paddings;
+    actions?: Actions;
+    /**
+     * Id для отправки в метрику
+     */
+    log_id?: string;
+    [k: string]: unknown;
+}
+export interface LeftRightCellView {
+    /**
+     * Тип ячейки
+     */
+    type: 'left_right_cell_view';
+    left: LeftView;
+    right?: RightView;
+    divider?: DividerView;
+    actions?: Actions;
+    /**
+     * Id для отправки в метрику
+     */
+    log_id?: string;
+    paddings?: Paddings;
+    [k: string]: unknown;
+}
+/**
+ * Горизонтальный упорядоченный блок содержащий icon и texts
+ */
+export interface SimpleLeftView {
+    /**
+     * Тип левого элемента ячейки.
+     */
+    type: 'simple_left_view';
+    icon?: IconView;
+    texts?: VerticalTextsView;
+    icon_vertical_gravity?: VerticalGravity;
+    texts_vertical_gravity?: VerticalGravity;
+    title?: TextView;
+    [k: string]: unknown;
+}
+/**
+ * Вертикальный упорядоченный список содержащий title, subtitle, caption,
+ * https://www.figma.com/file/MQHBgPkW4dqXmI2549WioI/Dev?node-id=19%3A5641
+ */
+export interface VerticalTextsView {
+    title?: TextView;
+    subtitle?: TextView;
+    caption?: TextView;
+    margins?: Margins;
+    [k: string]: unknown;
+}
+/**
+ * Вертикальный упорядоченный список, состоит из label, icon_and_value
+ * https://www.figma.com/file/MQHBgPkW4dqXmI2549WioI/Dev?node-id=227%3A3670
+ */
+export interface FastAnswerLeftView {
+    /**
+     * Тип левого элемента ячейки.
+     */
+    type: 'fast_answer_left_view';
+    label?: TextView;
+    icon_and_value?: IconAndValueView;
+    margins?: Margins;
+    [k: string]: unknown;
+}
+/**
+ * Горизонтальный упорядоченный список содержит icon и value,
+ * https://www.figma.com/file/MQHBgPkW4dqXmI2549WioI/Dev?node-id=227%3A3670
+ */
+export interface IconAndValueView {
+    icon?: IconView;
+    value?: TextView;
+    margins?: Margins;
+    required?: ['value'];
+    [k: string]: unknown;
+}
+export interface FlexibleImageLeftRightCellView {
+    /**
+     * Тип ячейки
+     */
+    type: 'flexible_image_left_right_cell_view';
+    content: FlexibleImageView;
+    margins?: Margins;
+    [k: string]: unknown;
+}
+/**
  * Горизонтальный упорядоченный блок, состоящий из картинки и блока текстов, выровненный по левому краю
  */
 export interface ImageTextsLeftCellView {
@@ -1739,28 +1919,6 @@ export interface PlasmaButtonCellView {
     type: 'plasma_button_cell_view';
     content: PlasmaButtonView;
     margins?: Margins;
-    [k: string]: unknown;
-}
-/**
- * Кнопка, соответствующая дизайну Плазмы. Растягивается по размеру контента
- */
-export interface PlasmaButtonView {
-    /**
-     * Стиль кнопки из ДС (Плазмы)
-     */
-    style?: 'primary' | 'secondary' | 'warning' | 'checked' | 'critical';
-    /**
-     * Текст, отображаемый на кнопке
-     */
-    text: string;
-    icon?: ImageAddress;
-    rounded_corners?: RoundedCorners;
-    actions: Actions;
-    paddings?: Paddings;
-    /**
-     * Id для отправки в метрику
-     */
-    log_id?: string;
     [k: string]: unknown;
 }
 /**
@@ -1849,18 +2007,19 @@ export interface TagView {
     [k: string]: unknown;
 }
 /**
- * Divider/Separator. Тонка полоска, разделяющая ячейки
+ * Список ячеек типа right
  */
-export interface DividerView {
+export interface RightCellArrayView {
+    type: 'right_cell_array_view';
     /**
-     * Стиль дивайдера.
+     * Направление списка (вертикальное или горизонтальное)
      */
-    style: 'default' | 'read_only';
+    orientation?: 'vertical' | 'horizontal';
+    items: RightView[];
     /**
-     * Возможные размеры сепаратора/дивайдера
-     * https://www.figma.com/file/sC1HJg3HRcNjaG3rcd4b3V/Templates?node-id=289%3A3210
+     * Id для отправки в метрику
      */
-    size: 'd1' | 'd2' | 'd3' | 'd4' | 'd5' | 'd6';
+    log_id?: string;
     [k: string]: unknown;
 }
 /**
@@ -1885,53 +2044,6 @@ export interface HorizontalStackCellView {
     paddings?: Paddings;
     [k: string]: unknown;
 }
-export interface TextCellView {
-    /**
-     * Тип ячейки
-     */
-    type: 'text_cell_view';
-    content: TextView;
-    divider?: DividerView;
-    paddings?: Paddings;
-    gravity?: HorizontalGravity;
-    [k: string]: unknown;
-}
-export interface ButtonCellView {
-    /**
-     * Тип ячейки
-     */
-    type: 'button_cell_view';
-    content: ButtonView;
-    paddings?: Paddings;
-    [k: string]: unknown;
-}
-/**
- * Кнопки для универсальных карточек
- */
-export interface ButtonView {
-    /**
-     * Текст кнопки.
-     */
-    text: string;
-    plasma_button?: PlasmaButtonView;
-    typeface?: Typeface;
-    /**
-     * Стиль кнопки.
-     */
-    style?: 'default' | 'transparent';
-    /**
-     * Тип кнопки.
-     */
-    type?: 'accept' | 'disabled' | 'negative';
-    actions: Actions;
-    /**
-     * Id для отправки в метрику
-     */
-    log_id?: string;
-    margins?: Margins;
-    paddings?: Paddings;
-    [k: string]: unknown;
-}
 export interface ImageCellView {
     /**
      * Тип ячейки
@@ -1939,44 +2051,6 @@ export interface ImageCellView {
     type: 'image_cell_view';
     content: ImageView;
     paddings?: Paddings;
-    [k: string]: unknown;
-}
-/**
- * Изображение из интернета. Ширина изображения будет соответствовать всей ширине карточке.
- */
-export interface ImageView {
-    /**
-     * Адрес изображения в интернет
-     */
-    url: string;
-    /**
-     * Hash катинки в интернете(опционален)
-     */
-    hash?: string;
-    placeholder?: LocalImageIdentificator;
-    scale_mode?: ScaleMode;
-    /**
-     * Высота контейнера под картинку, указывается в платформонезависимых поинтах
-     */
-    height?: number;
-    placeholder_color?: Color;
-    actions?: Actions;
-    /**
-     * Id для отправки в метрику
-     */
-    log_id?: string;
-    size?: GridContentSize;
-    [k: string]: unknown;
-}
-/**
- * Размера контента в терминах сеток https://www.figma.com/file/L6AlpyUxFuumKEEbh4ADIh/🤖SD-Styles?node-id=26%3A17
- */
-export interface GridContentSize {
-    width: GridContentWidth;
-    /**
-     * Отношение высоты контента к ширине
-     */
-    aspect_ratio: number;
     [k: string]: unknown;
 }
 export interface DetailsCellView {
@@ -2089,75 +2163,18 @@ export interface SpacerView {
     [k: string]: unknown;
 }
 /**
- * Элемент галереи состоящий из изображения и двух текстовых полей
+ * Содержимое QR-code. Ширина сгенерированного изображения будет соответствовать всей ширине карточке
  */
-export interface MediaGalleryItem {
+export interface QRCodeCard {
     /**
-     * Тип элемента галереи
+     * Тип ячейки
      */
-    type: 'media_gallery_item';
-    image: ImageView;
-    top_text?: TextView;
-    bottom_text?: TextView;
-    margins?: Margins;
-    actions?: Actions;
+    type: 'qr_code_card';
     /**
-     * Id для отправки в метрику
+     * Содержимое QR-кода
      */
-    log_id?: string;
-    [k: string]: unknown;
-}
-/**
- * Элемент карточки галереи с заголовком, ссылкой и описанием
- */
-export interface GallerySearchContentItem {
-    /**
-     * Тип элемента отдельной карточки
-     */
-    type: 'gallery_search_content_item';
-    title_text: TextView;
-    image?: ImageAddress;
-    link_text: TextView;
-    description_text?: TextView;
-    paddings?: Paddings;
-    actions: Actions;
-    /**
-     * Id для отправки в метрику
-     */
-    log_id?: string;
-    width?: GridContentWidth;
-    [k: string]: unknown;
-}
-/**
- * Кнопка "Все результаты" в карточке галереи
- */
-export interface GalleryMoreButtonItem {
-    /**
-     * Тип элемента кнопки всех результатов
-     */
-    type: 'gallery_more_button_item';
-    bottom_text: TextView;
-    icon: IconView;
-    actions: Actions;
-    /**
-     * Id для отправки в метрику
-     */
-    log_id?: string;
-    [k: string]: unknown;
-}
-/**
- * Элемент карточки приветствия, состоящий из двух текстовых полей и опционального изображения
- */
-export interface GreetingGridItem {
-    /**
-     * Тип элемента карточки приветствия
-     */
-    type: 'greeting_grid_item';
-    background_image?: ImageView;
-    top_text: TextView;
-    bottom_text: TextView;
-    paddings?: Paddings;
-    actions?: Actions;
+    data: string;
+    size?: GridContentSize;
     /**
      * Id для отправки в метрику
      */
@@ -2209,53 +2226,6 @@ export interface DiscoveryCard {
     [k: string]: unknown;
 }
 /**
- * Содержимое QR-code. Ширина сгенерированного изображения будет соответствовать всей ширине карточке
- */
-export interface QRCodeCard {
-    /**
-     * Тип ячейки
-     */
-    type: 'qr_code_card';
-    /**
-     * Содержимое QR-кода
-     */
-    data: string;
-    size?: GridContentSize;
-    /**
-     * Id для отправки в метрику
-     */
-    log_id?: string;
-    [k: string]: unknown;
-}
-/**
- * Виджет с заголовком раздела и действием
- */
-export interface WidgetTitleCard {
-    cell: LeftRightCellView;
-    type: 'widget_title_card';
-    /**
-     * Id для отправки в метрику
-     */
-    log_id?: string;
-    [k: string]: unknown;
-}
-/**
- * Горизонтальная галерея
- */
-export interface WidgetGallery {
-    /**
-     * @minItems 1
-     */
-    items: [DiscoveryCard, ...DiscoveryCard[]];
-    type: 'widget_gallery';
-    spacing?: Dimension;
-    /**
-     * Id для отправки в метрику
-     */
-    log_id?: string;
-    [k: string]: unknown;
-}
-/**
  * Горизонтальная галерея с категориями
  */
 export interface WidgetGalleryWithCategories {
@@ -2283,11 +2253,39 @@ export interface WidgetGalleryWithCategories {
     [k: string]: unknown;
 }
 /**
+ * Горизонтальная галерея
+ */
+export interface WidgetGallery {
+    /**
+     * @minItems 1
+     */
+    items: [DiscoveryCard, ...DiscoveryCard[]];
+    type: 'widget_gallery';
+    spacing?: Dimension;
+    /**
+     * Id для отправки в метрику
+     */
+    log_id?: string;
+    [k: string]: unknown;
+}
+/**
  * Виджет с одиночной карточкой
  */
 export interface WidgetSingleCard {
     item: DiscoveryCard;
     type: 'widget_single_card';
+    /**
+     * Id для отправки в метрику
+     */
+    log_id?: string;
+    [k: string]: unknown;
+}
+/**
+ * Виджет с заголовком раздела и действием
+ */
+export interface WidgetTitleCard {
+    cell: LeftRightCellView;
+    type: 'widget_title_card';
     /**
      * Id для отправки в метрику
      */
@@ -2420,3 +2418,57 @@ export interface Hint {
     next_time: number;
     [k: string]: unknown;
 }
+
+// Extension
+
+/**
+ * Дефолтные каналы для поверхностей
+ */
+export const DefaultChannels: Record<Surface, UserChannel> = {
+    SBERBOX: 'B2C',
+    STARGATE: 'B2C',
+    SATELLITE: 'B2C',
+    TIME: 'B2C',
+    TV: 'B2C',
+    TV_HUAWEI: 'B2C',
+    COMPANION: 'COMPANION_B2C',
+    SBOL: 'SBOL',
+};
+export type SimpleItem = {
+    title: string;
+    body: string;
+};
+export type SimpleList = CardBase & {
+    header: string;
+    footer?: string;
+    items?: SimpleItem[];
+    type: 'simple_list';
+    [k: string]: unknown;
+};
+/**
+ * Запрос поиска от сценария.
+ */
+export interface StartSmartSearchAction {
+    /**
+     * Тип действия.
+     */
+    type: 'start_smart_search';
+    /**
+     * Данные запроса.
+     */
+    start_smart_search: {
+        /**
+         * Текст запроса, который прислал сценарий.
+         */
+        query: string;
+        /**
+         * Время за которое поиск должен ответить.
+         */
+        timeoutMS?: string;
+    };
+    [k: string]: unknown;
+}
+/**
+ * Идентификатор канала коммуникации
+ */
+export type UserChannel = 'B2C' | 'SBOL' | 'COMPANION_B2C';

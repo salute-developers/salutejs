@@ -10,6 +10,7 @@ import {
     SaluteSession,
 } from './types/salute';
 import { AppState } from './types/systemMessage';
+import { NLPRequestMTS } from './types/request';
 
 interface ScenarioWalkerOptions {
     intents?: IntentsDict;
@@ -134,8 +135,10 @@ export const createScenarioWalker = ({
             return;
         }
 
-        await systemScenario.RUN_APP(saluteHandlerOpts, dispatch);
-        return;
+        if ((req.request as NLPRequestMTS).payload.original_intent === 'run_app') {
+            await systemScenario.RUN_APP(saluteHandlerOpts, dispatch);
+            return;
+        }
     }
 
     if (req.systemIntent === 'close_app') {

@@ -47,7 +47,7 @@ export const createSaluteRequest = (request: NLPRequest): SaluteRequest => {
             return (
                 !(request as NLPRequestSA).payload.server_action &&
                 (request as NLPRequestMTS).payload.intent !== 'close_app' &&
-                (request as NLPRequestMTS).payload.intent !== 'run_app'
+                (request as NLPRequestMTS).payload.original_intent !== 'run_app'
             );
         },
         get variables() {

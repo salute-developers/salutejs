@@ -23,7 +23,14 @@ export type SharedRequestPayload = Pick<
 export type MTSPayload = SharedRequestPayload &
     Pick<
         SystemMessagePayload,
-        'intent' | 'original_intent' | 'intent_meta' | 'meta' | 'selected_item' | 'annotations' | 'message'
+        | 'intent'
+        | 'original_intent'
+        | 'intent_meta'
+        | 'meta'
+        | 'selected_item'
+        | 'annotations'
+        | 'message'
+        | 'new_session'
     >;
 
 /** MESSAGE_TO_SKILL */

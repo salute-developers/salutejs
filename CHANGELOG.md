@@ -1,3 +1,16 @@
+# (Mon Jan 16 2023)
+
+#### 🐛 Bug Fix
+
+- `@salutejs/scenario@0.29.1`
+  - Не работает response.voiceAction [#30](https://github.com/salute-developers/salutejs/pull/30) ([@sasha-tlt](https://github.com/sasha-tlt))
+
+#### Authors: 1
+
+- Alexander Salmin ([@sasha-tlt](https://github.com/sasha-tlt))
+
+---
+
 # (Fri Dec 30 2022)
 
 #### 🚀 Enhancement

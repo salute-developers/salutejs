@@ -1,3 +1,16 @@
+# (Wed Jan 18 2023)
+
+#### 🚀 Enhancement
+
+- `@salutejs/scenario@0.30.0`
+  - feat: Добавлен ExtendedListCard в SystemMessage [#28](https://github.com/salute-developers/salutejs/pull/28) ([@ivan-ushatsky](https://github.com/ivan-ushatsky))
+
+#### Authors: 1
+
+- Ivan Ushatsky ([@ivan-ushatsky](https://github.com/ivan-ushatsky))
+
+---
+
 # (Mon Jan 16 2023)
 
 #### 🐛 Bug Fix

@@ -24,7 +24,7 @@ rl.question('Path to "assistantapischemas" (../../../assistantapischemas): ', (p
         cwd,
         style: { printWidth: 120, singleQuote: true, tabWidth: 4, trailingComma: 'all' },
     }).then((systemMessageTs) => {
-        writeFileSync('./src/lib/types/systemMessage.ts', systemMessageTs, { encoding: 'utf-8' });
+        writeFileSync('./src/lib/types/generatedSystemMessage.ts', systemMessageTs, { encoding: 'utf-8' });
 
         rl.close();
     });

@@ -131,7 +131,7 @@ export const createScenarioWalker = ({
                 return;
             }
 
-            systemScenario.PAY_DIALOG_FINISHED(saluteHandlerOpts, dispatch);
+            await systemScenario.PAY_DIALOG_FINISHED(saluteHandlerOpts, dispatch);
             return;
         }
 
@@ -142,7 +142,7 @@ export const createScenarioWalker = ({
     }
 
     if (req.systemIntent === 'close_app') {
-        systemScenario.CLOSE_APP(saluteHandlerOpts, dispatch);
+        await systemScenario.CLOSE_APP(saluteHandlerOpts, dispatch);
         return;
     }
 
@@ -200,5 +200,5 @@ export const createScenarioWalker = ({
         }
     }
 
-    systemScenario.NO_MATCH(saluteHandlerOpts, dispatch);
+    await systemScenario.NO_MATCH(saluteHandlerOpts, dispatch);
 };

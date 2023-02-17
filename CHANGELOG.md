@@ -1,3 +1,21 @@
+# (Fri Feb 17 2023)
+
+#### 🚀 Enhancement
+
+- `@salutejs/scenario@0.31.0`
+  - Добавлена типизация transfer_to_operator [#32](https://github.com/salute-developers/salutejs/pull/32) ([@sasha-tlt](https://github.com/sasha-tlt))
+
+#### 🐛 Bug Fix
+
+- `@salutejs/scenario@0.31.0`
+  - Асинхронные обработчики SystemScenario [#36](https://github.com/salute-developers/salutejs/pull/36) ([@sasha-tlt](https://github.com/sasha-tlt))
+
+#### Authors: 1
+
+- Alexander Salmin ([@sasha-tlt](https://github.com/sasha-tlt))
+
+---
+
 # (Wed Jan 18 2023)
 
 #### 🚀 Enhancement

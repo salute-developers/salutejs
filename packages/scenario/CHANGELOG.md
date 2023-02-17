@@ -1,3 +1,21 @@
+# v0.31.0 (Fri Feb 17 2023)
+
+#### 🚀 Enhancement
+
+- Добавлена типизация transfer_to_operator [#32](https://github.com/salute-developers/salutejs/pull/32) ([@sasha-tlt](https://github.com/sasha-tlt))
+- feat: Добавлена типизация transfer_to_operator ([@sasha-tlt](https://github.com/sasha-tlt))
+
+#### 🐛 Bug Fix
+
+- Асинхронные обработчики SystemScenario [#36](https://github.com/salute-developers/salutejs/pull/36) ([@sasha-tlt](https://github.com/sasha-tlt))
+- fix: Асинхронные обработчики SystemScenario ([@sasha-tlt](https://github.com/sasha-tlt))
+
+#### Authors: 1
+
+- Alexander Salmin ([@sasha-tlt](https://github.com/sasha-tlt))
+
+---
+
 # v0.30.0 (Wed Jan 18 2023)
 
 #### 🚀 Enhancement

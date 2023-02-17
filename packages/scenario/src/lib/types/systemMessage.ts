@@ -292,7 +292,8 @@ export type Card =
     | WidgetGalleryWithCategories
     | WidgetSingleCard
     | WidgetTitleCard
-    | WidgetTwoColumns;
+    | WidgetTwoColumns
+    | OperatorCard;
 /**
  * Карточка со списком ячеек и одной картинкой
  */
@@ -2317,6 +2318,53 @@ export interface ColumnView {
     cards?: [DiscoveryCard] | [DiscoveryCard, DiscoveryCard] | [DiscoveryCard, DiscoveryCard, DiscoveryCard];
     [k: string]: unknown;
 }
+/**
+ * Карточка перевода на оператора
+ */
+export interface OperatorCard {
+    /**
+     * Тип карточки
+     */
+    type: 'transfer_to_operator';
+    /**
+     * Заголовок карточки с таймером
+     */
+    title_with_timer: string;
+    /**
+     * Заголовок карточки без таймера
+     */
+    title_without_timer: string;
+    /**
+     * Заголовок карточки после закрытия сессии
+     */
+    title_close_session: string;
+    /**
+     * Время в секундах до автоматического открытия
+     */
+    time_to_open_chat: number;
+    /**
+     * Время в секундах до окончания сессии
+     */
+    time_to_close_session: number;
+    open_chat_button: OperatorCardButton;
+    active_chat_button: OperatorCardButton;
+    cancel_chat_button: OperatorCardButton;
+    history_chat_button: OperatorCardButton;
+    [k: string]: unknown;
+}
+
+/**
+ * Кнопка старта сессии
+ */
+export interface OperatorCardButton {
+    /**
+     * Заголовок кнопки
+     */
+    title: string;
+    actions: Actions;
+    [k: string]: unknown;
+}
+
 export interface PolicyRunAppComand {
     command: 'POLICY_RUN_APP';
     nodes: {

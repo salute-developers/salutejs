@@ -1,9 +1,9 @@
 import { NLPRequest, NLPRequestSA } from './types/request';
-import { NLPResponse, NLPResponseCPD } from './types/response';
+import { NLPResponse, NLPResponseATU, NLPResponseCPD } from './types/response';
 import { SaluteCommand, SaluteResponse } from './types/salute';
 import { Bubble, Button, Card, EmotionId, PolicyRunAppComand, SmartAppErrorCommand } from './types/systemMessage';
 
-export const createSaluteResponse = (req: NLPRequest): SaluteResponse => {
+export const createSaluteResponse = <T extends NLPResponse = NLPResponseATU>(req: NLPRequest): SaluteResponse<T> => {
     const { messageId, sessionId, uuid, payload } = req;
     let message: NLPResponse = {
         messageName: 'ANSWER_TO_USER',
@@ -254,8 +254,8 @@ export const createSaluteResponse = (req: NLPRequest): SaluteResponse => {
                 frontendEndpoint,
             };
         },
-        get message(): NLPResponse {
-            return message;
+        get message(): T {
+            return message as T;
         },
     };
 };

@@ -14,7 +14,7 @@ import {
     PolicyRunAppComand,
 } from './systemMessage';
 import { NLPRequest, NLPRequestTPD } from './request';
-import { NLPResponse, NLPResponseCPD } from './response';
+import { NLPResponse, NLPResponseATU, NLPResponseCPD } from './response';
 import { KeysetDictionary, I18nOptions } from './i18n';
 
 interface IntentSlot {
@@ -79,7 +79,7 @@ export interface SaluteRequest<V = SaluteRequestVariable, S = AppState, A = { pa
     setVariant: (intent: Variant) => void;
 }
 
-export interface SaluteResponse {
+export interface SaluteResponse<T extends NLPResponse = NLPResponseATU> {
     appendBubble: (bubble: string, options?: { expand_policy?: Bubble['expand_policy']; markdown?: boolean }) => void;
     appendCard: (card: Card) => void;
     appendCommand: <T = SaluteCommand>(command: T) => void;
@@ -102,7 +102,7 @@ export interface SaluteResponse {
     overrideFrontendEndpoint: (frontendEndpoint: string) => void;
     error: (status: { code: number; description?: string }) => void;
     nothingFound: () => void;
-    readonly message: NLPResponse;
+    readonly message: T;
 }
 
 export type SaluteHandler<

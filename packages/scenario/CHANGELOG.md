@@ -1,3 +1,16 @@
+# v0.32.0 (Wed Mar 15 2023)
+
+#### 🚀 Enhancement
+
+- Добавить поле в ответ [#38](https://github.com/salute-developers/salutejs/pull/38) ([@sasha-tlt](https://github.com/sasha-tlt))
+- feat: Добавить поле в ответ ([@sasha-tlt](https://github.com/sasha-tlt))
+
+#### Authors: 1
+
+- Alexander Salmin ([@sasha-tlt](https://github.com/sasha-tlt))
+
+---
+
 # v0.31.0 (Fri Feb 17 2023)
 
 #### 🚀 Enhancement

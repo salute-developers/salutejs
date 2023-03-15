@@ -43,6 +43,7 @@ export interface ATUPayload
      * если вы не используете Assistant Client.
      */
     finished: boolean;
+    activate_app_info?: boolean;
     app_info?: AppInfo;
     framework_type?: string;
 }

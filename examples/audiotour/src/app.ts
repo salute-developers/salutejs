@@ -12,6 +12,7 @@ import {
 } from '@salutejs/scenario';
 import { SaluteMemoryStorage } from '@salutejs/storage-adapter-memory';
 import { SmartAppBrainRecognizer } from '@salutejs/recognizer-smartapp-brain';
+import { parse, stringify } from 'lossless-json';
 
 import model from './intents.json';
 import config from './config';
@@ -21,7 +22,11 @@ import { createLegacyAction, createLegacyGoToAction } from './legacyAction';
 dotEnv();
 
 const app = express();
-app.use(express.json());
+app.use(express.text({ type: 'application/json' }));
+app.use((req, _, next) => {
+    req.body = parse(req.body);
+    next();
+});
 
 const intents = createIntents(model);
 
@@ -153,7 +158,7 @@ app.post('/hook', async ({ body }, response) => {
     await scenarioWalker({ req, res, session });
     await storage.save({ id: sessionId, session });
 
-    response.status(200).json(res.message);
+    response.status(200).type('application/json').send(stringify(res.message));
 });
 
 app.listen(4000, () => {

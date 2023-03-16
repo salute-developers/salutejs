@@ -3,6 +3,7 @@ import { config as dotenv } from 'dotenv';
 import { createIntents, createSystemScenario, createUserScenario, createMatchers } from '@salutejs/scenario';
 import { SmartAppBrainRecognizer } from '@salutejs/recognizer-smartapp-brain';
 import { SaluteMemoryStorage } from '@salutejs/storage-adapter-memory';
+import { parse } from 'lossless-json';
 
 import { saluteExpressMiddleware } from './middleware';
 import * as dictionary from './system.i18n';
@@ -12,7 +13,11 @@ dotenv();
 
 const port = process.env.PORT || 3000;
 const app = express();
-app.use(express.json());
+app.use(express.text({ type: 'application/json' }));
+app.use((req, _, next) => {
+    req.body = parse(req.body);
+    next();
+});
 
 const { intent } = createMatchers();
 

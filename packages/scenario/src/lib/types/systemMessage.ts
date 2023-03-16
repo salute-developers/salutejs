@@ -515,7 +515,7 @@ export interface SystemMessage {
      * Идентификатор запроса, который отправил ассистент. Ответ на запрос должен содержать такой же идентификатор в поле
      * messageId.
      */
-    messageId: number;
+    messageId: number | BigInt;
     uuid: UUID;
     messageName: SystemMessageName;
     payload: SystemMessagePayload;

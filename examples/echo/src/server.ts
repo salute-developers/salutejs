@@ -4,13 +4,18 @@ import { Server as SocketServer } from 'socket.io';
 import type { Socket } from 'socket.io';
 import next from 'next';
 import { NLPRequest, NLPResponse } from '@salutejs/scenario';
+import { parse, stringify } from 'lossless-json';
 
 const app = express();
 const server = new Server(app);
 const io = new SocketServer(server);
 let socket: Socket;
 
-app.use(express.json());
+app.use(express.text({ type: 'application/json' }));
+app.use((req, _, next) => {
+    req.body = parse(req.body);
+    next();
+});
 
 const port = parseInt(process.env.PORT, 10) || 3000;
 const dev = process.env.NODE_ENV !== 'production';
@@ -36,7 +41,7 @@ nextApp.prepare().then(() => {
             socket.emit('incoming', body);
         });
 
-        response.status(200).json(answer);
+        response.status(200).type('application/json').send(stringify(answer));
     });
 
     app.get('*', (req, res) => {

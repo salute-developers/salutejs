@@ -1,4 +1,5 @@
 import { createScenarioWalker, createSaluteRequest, createSaluteResponse } from '@salutejs/scenario';
+import { stringify } from 'lossless-json';
 
 export const saluteExpressMiddleware = ({ intents, recognizer, userScenario, systemScenario, storage }) => {
     const scenarioWalker = createScenarioWalker({ intents, recognizer, systemScenario, userScenario });
@@ -12,6 +13,6 @@ export const saluteExpressMiddleware = ({ intents, recognizer, userScenario, sys
         await scenarioWalker({ req, res, session });
         await storage.save({ id, session });
 
-        httpRes.json(res.message);
+        httpRes.status(200).type('application/json').send(stringify(res.message));
     };
 };

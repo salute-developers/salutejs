@@ -11,6 +11,7 @@ import {
 } from '@salutejs/scenario';
 import { SaluteMemoryStorage } from '@salutejs/storage-adapter-memory';
 import { config as dotEnv } from 'dotenv';
+import { stringify, parse } from 'lossless-json';
 
 import { appendHandler, cartHandler, payDialogFinished, paymentHandler, removeHandler, runApp } from './handlers';
 import intents from './intents';
@@ -52,7 +53,11 @@ const scenarioWalker = createScenarioWalker({
 });
 
 const app = express();
-app.use(express.json());
+app.use(express.text({ type: 'application/json' }));
+app.use((req, _, next) => {
+    req.body = parse(req.body);
+    next();
+});
 
 const storage = new SaluteMemoryStorage();
 
@@ -66,7 +71,7 @@ app.post('/app-connector', async (request: Request, response: Response) => {
     await scenarioWalker({ req, res, session });
     await storage.save({ id: sessionId, session });
 
-    response.status(200).json(res.message);
+    response.status(200).type('application/json').send(stringify(res.message));
 });
 
 app.listen(3000);

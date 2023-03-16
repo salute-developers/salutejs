@@ -1,3 +1,16 @@
+# v0.32.1 (Thu Mar 16 2023)
+
+#### 🐛 Bug Fix
+
+- messageId это bigint [#39](https://github.com/salute-developers/salutejs/pull/39) ([@sasha-tlt](https://github.com/sasha-tlt))
+- fix: messageId это bigint ([@sasha-tlt](https://github.com/sasha-tlt))
+
+#### Authors: 1
+
+- Alexander Salmin ([@sasha-tlt](https://github.com/sasha-tlt))
+
+---
+
 # v0.32.0 (Wed Mar 15 2023)
 
 #### 🚀 Enhancement

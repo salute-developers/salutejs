@@ -1,3 +1,16 @@
+# (Thu Mar 16 2023)
+
+#### 🐛 Bug Fix
+
+- `@salutejs/scenario@0.32.1`
+  - messageId это bigint [#39](https://github.com/salute-developers/salutejs/pull/39) ([@sasha-tlt](https://github.com/sasha-tlt))
+
+#### Authors: 1
+
+- Alexander Salmin ([@sasha-tlt](https://github.com/sasha-tlt))
+
+---
+
 # (Wed Mar 15 2023)
 
 #### 🚀 Enhancement

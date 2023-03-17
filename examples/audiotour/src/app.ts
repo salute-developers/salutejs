@@ -28,9 +28,9 @@ app.use((req, _, next) => {
     next();
 });
 
-const intents = createIntents(model);
+const intents = createIntents(model.intents);
 
-const { match, intent, text, action, state, selectItem } = createMatchers<IziRequest, typeof intents>();
+const { match, intent, text, state, selectItem } = createMatchers<IziRequest, typeof intents>();
 
 const userScenario = createUserScenario({
     ToMainPageFromMainPage: {
@@ -105,26 +105,6 @@ const userScenario = createUserScenario({
     ShowAll: {
         match: match(intent('/Izi/ShowAll'), state({ screen: 'Screen.MainPage' })),
         handle: (_, dispatch) => dispatch(['ToMainPage']),
-    },
-    SlotFillingIntent: {
-        match: intent('/SlotFillingIntent'),
-        handle: ({ res, req }) => res.setPronounceText(`Вы попросили ${req.variables.a} яблок`),
-        children: {
-            Hello: {
-                match: text('привет'),
-                handle: ({ res }) => {
-                    res.setPronounceText('привет и тебе');
-                },
-            },
-        },
-    },
-    EchoAction: {
-        match: action('echo'),
-        handle: ({ res, req }) => {
-            const { phrase } = req.variables;
-            assert(typeof phrase === 'string');
-            res.setPronounceText(phrase);
-        },
     },
 });
 

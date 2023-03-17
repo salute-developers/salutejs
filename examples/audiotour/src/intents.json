@@ -347,43 +347,6 @@
         }
       ],
       "variables": {}
-    },
-    "/SlotFillingIntent": {
-      "matchers": [
-        {
-          "type": "phrase",
-          "rule": "захвати @duckling.number яблок"
-        },
-        {
-          "type": "phrase",
-          "rule": "захвати яблоки"
-        },
-        {
-          "type": "phrase",
-          "rule": "@duckling.number"
-        }
-      ],
-      "variables": {
-        "a": {
-          "required": true,
-          "questions": []
-        }
-      }
-    },
-    "/SlotFillingIntent2": {
-      "matchers": [
-        {
-          "type": "phrase",
-          "rule": "Купи @duckling.number банана за @duckling.number рублей"
-        }
-      ],
-      "variables": {
-        "arr": {
-          "required": true,
-          "questions": [],
-          "array": true
-        }
-      }
     }
   },
   "entities": {

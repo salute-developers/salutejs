@@ -1,4 +1,10 @@
-import { IntentsDict, SaluteRequest } from './types/salute';
+import {
+    DeprecatedServerAction,
+    IntentsDict,
+    SaluteRequest,
+    SaluteRequestVariable,
+    ServerAction,
+} from './types/salute';
 import { AppState } from './types/systemMessage';
 
 export const compare = (expected, actual) => {
@@ -50,7 +56,19 @@ export function createMatchers<R extends SaluteRequest = SaluteRequest, I extend
 
     const state = (expected: Partial<R['state']>) => (req: R) => compare(expected, req.state);
 
-    const action = (expected: string) => (req: R) => req.serverAction?.type === expected;
+    const action = (expected: string) => (req: R) => {
+        const request = req as SaluteRequest<
+            SaluteRequestVariable,
+            AppState,
+            ServerAction & Partial<DeprecatedServerAction>
+        >;
+
+        return (
+            (typeof request.serverAction?.type !== 'undefined'
+                ? request.serverAction?.type
+                : request.serverAction?.action_id) === expected
+        );
+    };
 
     const selectItems = (expected: AppState) => (req: R) =>
         req.state?.item_selector?.items?.filter((i) => compare(expected, i));

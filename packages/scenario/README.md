@@ -151,11 +151,11 @@ const handler: SaluteHandler = async ({ req, res }) => {
 необходимо подписаться на системный сценарий `PAY_DIALOG_FINISHED`.
 
 ```ts
-import { createSystemScenario, findInvoice, PayDialogFinishedServerAction, PayDialogStatuses, PaymentInvoiceStatuses } from '@salutejs/scenario';
+import { createSystemScenario, findInvoice, PayDialogStatuses, PaymentInvoiceStatuses } from '@salutejs/scenario';
 
 createSystemScenario({
     PAY_DIALOG_FINISHED: async ({ req, res }) => {
-        const { parameters } = req.serverAction as PayDialogFinishedServerAction;
+        const { parameters } = req.serverAction;
         if (parameters.payment_response.response_code === PayDialogStatuses.success) {
             // диалог завершился успешно, необходимо проверить статус платежа
             const { invoice_status } = await findInvoice({ invoiceId: parameters.payment_response.invoice_id });

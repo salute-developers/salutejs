@@ -275,7 +275,7 @@ export type Action =
     | TextAction
     | DeepLinkAction
     | SendContactPhone
-    | ServerAction
+    | ActionForServerAction
     | StartSmartSearchAction
     | CopyTextAction
     | OpenKeyboard
@@ -1233,7 +1233,7 @@ export interface SendContactPhone {
 /**
  * Действие, которое обозначает обработку сервер-экшена ассистентом или хост-приложением.
  */
-export interface ServerAction {
+export interface ActionForServerAction {
     /**
      * Тип действия.
      */

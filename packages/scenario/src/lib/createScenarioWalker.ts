@@ -2,15 +2,18 @@ import { createUserScenario } from './createUserScenario';
 import { SystemScenario } from './createSystemScenario';
 import { lookupMissingVariables } from './missingVariables';
 import {
+    DeprecatedServerAction,
     IntentsDict,
     Recognizer,
     SaluteRequest,
     SaluteRequestVariable,
     SaluteResponse,
     SaluteSession,
+    ServerAction,
 } from './types/salute';
 import { AppState } from './types/systemMessage';
 import { NLPRequestMTS } from './types/request';
+import { PayDialogFinishedServerAction } from './types/payment';
 
 interface ScenarioWalkerOptions {
     intents?: IntentsDict;
@@ -19,6 +22,17 @@ interface ScenarioWalkerOptions {
     userScenario?: ReturnType<typeof createUserScenario>;
     slotFillingConfidence?: number;
 }
+
+const buildNormalizedServerAction = (action: Partial<ServerAction> & DeprecatedServerAction): ServerAction => {
+    if (typeof action.action_id !== 'undefined') {
+        return action as ServerAction;
+    }
+
+    return {
+        action_id: action.type,
+        parameters: action.payload,
+    };
+};
 
 export const createScenarioWalker = ({
     intents,
@@ -31,7 +45,7 @@ export const createScenarioWalker = ({
     res,
     session,
 }: {
-    req: SaluteRequest<SaluteRequestVariable, AppState, { action_id?: string; type: string; payload: unknown }>;
+    req: SaluteRequest<SaluteRequestVariable, AppState, Partial<ServerAction> & DeprecatedServerAction>;
     res: SaluteResponse;
     session: SaluteSession;
 }) => {
@@ -119,6 +133,8 @@ export const createScenarioWalker = ({
         }
     };
 
+    const normalizedServerAction =
+        typeof req.serverAction === 'undefined' ? undefined : buildNormalizedServerAction(req.serverAction);
     const saluteHandlerOpts = { req, res, session: session.state, history: {} };
 
     if (req.systemIntent === 'run_app') {
@@ -131,7 +147,12 @@ export const createScenarioWalker = ({
                 return;
             }
 
-            await systemScenario.PAY_DIALOG_FINISHED(saluteHandlerOpts, dispatch);
+            await systemScenario.PAY_DIALOG_FINISHED(
+                (saluteHandlerOpts as unknown) as typeof saluteHandlerOpts & {
+                    req: SaluteRequest<SaluteRequestVariable, AppState, PayDialogFinishedServerAction>;
+                },
+                dispatch,
+            );
             return;
         }
 
@@ -153,10 +174,12 @@ export const createScenarioWalker = ({
 
     if (typeof intents !== undefined && userScenario) {
         // restore request from server_action payload
-        if (req.serverAction) {
-            Object.keys((req.serverAction.payload || {}) as Record<string, unknown>).forEach((key) => {
-                req.setVariable(key, (req.serverAction?.payload as Record<string, unknown>)[key]);
-            });
+        if (normalizedServerAction) {
+            Object.entries((normalizedServerAction.parameters || {}) as Record<string, unknown>).forEach(
+                ([key, value]) => {
+                    req.setVariable(key, value);
+                },
+            );
         }
 
         if (req.voiceAction && typeof recognizer !== 'undefined') {
@@ -165,17 +188,17 @@ export const createScenarioWalker = ({
 
         const scenarioState = userScenario.resolve(session.path, req);
 
-        if (req.serverAction && typeof intents !== 'undefined') {
+        if (normalizedServerAction && typeof intents !== 'undefined') {
             if (!scenarioState) {
                 res.appendError({
                     code: 404,
-                    description: `Missing handler for action: "${req.serverAction.type}"`,
+                    description: `Missing handler for action: "${normalizedServerAction.action_id}"`,
                 });
 
                 return;
             }
 
-            const missingVars = lookupMissingVariables(req.serverAction.type, intents, req.variables);
+            const missingVars = lookupMissingVariables(normalizedServerAction.action_id, intents, req.variables);
             if (missingVars.length) {
                 res.appendError({
                     code: 500,

@@ -56,7 +56,25 @@ export interface SaluteCommand {
 
 export type SaluteRequestVariable = Record<string, string | string[] | undefined>;
 
-export interface SaluteRequest<V = SaluteRequestVariable, S = AppState, A = { payload: unknown; type: string }> {
+/**
+ * @deprecated
+ * Такой формат экшенов устарел, используй ServerAction
+ */
+export interface DeprecatedServerAction {
+    payload: unknown;
+    type: string;
+}
+
+export interface ServerAction {
+    action_id: string;
+    parameters?: unknown;
+}
+
+export interface SaluteRequest<
+    V = SaluteRequestVariable,
+    S = AppState,
+    A extends DeprecatedServerAction | ServerAction | unknown = unknown
+> {
     readonly character: CharacterId;
     readonly appInfo: AppInfo;
     readonly message: Message;
@@ -82,7 +100,7 @@ export interface SaluteRequest<V = SaluteRequestVariable, S = AppState, A = { pa
 export interface SaluteResponse<T extends NLPResponse = NLPResponseATU> {
     appendBubble: (bubble: string, options?: { expand_policy?: Bubble['expand_policy']; markdown?: boolean }) => void;
     appendCard: (card: Card) => void;
-    appendCommand: <T = SaluteCommand>(command: T) => void;
+    appendCommand: <C = SaluteCommand>(command: C) => void;
     /** @deprecated */
     appendItem: (command: any) => void;
     appendError: (error: SmartAppErrorCommand['smart_app_error']) => void;
@@ -106,7 +124,7 @@ export interface SaluteResponse<T extends NLPResponse = NLPResponseATU> {
 }
 
 export type SaluteHandler<
-    Rq extends SaluteRequest = SaluteRequest,
+    Rq extends SaluteRequest = SaluteRequest<SaluteRequestVariable, AppState, DeprecatedServerAction>,
     S extends Record<string, unknown> = Record<string, unknown>,
     Rs extends SaluteResponse = SaluteResponse,
     H extends Record<string, unknown> = Record<string, unknown>
@@ -154,7 +172,10 @@ export interface Recognizer {
     inference: (options: { req: SaluteRequest; res: SaluteResponse; session: SaluteSession }) => void;
 }
 
-export type ScenarioSchema<Rq extends SaluteRequest = SaluteRequest, Sh extends SaluteHandler = SaluteHandler> = Record<
+export type ScenarioSchema<
+    Rq extends SaluteRequest = SaluteRequest,
+    Sh extends SaluteHandler = SaluteHandler<SaluteRequest>
+> = Record<
     string,
     {
         match: (req: Rq) => boolean;

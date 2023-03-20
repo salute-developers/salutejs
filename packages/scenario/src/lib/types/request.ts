@@ -1,3 +1,4 @@
+import { DeprecatedServerAction, ServerAction } from './salute';
 import { SystemMessage, SystemMessageName, SystemMessagePayload } from './systemMessage';
 
 export type NLPRequestType =
@@ -37,10 +38,7 @@ export type MTSPayload = SharedRequestPayload &
 export type NLPRequestMTS = NLPRequestBody<Extract<NLPRequestType, 'MESSAGE_TO_SKILL'>, MTSPayload>;
 
 export interface SAPayload extends SharedRequestPayload, Pick<SystemMessagePayload, 'app_info'> {
-    server_action?: {
-        payload: unknown;
-        type: string;
-    };
+    server_action?: ServerAction | DeprecatedServerAction;
 }
 
 /**
@@ -53,10 +51,7 @@ export type NLPRequestSA = NLPRequestBody<Extract<NLPRequestType, 'SERVER_ACTION
 export interface RAPayload extends SharedRequestPayload {
     /** Интент, который приходит при запуске смартапа */
     intent: 'run_app';
-    server_action?: {
-        payload: unknown;
-        type: string;
-    };
+    server_action?: ServerAction | DeprecatedServerAction;
 }
 
 /** RUN_APP */

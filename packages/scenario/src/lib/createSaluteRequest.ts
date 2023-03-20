@@ -1,9 +1,12 @@
 import { i18n } from './i18n';
 import { KeysetDictionary } from './types/i18n';
 import { NLPRequest, NLPRequestMTS, NLPRequestSA } from './types/request';
-import { Inference, SaluteRequest, SaluteRequestVariable, Variant } from './types/salute';
+import { DeprecatedServerAction, Inference, SaluteRequest, SaluteRequestVariable, Variant } from './types/salute';
+import { AppState } from './types/systemMessage';
 
-export const createSaluteRequest = (request: NLPRequest): SaluteRequest => {
+export const createSaluteRequest = (
+    request: NLPRequest,
+): SaluteRequest<SaluteRequestVariable, AppState, DeprecatedServerAction> => {
     let inference: Inference;
     let variant: Variant;
     const variables: SaluteRequestVariable = {};
@@ -41,7 +44,8 @@ export const createSaluteRequest = (request: NLPRequest): SaluteRequest => {
             return (request as NLPRequestMTS).payload.meta?.current_app?.state;
         },
         get serverAction() {
-            return (request as NLPRequestSA).payload.server_action;
+            // здесь DeprecatedServerAction поскольку используем в SaluteRequest по-умолчанию DeprecatedServerAction
+            return ((request as NLPRequestSA).payload.server_action as unknown) as DeprecatedServerAction;
         },
         get voiceAction() {
             return (

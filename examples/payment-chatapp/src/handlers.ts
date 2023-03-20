@@ -1,10 +1,12 @@
 import {
+    AppState,
     createInvoice,
     PayDialogFinishedServerAction,
     PayDialogStatuses,
     PaymentInvoice,
     SaluteHandler,
     SaluteRequest,
+    SaluteRequestVariable,
     TaxSystemTypes,
 } from '@salutejs/scenario';
 
@@ -127,8 +129,8 @@ export const paymentHandler: SaluteHandler<SaluteRequest, PaymentState> = async 
     res.askPayment(invoice_id);
 };
 
-export const payDialogFinished: SaluteHandler<SaluteRequest, PaymentState> = ({ req, res, session }) => {
-    const { parameters } = (req.serverAction as unknown) as PayDialogFinishedServerAction;
+export const payDialogFinished: SaluteHandler<SaluteRequest<SaluteRequestVariable, AppState, PayDialogFinishedServerAction>, PaymentState> = ({ req, res, session }) => {
+    const { parameters } = req.serverAction;
     if (parameters.payment_response.response_code === PayDialogStatuses.success) {
         res.setPronounceText('Оплачено');
         res.appendBubble('Оплачено');

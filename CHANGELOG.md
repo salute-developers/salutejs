@@ -1,3 +1,20 @@
+# (Mon Mar 20 2023)
+
+#### 🚀 Enhancement
+
+- `@salutejs/scenario@0.33.0`
+  - Поддержка server_action.action_id [#41](https://github.com/salute-developers/salutejs/pull/41) ([@sasha-tlt](https://github.com/sasha-tlt))
+
+#### 🐛 Bug Fix
+
+- chore: Починить примерчик audiotour [#40](https://github.com/salute-developers/salutejs/pull/40) ([@sasha-tlt](https://github.com/sasha-tlt))
+
+#### Authors: 1
+
+- Alexander Salmin ([@sasha-tlt](https://github.com/sasha-tlt))
+
+---
+
 # (Thu Mar 16 2023)
 
 #### 🐛 Bug Fix

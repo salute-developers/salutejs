@@ -1,3 +1,16 @@
+# v0.33.0 (Mon Mar 20 2023)
+
+#### 🚀 Enhancement
+
+- Поддержка server_action.action_id [#41](https://github.com/salute-developers/salutejs/pull/41) ([@sasha-tlt](https://github.com/sasha-tlt))
+- feat: Изменен тип экшенов ([@sasha-tlt](https://github.com/sasha-tlt))
+
+#### Authors: 1
+
+- Alexander Salmin ([@sasha-tlt](https://github.com/sasha-tlt))
+
+---
+
 # v0.32.1 (Thu Mar 16 2023)
 
 #### 🐛 Bug Fix

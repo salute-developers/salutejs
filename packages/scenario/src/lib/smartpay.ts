@@ -2,7 +2,7 @@ import fetch from 'node-fetch';
 
 import { PaymentInvoiceQuery, PaymentInvoiceAnswer, PaymentResponse, PaymentStatus } from './types/payment';
 
-const API_URL = 'https://smartmarket.online.sberbank.ru/smartpay/v1';
+const API_URL = 'https://smartpay.devices.sberbank.ru/smartpay/v1/';
 
 const callApi = <T>(
     url: string,

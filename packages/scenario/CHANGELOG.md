@@ -1,3 +1,16 @@
+# v0.33.1 (Wed Apr 05 2023)
+
+#### 🐛 Bug Fix
+
+- Изменить хост smartpay [#45](https://github.com/salute-developers/salutejs/pull/45) ([@sasha-tlt](https://github.com/sasha-tlt))
+- fix: Изменить хост smartpay ([@sasha-tlt](https://github.com/sasha-tlt))
+
+#### Authors: 1
+
+- Alexander Salmin ([@sasha-tlt](https://github.com/sasha-tlt))
+
+---
+
 # v0.33.0 (Mon Mar 20 2023)
 
 #### 🚀 Enhancement

@@ -1,3 +1,16 @@
+# (Wed Apr 05 2023)
+
+#### 🐛 Bug Fix
+
+- `@salutejs/scenario@0.33.1`
+  - Изменить хост smartpay [#45](https://github.com/salute-developers/salutejs/pull/45) ([@sasha-tlt](https://github.com/sasha-tlt))
+
+#### Authors: 1
+
+- Alexander Salmin ([@sasha-tlt](https://github.com/sasha-tlt))
+
+---
+
 # (Mon Mar 20 2023)
 
 #### 🚀 Enhancement

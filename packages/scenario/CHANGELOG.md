@@ -1,3 +1,16 @@
+# v0.33.2 (Thu Apr 06 2023)
+
+#### 🐛 Bug Fix
+
+- хост смартпей [#46](https://github.com/salute-developers/salutejs/pull/46) ([@sasha-tlt](https://github.com/sasha-tlt))
+- fix: хост смартпей ([@sasha-tlt](https://github.com/sasha-tlt))
+
+#### Authors: 1
+
+- Alexander Salmin ([@sasha-tlt](https://github.com/sasha-tlt))
+
+---
+
 # v0.33.1 (Wed Apr 05 2023)
 
 #### 🐛 Bug Fix

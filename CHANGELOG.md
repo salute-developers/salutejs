@@ -1,3 +1,16 @@
+# (Thu Apr 06 2023)
+
+#### 🐛 Bug Fix
+
+- `@salutejs/scenario@0.33.2`
+  - хост смартпей [#46](https://github.com/salute-developers/salutejs/pull/46) ([@sasha-tlt](https://github.com/sasha-tlt))
+
+#### Authors: 1
+
+- Alexander Salmin ([@sasha-tlt](https://github.com/sasha-tlt))
+
+---
+
 # (Wed Apr 05 2023)
 
 #### 🐛 Bug Fix

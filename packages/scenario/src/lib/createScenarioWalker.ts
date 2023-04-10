@@ -156,7 +156,10 @@ export const createScenarioWalker = ({
             return;
         }
 
-        if ((req.request as NLPRequestMTS).payload.original_intent === 'run_app') {
+        if (
+            (req.request as NLPRequestMTS).payload.original_intent === 'run_app' ||
+            req.request.messageName === 'RUN_APP'
+        ) {
             await systemScenario.RUN_APP(saluteHandlerOpts, dispatch);
             return;
         }

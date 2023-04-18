@@ -1,3 +1,16 @@
+# (Tue Apr 18 2023)
+
+#### 🐛 Bug Fix
+
+- `@salutejs/scenario@0.33.3`
+  - fix: Не срабатывает RUN_APP [#47](https://github.com/salute-developers/salutejs/pull/47) ([@soulko](https://github.com/soulko))
+
+#### Authors: 1
+
+- Anton Kostenko ([@soulko](https://github.com/soulko))
+
+---
+
 # (Thu Apr 06 2023)
 
 #### 🐛 Bug Fix

@@ -1,3 +1,15 @@
+# v0.33.3 (Tue Apr 18 2023)
+
+#### 🐛 Bug Fix
+
+- fix: Не срабатывает RUN_APP [#47](https://github.com/salute-developers/salutejs/pull/47) ([@soulko](https://github.com/soulko))
+
+#### Authors: 1
+
+- Anton Kostenko ([@soulko](https://github.com/soulko))
+
+---
+
 # v0.30.0 (Wed Jan 18 2023)
 
 #### 🚀 Enhancement

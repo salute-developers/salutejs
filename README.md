@@ -22,6 +22,7 @@ __Set of minimalistic utils for [Salute Assistants](https://bit.ly/3vNuhXY) scen
 - [@salutejs/scenario](https://github.com/salute-developers/salutejs/tree/master/packages/scenario) - user scenario framework;
 - [@salutejs/recognizer-smartapp-brain](https://github.com/salute-developers/salutejs/tree/master/packages/recognizer-smartapp-brain) - SmartApp Brain recognizer;
 - [@salutejs/recognizer-string-similarity](https://github.com/salute-developers/salutejs/tree/master/packages/recognizer-string-similarity) - string similarity recognizer;
+- [@salutejs/storage-adapter-firebase](https://github.com/salute-developers/salutejs/tree/master/packages/storage-adapter-firebase) - in firebase session storage adapter;
 - [@salutejs/storage-adapter-memory](https://github.com/salute-developers/salutejs/tree/master/packages/storage-adapter-memory) - in memory session storage adapter;
 
 ### Translations

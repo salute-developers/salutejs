@@ -22,4 +22,5 @@ __Набор утилит для описания пользовательски
 - [@salutejs/scenario](https://github.com/salute-developers/salutejs/tree/master/packages/scenario) - фреймворк описания пользовательских сценариев;
 - [@salutejs/recognizer-smartapp-brain](https://github.com/salute-developers/salutejs/tree/master/packages/recognizer-smartapp-brain) - рекогнайзер SmartApp Brain;
 - [@salutejs/recognizer-string-similarity](https://github.com/salute-developers/salutejs/tree/master/packages/recognizer-string-similarity) - рекогнайзер string similarity;
+- [@salutejs/storage-adapter-firebase](https://github.com/salute-developers/salutejs/tree/master/packages/storage-adapter-firebase) - адаптер для хранения сессии в firebase;
 - [@salutejs/storage-adapter-memory](https://github.com/salute-developers/salutejs/tree/master/packages/storage-adapter-memory) - адаптер для хранения сессии в памяти процесса;

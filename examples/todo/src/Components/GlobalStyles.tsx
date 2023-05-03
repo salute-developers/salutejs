@@ -1,8 +1,8 @@
 import { FC, useMemo } from 'react';
 import { createGlobalStyle } from 'styled-components';
-import type { CharacterId } from '@salutejs/client';
-import { darkJoy, darkEva, darkSber } from '@sberdevices/plasma-tokens/themes';
-import { text, background, gradient } from '@sberdevices/plasma-tokens';
+import type { CharacterId } from '@salutejs/scenario';
+import { darkJoy, darkEva, darkSber } from '@salutejs/plasma-tokens/themes';
+import { text, background, gradient } from '@salutejs/plasma-tokens';
 
 const themes = {
     sber: createGlobalStyle(darkEva),

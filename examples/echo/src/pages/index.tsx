@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
-import { Container, DeviceThemeProvider } from '@sberdevices/plasma-ui';
+import { Container, DeviceThemeProvider } from '@salutejs/plasma-ui';
 import {
-    AssistantCharacterType,
+    CharacterId,
     AssistantAppState,
     AssistantNavigationCommand,
     createAssistant,
     createSmartappDebugger,
     AssistantClientCommand,
-} from '@sberdevices/assistant-client';
+} from '@salutejs/client';
 
 import { GlobalStyles } from '../Components/GlobalStyles';
 import { useScenario } from '../hooks/useScenario';
@@ -19,7 +19,7 @@ const NEXT_PUBLIC_DEV_TOKEN = process.env.NEXT_PUBLIC_DEV_TOKEN;
 const NEXT_PUBLIC_DEV_PHRASE = process.env.NEXT_PUBLIC_DEV_PHRASE;
 
 const IndexPage = () => {
-    const [character, setCharacter] = useState<AssistantCharacterType>('sber' as const);
+    const [character, setCharacter] = useState<CharacterId>('sber' as const);
 
     const assistantStateRef = useRef<AssistantAppState>({});
     const assistantRef = useRef<ReturnType<typeof createAssistant>>();

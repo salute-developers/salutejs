@@ -19,7 +19,7 @@ import {
     TextBox,
     TextField,
     Checkbox,
-} from '@sberdevices/plasma-ui';
+} from '@salutejs/plasma-ui';
 
 import { GlobalStyles } from '../Components/GlobalStyles';
 import { Action, reducer } from '../store';
@@ -29,7 +29,6 @@ if (process.browser) {
     import('@sberdevices/spatial-navigation');
 }
 
-const IS_DEVELOPMENT = process.env.NODE_ENV === 'development';
 // eslint-disable-next-line prefer-destructuring
 const NEXT_PUBLIC_DEV_TOKEN = process.env.NEXT_PUBLIC_DEV_TOKEN;
 // eslint-disable-next-line prefer-destructuring
@@ -52,7 +51,7 @@ const IndexPage = () => {
 
     useEffect(() => {
         const initializeAssistant = () => {
-            if (!IS_DEVELOPMENT) {
+            if (process.env.NODE_ENV === 'production') {
                 return createAssistant<TodoCommand>({
                     getState: () => assistantStateRef.current,
                 });
@@ -61,7 +60,6 @@ const IndexPage = () => {
             if (!NEXT_PUBLIC_DEV_TOKEN || !NEXT_PUBLIC_DEV_PHRASE) {
                 throw new Error('');
             }
-
             return createSmartappDebugger({
                 token: NEXT_PUBLIC_DEV_TOKEN,
                 initPhrase: NEXT_PUBLIC_DEV_PHRASE,

@@ -1,3 +1,16 @@
+# v0.34.0 (Wed May 03 2023)
+
+#### 🚀 Enhancement
+
+- Дженерики в createSystemScenario [#50](https://github.com/salute-developers/salutejs/pull/50) ([@sasha-tlt](https://github.com/sasha-tlt))
+- feat: Дженерики в SystemScenario ([@sasha-tlt](https://github.com/sasha-tlt))
+
+#### Authors: 1
+
+- Alexander Salmin ([@sasha-tlt](https://github.com/sasha-tlt))
+
+---
+
 # v0.33.3 (Tue Apr 18 2023)
 
 #### 🐛 Bug Fix

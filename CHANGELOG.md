@@ -1,3 +1,20 @@
+# (Wed May 03 2023)
+
+#### 🚀 Enhancement
+
+- `@salutejs/scenario@0.34.0`
+  - Дженерики в createSystemScenario [#50](https://github.com/salute-developers/salutejs/pull/50) ([@sasha-tlt](https://github.com/sasha-tlt))
+
+#### 🐛 Bug Fix
+
+- docs: В документацию добавлена ссылка на storage-adapter-firebase [#49](https://github.com/salute-developers/salutejs/pull/49) ([@sasha-tlt](https://github.com/sasha-tlt))
+
+#### Authors: 1
+
+- Alexander Salmin ([@sasha-tlt](https://github.com/sasha-tlt))
+
+---
+
 # (Tue Apr 18 2023)
 
 #### 🐛 Bug Fix

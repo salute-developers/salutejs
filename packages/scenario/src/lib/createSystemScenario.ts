@@ -2,10 +2,10 @@ import { PayDialogFinishedServerAction } from './types/payment';
 import { SaluteHandler, SaluteRequest, SaluteRequestVariable } from './types/salute';
 import { AppState } from './types/systemMessage';
 
-export type SystemScenario = {
-    RUN_APP: SaluteHandler;
-    CLOSE_APP: SaluteHandler;
-    NO_MATCH: SaluteHandler;
+export type SystemScenario<Sh extends SaluteHandler = SaluteHandler<SaluteRequest>> = {
+    RUN_APP: Sh;
+    CLOSE_APP: Sh;
+    NO_MATCH: Sh;
     PAY_DIALOG_FINISHED?: SaluteHandler<SaluteRequest<SaluteRequestVariable, AppState, PayDialogFinishedServerAction>>;
 };
 

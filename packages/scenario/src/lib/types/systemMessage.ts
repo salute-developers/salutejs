@@ -1522,7 +1522,7 @@ export interface PlasmaButtonView {
     /**
      * Стиль кнопки из ДС (Плазмы)
      */
-    style?: 'primary' | 'secondary' | 'warning' | 'checked' | 'critical';
+    style?: 'checked' | 'clear' | 'critical' | 'primary' | 'secondary' | 'warning';
     /**
      * Текст, отображаемый на кнопке
      */

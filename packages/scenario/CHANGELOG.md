@@ -1,3 +1,16 @@
+# v0.35.0 (Wed May 10 2023)
+
+#### 🚀 Enhancement
+
+- feat: Обновлены стили PlasmaButtonView [#51](https://github.com/salute-developers/salutejs/pull/51) ([@ivan-ushatsky](https://github.com/ivan-ushatsky))
+- feat: Обновлены стили PlasmaButtonView ([@ivan-ushatsky](https://github.com/ivan-ushatsky))
+
+#### Authors: 1
+
+- Ivan Ushatsky ([@ivan-ushatsky](https://github.com/ivan-ushatsky))
+
+---
+
 # v0.34.0 (Wed May 03 2023)
 
 #### 🚀 Enhancement

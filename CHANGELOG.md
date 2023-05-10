@@ -1,3 +1,16 @@
+# (Wed May 10 2023)
+
+#### 🚀 Enhancement
+
+- `@salutejs/scenario@0.35.0`
+  - feat: Обновлены стили PlasmaButtonView [#51](https://github.com/salute-developers/salutejs/pull/51) ([@ivan-ushatsky](https://github.com/ivan-ushatsky))
+
+#### Authors: 1
+
+- Ivan Ushatsky ([@ivan-ushatsky](https://github.com/ivan-ushatsky))
+
+---
+
 # (Wed May 03 2023)
 
 #### 🚀 Enhancement

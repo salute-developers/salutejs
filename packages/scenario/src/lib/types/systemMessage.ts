@@ -2335,6 +2335,10 @@ export interface OperatorCard {
      */
     title_without_timer: string;
     /**
+     * Заголовок для активной карточки из истории (вэб)
+     */
+    title_open_chat: string;
+    /**
      * Заголовок карточки после закрытия сессии
      */
     title_close_session: string;

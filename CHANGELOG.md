@@ -1,3 +1,16 @@
+# (Thu May 25 2023)
+
+#### 🚀 Enhancement
+
+- `@salutejs/scenario@0.36.0`
+  - Заголовок для активной карточки оператора [#52](https://github.com/salute-developers/salutejs/pull/52) ([@sasha-tlt](https://github.com/sasha-tlt))
+
+#### Authors: 1
+
+- Alexander Salmin ([@sasha-tlt](https://github.com/sasha-tlt))
+
+---
+
 # (Wed May 10 2023)
 
 #### 🚀 Enhancement

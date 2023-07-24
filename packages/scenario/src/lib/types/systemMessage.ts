@@ -24,10 +24,10 @@ export type SystemMessageName =
  */
 export type AppType = 'DIALOG' | 'WEB_APP' | 'APK' | 'CHAT_APP' | 'EMBEDDED_APP';
 /**
- * Адрес графического ресурса, может быть задан в пространстве интернет или в локальном пространстве клиента, url имеет
- * больший приоритет чем local
+ * Адрес графического ресурса, может быть задан в пространстве интернет, в локальном пространстве клиента, в телефонной
+ * книге клиента. Url имеет больший приоритет чем local
  */
-export type ImageAddress = Url | Local;
+export type ImageAddress = Url | Local | LocalContact;
 /**
  * Адрес картинки в локальном пространстве клиента https://www.figma.com/file/MQHBgPkW4dqXmI2549WioI/Dev?node-id=19%3A9
  */
@@ -281,18 +281,21 @@ export type Action =
     | OpenKeyboard
     | ShareTextAction;
 export type Card =
-    | DiscoveryCard
     | ExtendedListCard
     | GalleryCard
     | GridCard
     | ListCard
     | QRCodeCard
-    | SimpleList
-    | WidgetGallery
+    | DiscoveryCard
     | WidgetGalleryWithCategories
+    | WidgetGallery
     | WidgetSingleCard
     | WidgetTitleCard
     | WidgetTwoColumns
+    | WidgetNestedContentCard
+    | WidgetButton
+    | WidgetVerticalCards
+    | SimpleList
     | OperatorCard;
 /**
  * Карточка со списком ячеек и одной картинкой
@@ -308,6 +311,10 @@ export type ExtendedListCard = CardBase & {
     log_id?: string;
     background_image?: FlexibleImageView;
     background_color?: SurfaceColor;
+    /**
+     * текст который бедет озвучен при выборе карточки механизмом accessibility
+     */
+    accessibility?: string;
     [k: string]: unknown;
 };
 /**
@@ -326,17 +333,21 @@ export type Typeface =
     | 'headline2'
     | 'headline3'
     | 'headline4'
+    | 'headline5'
+    | 'headline6'
     | 'title1'
     | 'title2'
     | 'body1'
     | 'body2'
     | 'body3'
+    | 'body4'
     | 'body_ai'
     | 'text1'
     | 'paragraphText1'
     | 'paragraphText2'
     | 'footnote1'
     | 'footnote2'
+    | 'footnote3'
     | 'button1'
     | 'button2'
     | 'caption'
@@ -461,6 +472,10 @@ export type ListCard = CardBase & {
     log_id?: string;
     background_image?: FlexibleImageView;
     background_color?: SurfaceColor;
+    /**
+     * текст который бедет озвучен при выборе карточки механизмом accessibility
+     */
+    accessibility?: string;
     [k: string]: unknown;
 };
 export type CellView =
@@ -473,7 +488,8 @@ export type CellView =
     | WeatherCellView
     | RightSideCellView
     | FlexibleImageCellView
-    | HorizontalCellsView;
+    | HorizontalCellsView
+    | OperatorChatCellView;
 export type LeftView =
     | SimpleLeftView
     | FastAnswerLeftView
@@ -490,11 +506,38 @@ export type RightView =
     | PlasmaButtonCellView;
 export type HorizontalCellContentView = VerticalIconTextView | SpacerView;
 /**
- * Упорядоченный список категорий с подмассивами из карточек
+ * https://www.figma.com/file/b5K8naZPDs3pE6pafBkoz8/%F0%9F%8C%80Plasma-Styles-Salute?node-id=5%3A213
+ */
+export type ButtonColor =
+    | 'primary_default'
+    | 'secondary'
+    | 'clear'
+    | 'success'
+    | 'warning'
+    | 'critical'
+    | 'checked'
+    | 'global_black'
+    | 'global_black_secondary'
+    | 'global_black_transparent'
+    | 'global_white'
+    | 'global_white_secondary';
+/**
+ * Горизонтальный упорядоченный список карточек одной категории
  *
  * @minItems 1
  */
-export type ObjectObject = [DiscoveryCard | ListCard, ...(DiscoveryCard | ListCard)[]];
+export type Items = [DiscoveryCard | ListCard, ...(DiscoveryCard | ListCard)[]];
+export type NestedContent = NestedContentGallery | NestedContentList;
+/**
+ * Карточка с вертикальным списком ячеек.
+ */
+export type SimpleList = CardBase & {
+    header: string;
+    footer?: string;
+    items?: SimpleItem[];
+    type: 'simple_list';
+    [k: string]: unknown;
+};
 /**
  * Доступные id контекстов для поиска. Например, если задать для какого-то контекста префиксы ('позвони', 'набери'), то
  * ASR будет искать в этом контексте только, если встретит слова 'позвони' или 'набери'. Если задать пустой набор
@@ -615,6 +658,10 @@ export interface SystemMessagePayload {
      * Список команд и элементов интерфейса смартапа.
      */
     items?: (AssistantCommand | BubbleCommand | CardCommand | PolicyRunAppComand)[];
+    /**
+     * SID идентификатор
+     */
+    sid?: string;
     suggestions?: Suggestions;
     asr_hints?: ASRHints;
     hints?: Hints;
@@ -760,6 +807,17 @@ export interface Local {
      */
     type: 'local';
     identificator: LocalImageIdentificator;
+    [k: string]: unknown;
+}
+export interface LocalContact {
+    /**
+     * Тип ресурса.
+     */
+    type: 'localcontact';
+    /**
+     * Захешированное значение телефона, соответствующего контакту в переданной адресной книге
+     */
+    local_contact_hash: string;
     [k: string]: unknown;
 }
 /**
@@ -1159,7 +1217,11 @@ export interface AssistantCommand {
         | PermissionCommand
         | InvoiceCommand
         | SmartAppErrorCommand
-        | OperatorCardCommand;
+        | OperatorCardCommand
+        | RequestHashOfContactsCommand
+        | RequestContactsCommand
+        | RequestHashesCommand
+        | RequestContactPhoneCommand;
     [k: string]: unknown;
 }
 /**
@@ -1346,6 +1408,43 @@ export interface OperatorCardCommand {
     message_id: string;
     [k: string]: unknown;
 }
+/**
+ * Запрос всех контактов из адресной книги в виде хеш-сумм
+ */
+export interface RequestHashOfContactsCommand {
+    type: 'request_hash_of_contacts';
+    [k: string]: unknown;
+}
+/**
+ * Запрос всех контактов из адресной книги
+ */
+export interface RequestContactsCommand {
+    type: 'request_contacts';
+    [k: string]: unknown;
+}
+/**
+ * Запрос контактов из адресной книги по хешу телефона
+ */
+export interface RequestHashesCommand {
+    type: 'request_hashes';
+    /**
+     * Массив хэшей телефонов
+     */
+    hashes: 'string'[];
+    [k: string]: unknown;
+}
+/**
+ * Запрос номера телефона адресной книги по идентификатору контакта
+ */
+export interface RequestContactPhoneCommand {
+    type: 'request_contact_phone';
+    /**
+     * Идентификатор контакта
+     */
+    id: string;
+    timeout?: number;
+    [k: string]: unknown;
+}
 export interface BubbleCommand {
     bubble: Bubble;
     [k: string]: unknown;
@@ -1433,6 +1532,10 @@ export interface TextView {
      * Id для отправки в метрику
      */
     log_id?: string;
+    /**
+     * текст который бедет озвучен при выборе карточки механизмом accessibility
+     */
+    accessibility?: string;
     [k: string]: unknown;
 }
 /**
@@ -1513,6 +1616,10 @@ export interface ButtonView {
     log_id?: string;
     margins?: Margins;
     paddings?: Paddings;
+    /**
+     * текст который бедет озвучен, при выборе карточки, механизмом accessibility
+     */
+    accessibility?: string;
     [k: string]: unknown;
 }
 /**
@@ -1535,6 +1642,10 @@ export interface PlasmaButtonView {
      * Id для отправки в метрику
      */
     log_id?: string;
+    /**
+     * текст который бедет озвучен при выборе карточки механизмом accessibility
+     */
+    accessibility?: string;
     [k: string]: unknown;
 }
 /**
@@ -1565,6 +1676,10 @@ export interface ExtendedImageView {
      * соотношение сторон картинки
      */
     fixed_ratio?: '16:9' | '3:2' | '4:3' | '1:1' | '3:4' | '9:16';
+    /**
+     * текст который бедет озвучен при выборе карточки механизмом accessibility
+     */
+    accessibility?: string;
     [k: string]: unknown;
 }
 /**
@@ -1596,6 +1711,10 @@ export interface FlexibleImageView {
      * Id для отправки в метрику
      */
     log_id?: string;
+    /**
+     * текст который бедет озвучен при выборе карточки механизмом accessibility
+     */
+    accessibility?: string;
     [k: string]: unknown;
 }
 /**
@@ -1722,6 +1841,10 @@ export interface ImageView {
      */
     log_id?: string;
     size?: GridContentSize;
+    /**
+     * текст который бедет озвучен при выборе карточки механизмом accessibility
+     */
+    accessibility?: string;
     [k: string]: unknown;
 }
 /**
@@ -1788,6 +1911,10 @@ export interface IconView {
      * Id для отправки в метрику
      */
     log_id?: string;
+    /**
+     * текст который бедет озвучен при выборе карточки механизмом accessibility
+     */
+    accessibility?: string;
     [k: string]: unknown;
 }
 /**
@@ -1841,6 +1968,10 @@ export interface LeftRightCellView {
      */
     log_id?: string;
     paddings?: Paddings;
+    /**
+     * текст который бедет озвучен при выборе карточки механизмом accessibility
+     */
+    accessibility?: string;
     [k: string]: unknown;
 }
 /**
@@ -1936,6 +2067,10 @@ export interface DisclosureRightView {
      * Id для отправки в метрику
      */
     log_id?: string;
+    /**
+     * текст который бедет озвучен при выборе карточки механизмом accessibility
+     */
+    accessibility?: string;
     [k: string]: unknown;
 }
 /**
@@ -1988,6 +2123,10 @@ export interface RoundButtonView {
      * Id для отправки в метрику
      */
     log_id?: string;
+    /**
+     * текст который бедет озвучен при выборе карточки механизмом accessibility
+     */
+    accessibility?: string;
     [k: string]: unknown;
 }
 export interface TagCellView {
@@ -2154,6 +2293,10 @@ export interface VerticalIconTextView {
      * Id для отправки в метрику
      */
     log_id?: string;
+    /**
+     * текст который бедет озвучен при выборе карточки механизмом accessibility
+     */
+    accessibility?: string;
     [k: string]: unknown;
 }
 /**
@@ -2161,6 +2304,50 @@ export interface VerticalIconTextView {
  */
 export interface SpacerView {
     type: 'spacer_view';
+    [k: string]: unknown;
+}
+export interface OperatorChatCellView {
+    /**
+     * Тип ячейки
+     */
+    type: 'operator_chat_cell_view';
+    icon: IconView;
+    placeholder: TextView;
+    title: {
+        style: TextViewStyle;
+        margins?: Margins;
+        [k: string]: unknown;
+    };
+    subtitle: {
+        style: TextViewStyle;
+        margins?: Margins;
+        [k: string]: unknown;
+    };
+    badge: {
+        color: Color;
+        [k: string]: unknown;
+    };
+    paddings?: Paddings;
+    [k: string]: unknown;
+}
+/**
+ * Стиль текстового элемента
+ */
+export interface TextViewStyle {
+    typeface: Typeface;
+    text_color: TypeColor;
+    /**
+     * Максимальное количество строк. 0 - не ограничено.
+     */
+    max_lines?: number;
+    /**
+     * Выравнивание текста внутри его блока
+     */
+    alignment?: 'left' | 'center' | 'right';
+    /**
+     * Позволяет переносить слова по слогам
+     */
+    use_hyphen?: boolean;
     [k: string]: unknown;
 }
 /**
@@ -2193,6 +2380,7 @@ export interface DiscoveryCard {
         top_cell?: CellView;
         middle_cell?: CellView;
         bottom_cell?: CellView;
+        [k: string]: unknown;
     };
     background_image?: FlexibleImageView;
     /**
@@ -2234,6 +2422,9 @@ export interface WidgetGalleryWithCategories {
      * Описание цветов для чипа категорий
      */
     chip?: {
+        background_checked?: ButtonColor;
+        type_color_checked?: TypeColor;
+        type_color_unchecked?: TypeColor;
         [k: string]: unknown;
     };
     /**
@@ -2244,7 +2435,14 @@ export interface WidgetGalleryWithCategories {
      * Тип элемента категории
      */
     chips_type?: 'string' | 'flexible_image_view';
-    categories: ObjectObject;
+    /**
+     * Упорядоченный список категорий с подмассивами из карточек
+     */
+    categories: {
+        items: Items;
+        title: string | FlexibleImageView;
+        [k: string]: unknown;
+    }[];
     categories_paddings?: Paddings;
     type: 'widget_gallery_with_categories';
     /**
@@ -2315,7 +2513,118 @@ export interface ColumnView {
      * @minItems 1
      * @maxItems 3
      */
-    cards?: [DiscoveryCard] | [DiscoveryCard, DiscoveryCard] | [DiscoveryCard, DiscoveryCard, DiscoveryCard];
+    cards: [DiscoveryCard] | [DiscoveryCard, DiscoveryCard] | [DiscoveryCard, DiscoveryCard, DiscoveryCard];
+    [k: string]: unknown;
+}
+/**
+ * Виджет с кастомизируемым вложенным контентом
+ */
+export interface WidgetNestedContentCard {
+    type: 'widget_nested_content_card';
+    header?: {
+        background_image?: FlexibleImageView;
+        header_cell?: CellView;
+        height?: ContentHeight;
+        actions?: Actions;
+        [k: string]: unknown;
+    };
+    /**
+     * Цвет, которым заливается фон карточки. Задаётся как HEX c компонентом alpha в виде #AARRGGBB или #RRGGBB
+     */
+    background_color?: string;
+    body_cell?: CellView;
+    nested_content: NestedContent;
+    paddings?: Paddings;
+    /**
+     * Id для отправки в метрику
+     */
+    log_id?: string;
+    [k: string]: unknown;
+}
+/**
+ * Тип вложенного контента - горизонтальная галерея
+ */
+export interface NestedContentGallery {
+    type: 'nested_content_gallery';
+    items: ImageTextItem[];
+    /**
+     * Id для отправки в метрику
+     */
+    log_id?: string;
+    [k: string]: unknown;
+}
+export interface ImageTextItem {
+    type: 'image_text_item';
+    image?: FlexibleImageView;
+    texts?: VerticalTextsView;
+    /**
+     * Id для отправки в метрику
+     */
+    log_id?: string;
+    actions?: Actions;
+    width: ContentWidth;
+    [k: string]: unknown;
+}
+/**
+ * Вложенный контент для виджета в виде небольшого списка с опциональной кнопкой
+ */
+export interface NestedContentList {
+    type: 'nested_content_list';
+    list: LeftRightCellView[];
+    /**
+     * Опциональный блок, который располагается после списка
+     */
+    bottom_block?: {
+        divider?: DividerView;
+        cell?: CellView;
+        [k: string]: unknown;
+    };
+    [k: string]: unknown;
+}
+/**
+ * Виджет кнопки
+ */
+export interface WidgetButton {
+    type: 'widget_button';
+    /**
+     * Стиль кнопки из ДС (Плазмы)
+     */
+    style?: 'primary' | 'secondary' | 'warning' | 'checked';
+    /**
+     * Размер кнопки (фактически - ее высота) из ДС (Плазмы)
+     */
+    size?: 'small' | 'medium';
+    /**
+     * Текст, отображаемый на кнопке
+     */
+    text: string;
+    icon?: ImageAddress;
+    actions: Actions;
+    /**
+     * Id для отправки в метрику
+     */
+    log_id?: string;
+    [k: string]: unknown;
+}
+/**
+ * Стек из вертикальных карточек
+ */
+export interface WidgetVerticalCards {
+    type: 'widget_vertical_cards';
+    items: DiscoveryCard[];
+    widget_id?: string;
+    /**
+     * Id для отправки в метрику
+     */
+    log_id?: string;
+    [k: string]: unknown;
+}
+/**
+ * Элемент списка, состоящий из двух текстовых полей
+ */
+export interface SimpleItem {
+    title: string;
+    body: string;
     [k: string]: unknown;
 }
 /**
@@ -2326,6 +2635,10 @@ export interface OperatorCard {
      * Тип карточки
      */
     type: 'transfer_to_operator';
+    /**
+     * Заголовок карточки перевода на оператора
+     */
+    header: string;
     /**
      * Заголовок карточки с таймером
      */
@@ -2356,9 +2669,8 @@ export interface OperatorCard {
     history_chat_button: OperatorCardButton;
     [k: string]: unknown;
 }
-
 /**
- * Кнопка старта сессии
+ * Кнопка карточки оператора
  */
 export interface OperatorCardButton {
     /**
@@ -2368,7 +2680,6 @@ export interface OperatorCardButton {
     actions: Actions;
     [k: string]: unknown;
 }
-
 export interface PolicyRunAppComand {
     command: 'POLICY_RUN_APP';
     nodes: {
@@ -2485,17 +2796,6 @@ export const DefaultChannels: Record<Surface, UserChannel> = {
     TV_HUAWEI: 'B2C',
     COMPANION: 'COMPANION_B2C',
     SBOL: 'SBOL',
-};
-export type SimpleItem = {
-    title: string;
-    body: string;
-};
-export type SimpleList = CardBase & {
-    header: string;
-    footer?: string;
-    items?: SimpleItem[];
-    type: 'simple_list';
-    [k: string]: unknown;
 };
 /**
  * Запрос поиска от сценария.

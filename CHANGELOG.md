@@ -1,3 +1,16 @@
+# (Mon Jul 24 2023)
+
+#### 🚀 Enhancement
+
+- `@salutejs/scenario@0.37.0`
+  - feat: Добавлены виджеты в SystemMessage [#54](https://github.com/salute-developers/salutejs/pull/54) ([@ivan-ushatsky](https://github.com/ivan-ushatsky))
+
+#### Authors: 1
+
+- Ivan Ushatsky ([@ivan-ushatsky](https://github.com/ivan-ushatsky))
+
+---
+
 # (Thu May 25 2023)
 
 #### 🚀 Enhancement

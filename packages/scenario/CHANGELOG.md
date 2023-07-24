@@ -1,3 +1,16 @@
+# v0.37.0 (Mon Jul 24 2023)
+
+#### 🚀 Enhancement
+
+- feat: Добавлены виджеты в SystemMessage [#54](https://github.com/salute-developers/salutejs/pull/54) ([@ivan-ushatsky](https://github.com/ivan-ushatsky))
+- feat: Добавлены виджеты в SystemMessage ([@ivan-ushatsky](https://github.com/ivan-ushatsky))
+
+#### Authors: 1
+
+- Ivan Ushatsky ([@ivan-ushatsky](https://github.com/ivan-ushatsky))
+
+---
+
 # v0.36.0 (Thu May 25 2023)
 
 #### 🚀 Enhancement

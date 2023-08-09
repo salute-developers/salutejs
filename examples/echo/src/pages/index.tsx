@@ -1,22 +1,16 @@
 import { useEffect, useRef, useState } from 'react';
+import dynamic from 'next/dynamic';
 import { Container, DeviceThemeProvider } from '@salutejs/plasma-ui';
 import {
     CharacterId,
     AssistantAppState,
     AssistantNavigationCommand,
     createAssistant,
-    createSmartappDebugger,
     AssistantClientCommand,
 } from '@salutejs/client';
 
 import { GlobalStyles } from '../Components/GlobalStyles';
 import { useScenario } from '../hooks/useScenario';
-
-const IS_DEVELOPMENT = process.env.NODE_ENV === 'development';
-// eslint-disable-next-line prefer-destructuring
-const NEXT_PUBLIC_DEV_TOKEN = process.env.NEXT_PUBLIC_DEV_TOKEN;
-// eslint-disable-next-line prefer-destructuring
-const NEXT_PUBLIC_DEV_PHRASE = process.env.NEXT_PUBLIC_DEV_PHRASE;
 
 const IndexPage = () => {
     const [character, setCharacter] = useState<CharacterId>('sber' as const);
@@ -28,19 +22,7 @@ const IndexPage = () => {
 
     useEffect(() => {
         const initializeAssistant = () => {
-            if (!IS_DEVELOPMENT) {
-                return createAssistant({
-                    getState: () => assistantStateRef.current,
-                });
-            }
-
-            if (!NEXT_PUBLIC_DEV_TOKEN || !NEXT_PUBLIC_DEV_PHRASE) {
-                throw new Error('');
-            }
-
-            return createSmartappDebugger({
-                token: NEXT_PUBLIC_DEV_TOKEN,
-                initPhrase: NEXT_PUBLIC_DEV_PHRASE,
+            return createAssistant({
                 getState: () => assistantStateRef.current,
             });
         };
@@ -89,4 +71,6 @@ const IndexPage = () => {
     );
 };
 
-export default IndexPage;
+export default dynamic(() => Promise.resolve(IndexPage), {
+    ssr: false
+  })

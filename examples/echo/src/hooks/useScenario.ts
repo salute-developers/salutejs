@@ -34,6 +34,7 @@ const addition: SaluteHandler<SaluteRequest> = ({ req, res }) => {
     }, 0);
 
     res.setPronounceText(`Результат ${result}`);
+    res.appendBubble(`Результат ${result}`);
 };
 
 const { regexp } = createMatchers<SaluteRequest>();

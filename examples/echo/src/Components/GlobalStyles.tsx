@@ -1,17 +1,17 @@
 import { FC, useMemo } from 'react';
 import { createGlobalStyle } from 'styled-components';
-import { darkSber, darkEva, darkJoy } from '@sberdevices/plasma-tokens/themes';
+import { salutejs_sber__dark, salutejs_eva__dark, salutejs_joy__dark } from '@salutejs/plasma-tokens';
 import {
     text, // Цвет текста
     background, // Цвет подложки
     gradient, // Градиент
-} from '@sberdevices/plasma-tokens';
-import { AssistantCharacterType } from '@sberdevices/assistant-client';
+} from '@salutejs/plasma-tokens';
+import type { CharacterId } from '@salutejs/client';
 
 const themes = {
-    sber: createGlobalStyle(darkEva),
-    eva: createGlobalStyle(darkSber),
-    joy: createGlobalStyle(darkJoy),
+    sber: createGlobalStyle(salutejs_eva__dark),
+    eva: createGlobalStyle(salutejs_sber__dark),
+    joy: createGlobalStyle(salutejs_joy__dark),
 };
 
 const DocumentStyle = createGlobalStyle`
@@ -23,7 +23,7 @@ const DocumentStyle = createGlobalStyle`
     }
 `;
 
-export const GlobalStyles: FC<{ character: AssistantCharacterType }> = ({ character }) => {
+export const GlobalStyles: FC<{ character: CharacterId }> = ({ character }) => {
     const Theme = useMemo(() => themes[character], [character]);
     return (
         <>

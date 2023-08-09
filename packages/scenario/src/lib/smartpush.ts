@@ -1,19 +1,11 @@
 import fetch from 'node-fetch';
+import { v4 as uuidv4 } from 'uuid';
 
 import { DeliveryConfig, Destination, SmartPushRequest, SmartPushResponse } from './types/push';
 import { DefaultChannels } from './types/systemMessage';
 
 const URL = 'https://salute.online.sberbank.ru:9443/api/v2/smartpush/apprequest';
 const TOKEN_URL = 'https://salute.online.sberbank.ru:9443/api/v2/oauth';
-
-const uuidv4 = () =>
-    'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
-        // eslint-disable-next-line no-bitwise
-        const r = (Math.random() * 16) | 0;
-        // eslint-disable-next-line no-bitwise
-        const v = c === 'x' ? r : (r & 0x3) | 0x8;
-        return v.toString(16);
-    });
 
 const requestAccesToken = async ({
     clientId,

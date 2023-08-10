@@ -112,6 +112,9 @@ export type NLPRequestTPD = NLPRequestBody<
             customer_name?: string;
             surname?: string;
             patronymic?: string;
+            birthDate?: string;
+            phone_number?: string;
+            email?: string;
             address?: {
                 address_string: string;
                 address_type: string;
@@ -134,7 +137,6 @@ export type NLPRequestTPD = NLPRequestBody<
                 house: string;
                 settlement?: string;
             };
-            phone_number?: string;
         };
         status_code: TakeProfileDataStatuses;
     }

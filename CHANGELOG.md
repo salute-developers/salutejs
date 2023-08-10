@@ -1,3 +1,54 @@
+# (Thu Aug 10 2023)
+
+#### 🐛 Bug Fix
+
+- chore: удален publish в examples/todo [#78](https://github.com/salute-developers/salutejs/pull/78) ([@sasha-tlt](https://github.com/sasha-tlt))
+- chore: актуализирован examples/todo [#76](https://github.com/salute-developers/salutejs/pull/76) ([@sasha-tlt](https://github.com/sasha-tlt))
+- chore: актуализирован example/echo [#75](https://github.com/salute-developers/salutejs/pull/75) ([@sasha-tlt](https://github.com/sasha-tlt))
+- chore: node 18 в ci [#68](https://github.com/salute-developers/salutejs/pull/68) ([@sasha-tlt](https://github.com/sasha-tlt))
+- chore: codeql v2 [#58](https://github.com/salute-developers/salutejs/pull/58) ([@sasha-tlt](https://github.com/sasha-tlt))
+- `@salutejs/scenario@0.37.1`
+  - fix: исправлен NLPRequestTPD [#87](https://github.com/salute-developers/salutejs/pull/87) ([@sasha-tlt](https://github.com/sasha-tlt))
+  - chore: использовать либу uuid [#74](https://github.com/salute-developers/salutejs/pull/74) ([@sasha-tlt](https://github.com/sasha-tlt))
+- `@salutejs/recognizer-smartapp-brain@0.37.1`, `@salutejs/scenario@0.37.1`
+  - chore: lerna v6 [#68](https://github.com/salute-developers/salutejs/pull/68) ([@sasha-tlt](https://github.com/sasha-tlt))
+- `@salutejs/storage-adapter-firebase@0.37.1`
+  - chore: обновление firebase-admin [#59](https://github.com/salute-developers/salutejs/pull/59) ([@sasha-tlt](https://github.com/sasha-tlt))
+
+#### ⚠️ Pushed to `master`
+
+- chore: Create semgrep.yml ([@sasha-tlt](https://github.com/sasha-tlt))
+
+#### 🔩 Dependency Updates
+
+- chore(deps): bump qs and express in /examples/audiotour [#85](https://github.com/salute-developers/salutejs/pull/85) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps): bump got and nodemon in /examples/chatapp-brain [#84](https://github.com/salute-developers/salutejs/pull/84) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps-dev): bump semver from 6.3.0 to 6.3.1 in /examples/todo [#81](https://github.com/salute-developers/salutejs/pull/81) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps): bump qs and express in /examples/chatapp-brain [#83](https://github.com/salute-developers/salutejs/pull/83) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps): bump got and nodemon in /examples/echo [#80](https://github.com/salute-developers/salutejs/pull/80) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps): bump got and nodemon in /examples/payment-chatapp [#82](https://github.com/salute-developers/salutejs/pull/82) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps): bump qs and express in /examples/echo [#79](https://github.com/salute-developers/salutejs/pull/79) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps-dev): bump json5 from 1.0.1 to 1.0.2 [#66](https://github.com/salute-developers/salutejs/pull/66) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps-dev): bump jsdom from 16.4.0 to 16.7.0 [#70](https://github.com/salute-developers/salutejs/pull/70) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps): bump json-schema and jsprim [#72](https://github.com/salute-developers/salutejs/pull/72) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps-dev): bump tough-cookie from 4.1.2 to 4.1.3 in /examples/todo [#69](https://github.com/salute-developers/salutejs/pull/69) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps-dev): bump qs from 6.5.2 to 6.5.3 [#64](https://github.com/salute-developers/salutejs/pull/64) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps-dev): bump word-wrap from 1.2.3 to 1.2.5 [#63](https://github.com/salute-developers/salutejs/pull/63) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps-dev): bump decode-uri-component from 0.2.0 to 0.2.2 [#61](https://github.com/salute-developers/salutejs/pull/61) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- `@salutejs/recognizer-smartapp-brain@0.37.1`
+  - chore(deps): bump node-fetch from 2.6.1 to 2.6.7 in /packages/recognizer-smartapp-brain [#62](https://github.com/salute-developers/salutejs/pull/62) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- `@salutejs/scenario@0.37.1`
+  - chore(deps): bump node-fetch from 2.6.1 to 2.6.7 in /packages/scenario [#60](https://github.com/salute-developers/salutejs/pull/60) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- `@salutejs/storage-adapter-firebase@0.37.1`
+  - chore(deps): bump semver from 5.7.1 to 5.7.2 in /packages/storage-adapter-firebase [#55](https://github.com/salute-developers/salutejs/pull/55) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Alexander Salmin ([@sasha-tlt](https://github.com/sasha-tlt))
+
+---
+
 # (Mon Jul 24 2023)
 
 #### 🚀 Enhancement

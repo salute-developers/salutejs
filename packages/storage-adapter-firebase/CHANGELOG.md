@@ -1,3 +1,22 @@
+# v0.37.1 (Thu Aug 10 2023)
+
+#### 🐛 Bug Fix
+
+- chore: обновление firebase-admin [#59](https://github.com/salute-developers/salutejs/pull/59) ([@sasha-tlt](https://github.com/sasha-tlt))
+- chore: обновление firebase-admin ([@sasha-tlt](https://github.com/sasha-tlt))
+- chore(deps): bump semver in /packages/storage-adapter-firebase ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### 🔩 Dependency Updates
+
+- chore(deps): bump semver from 5.7.1 to 5.7.2 in /packages/storage-adapter-firebase [#55](https://github.com/salute-developers/salutejs/pull/55) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Alexander Salmin ([@sasha-tlt](https://github.com/sasha-tlt))
+
+---
+
 # v0.33.3 (Tue Apr 18 2023)
 
 #### 🐛 Bug Fix

@@ -1,3 +1,25 @@
+# v0.37.1 (Thu Aug 10 2023)
+
+#### 🐛 Bug Fix
+
+- fix: исправлен NLPRequestTPD [#87](https://github.com/salute-developers/salutejs/pull/87) ([@sasha-tlt](https://github.com/sasha-tlt))
+- fix: исправлен NLPRequestTPD ([@sasha-tlt](https://github.com/sasha-tlt))
+- chore: использовать либу uuid [#74](https://github.com/salute-developers/salutejs/pull/74) ([@sasha-tlt](https://github.com/sasha-tlt))
+- chore: использовать либу uuid ([@sasha-tlt](https://github.com/sasha-tlt))
+- chore: lerna v6 [#68](https://github.com/salute-developers/salutejs/pull/68) ([@sasha-tlt](https://github.com/sasha-tlt))
+- chore(deps): bump node-fetch from 2.6.1 to 2.6.7 in /packages/scenario ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### 🔩 Dependency Updates
+
+- chore(deps): bump node-fetch from 2.6.1 to 2.6.7 in /packages/scenario [#60](https://github.com/salute-developers/salutejs/pull/60) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Alexander Salmin ([@sasha-tlt](https://github.com/sasha-tlt))
+
+---
+
 # v0.37.0 (Mon Jul 24 2023)
 
 #### 🚀 Enhancement

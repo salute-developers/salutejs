@@ -1,3 +1,22 @@
+# v0.37.1 (Thu Aug 10 2023)
+
+#### 🐛 Bug Fix
+
+- chore(deps): bump node-fetch in /packages/recognizer-smartapp-brain ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore: lerna v6 [#68](https://github.com/salute-developers/salutejs/pull/68) ([@sasha-tlt](https://github.com/sasha-tlt))
+
+#### 🔩 Dependency Updates
+
+- chore(deps-dev): bump jsdom from 16.4.0 to 16.7.0 [#70](https://github.com/salute-developers/salutejs/pull/70) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps): bump node-fetch from 2.6.1 to 2.6.7 in /packages/recognizer-smartapp-brain [#62](https://github.com/salute-developers/salutejs/pull/62) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Alexander Salmin ([@sasha-tlt](https://github.com/sasha-tlt))
+
+---
+
 # v0.33.3 (Tue Apr 18 2023)
 
 #### 🐛 Bug Fix

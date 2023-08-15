@@ -1536,6 +1536,10 @@ export interface TextView {
      * текст который бедет озвучен при выборе карточки механизмом accessibility
      */
     accessibility?: string;
+    /**
+     * Признак чувствительной информации
+     */
+    sensitive?: boolean;
     [k: string]: unknown;
 }
 /**

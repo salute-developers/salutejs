@@ -1,3 +1,16 @@
+# (Tue Aug 15 2023)
+
+#### 🚀 Enhancement
+
+- `@salutejs/scenario@0.38.0`
+  - feat: В TextView добавлен признак чувствительной информации [#88](https://github.com/salute-developers/salutejs/pull/88) ([@ivan-ushatsky](https://github.com/ivan-ushatsky))
+
+#### Authors: 1
+
+- Ivan Ushatsky ([@ivan-ushatsky](https://github.com/ivan-ushatsky))
+
+---
+
 # (Thu Aug 10 2023)
 
 #### 🐛 Bug Fix

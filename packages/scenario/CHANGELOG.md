@@ -1,3 +1,16 @@
+# v0.38.0 (Tue Aug 15 2023)
+
+#### 🚀 Enhancement
+
+- feat: В TextView добавлен признак чувствительной информации [#88](https://github.com/salute-developers/salutejs/pull/88) ([@ivan-ushatsky](https://github.com/ivan-ushatsky))
+- feat: В TextView добавлен признак чувствительной информации ([@ivan-ushatsky](https://github.com/ivan-ushatsky))
+
+#### Authors: 1
+
+- Ivan Ushatsky ([@ivan-ushatsky](https://github.com/ivan-ushatsky))
+
+---
+
 # v0.37.1 (Thu Aug 10 2023)
 
 #### 🐛 Bug Fix

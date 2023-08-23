@@ -1,6 +1,6 @@
 {
   "name": "@salutejs/storage-adapter-memory",
-  "version": "0.38.0",
+  "version": "0.38.1",
   "description": "In memory storage adapter for SaluteJS",
   "author": "Salute Frontend Team <salute.developers@gmail.com>",
   "main": "dist/index.js",
@@ -29,6 +29,6 @@
     "typescript": "4.1.3"
   },
   "dependencies": {
-    "@salutejs/scenario": "0.38.0"
+    "@salutejs/scenario": "0.38.1"
   }
 }

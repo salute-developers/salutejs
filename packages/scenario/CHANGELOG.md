@@ -1,3 +1,16 @@
+# v0.38.1 (Wed Aug 23 2023)
+
+#### 🐛 Bug Fix
+
+- fix: Актуализировать NLPRequestTPD [#89](https://github.com/salute-developers/salutejs/pull/89) ([@sasha-tlt](https://github.com/sasha-tlt))
+- fix: Актуализировать NLPRequestTPD ([@sasha-tlt](https://github.com/sasha-tlt))
+
+#### Authors: 1
+
+- Alexander Salmin ([@sasha-tlt](https://github.com/sasha-tlt))
+
+---
+
 # v0.38.0 (Tue Aug 15 2023)
 
 #### 🚀 Enhancement

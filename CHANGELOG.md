@@ -1,3 +1,16 @@
+# (Wed Aug 23 2023)
+
+#### 🐛 Bug Fix
+
+- `@salutejs/scenario@0.38.1`
+  - fix: Актуализировать NLPRequestTPD [#89](https://github.com/salute-developers/salutejs/pull/89) ([@sasha-tlt](https://github.com/sasha-tlt))
+
+#### Authors: 1
+
+- Alexander Salmin ([@sasha-tlt](https://github.com/sasha-tlt))
+
+---
+
 # (Tue Aug 15 2023)
 
 #### 🚀 Enhancement

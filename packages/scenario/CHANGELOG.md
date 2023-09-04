@@ -1,3 +1,16 @@
+# v0.39.0 (Mon Sep 04 2023)
+
+#### 🚀 Enhancement
+
+- feat: Передавать user_id при создании платежки [#92](https://github.com/salute-developers/salutejs/pull/92) ([@sasha-tlt](https://github.com/sasha-tlt))
+- feat: Передавать user_id при создании платежки ([@sasha-tlt](https://github.com/sasha-tlt))
+
+#### Authors: 1
+
+- Alexander Salmin ([@sasha-tlt](https://github.com/sasha-tlt))
+
+---
+
 # v0.38.1 (Wed Aug 23 2023)
 
 #### 🐛 Bug Fix

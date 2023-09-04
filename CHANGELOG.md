@@ -1,3 +1,22 @@
+# (Mon Sep 04 2023)
+
+#### 🚀 Enhancement
+
+- `@salutejs/scenario@0.39.0`
+  - feat: Передавать user_id при создании платежки [#92](https://github.com/salute-developers/salutejs/pull/92) ([@sasha-tlt](https://github.com/sasha-tlt))
+
+#### 🔩 Dependency Updates
+
+- chore(deps): bump protobufjs and @salutejs/client in /examples/todo [#91](https://github.com/salute-developers/salutejs/pull/91) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps): bump protobufjs and @salutejs/client in /examples/echo [#90](https://github.com/salute-developers/salutejs/pull/90) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Alexander Salmin ([@sasha-tlt](https://github.com/sasha-tlt))
+
+---
+
 # (Wed Aug 23 2023)
 
 #### 🐛 Bug Fix

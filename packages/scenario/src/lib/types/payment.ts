@@ -175,8 +175,16 @@ export interface PaymentInvoice {
     };
 }
 
+type PaymentUserId =
+    | { partner_client_id: string }
+    | { user_uid: string }
+    | { encrypted_sub_id: string }
+    | { partner_client_sub_id: string };
+
 /** Запрос счета */
 export interface PaymentInvoiceQuery {
+    /** Внешний идентификатор клиента партнера */
+    user_id?: PaymentUserId;
     /** Тип оплаты счета, по умолчанию используется одностадийная оплата */
     ptype?: PaymentTypes;
     /** В этом блоке передается вся информация о регистрируемой покупке */

@@ -1,3 +1,18 @@
+# (Tue Sep 05 2023)
+
+#### 🐛 Bug Fix
+
+- chore: bump @salutejs/client [#94](https://github.com/salute-developers/salutejs/pull/94) ([@sasha-tlt](https://github.com/sasha-tlt))
+- chore: конфиг semgrep [#93](https://github.com/salute-developers/salutejs/pull/93) ([@sasha-tlt](https://github.com/sasha-tlt))
+- `@salutejs/scenario@0.39.1`
+  - fix: добавить бумы в surface [#95](https://github.com/salute-developers/salutejs/pull/95) ([@sasha-tlt](https://github.com/sasha-tlt))
+
+#### Authors: 1
+
+- Alexander Salmin ([@sasha-tlt](https://github.com/sasha-tlt))
+
+---
+
 # (Mon Sep 04 2023)
 
 #### 🚀 Enhancement

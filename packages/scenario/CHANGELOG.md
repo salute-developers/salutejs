@@ -1,3 +1,16 @@
+# v0.39.1 (Tue Sep 05 2023)
+
+#### 🐛 Bug Fix
+
+- fix: добавить бумы в surface [#95](https://github.com/salute-developers/salutejs/pull/95) ([@sasha-tlt](https://github.com/sasha-tlt))
+- fix: добавить бумы в surface ([@sasha-tlt](https://github.com/sasha-tlt))
+
+#### Authors: 1
+
+- Alexander Salmin ([@sasha-tlt](https://github.com/sasha-tlt))
+
+---
+
 # v0.39.0 (Mon Sep 04 2023)
 
 #### 🚀 Enhancement

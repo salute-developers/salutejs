@@ -95,7 +95,7 @@ export type LocalImageIdentificator =
     | 'coin'
     | 'coin_heart'
     | 'color_spasibo'
-    | 'color_total'
+    | 'total'
     | 'counterclock_wise'
     | 'crown'
     | 'digital_banknotes'

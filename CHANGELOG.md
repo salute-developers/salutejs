@@ -1,3 +1,30 @@
+# (Wed Oct 25 2023)
+
+#### 🚀 Enhancement
+
+- `@salutejs/scenario@0.40.0`
+  - feat: Добавление иконки total в LocalImageIdentificator [#110](https://github.com/salute-developers/salutejs/pull/110) ([@ivan-ushatsky](https://github.com/ivan-ushatsky))
+
+#### 🔩 Dependency Updates
+
+- chore(deps): bump node-fetch from 2.6.1 to 2.6.7 in /examples/payment-chatapp [#106](https://github.com/salute-developers/salutejs/pull/106) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps): bump node-fetch from 2.6.1 to 2.6.7 in /examples/chatapp-brain [#104](https://github.com/salute-developers/salutejs/pull/104) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps): bump node-fetch from 2.6.1 to 2.6.7 in /examples/audiotour [#102](https://github.com/salute-developers/salutejs/pull/102) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps): bump postcss and next in /examples/echo [#98](https://github.com/salute-developers/salutejs/pull/98) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps): bump postcss and next in /examples/todo [#97](https://github.com/salute-developers/salutejs/pull/97) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps): bump @babel/traverse from 7.22.10 to 7.23.2 in /examples/echo [#101](https://github.com/salute-developers/salutejs/pull/101) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps): bump @babel/traverse from 7.14.2 to 7.23.2 in /examples/todo [#100](https://github.com/salute-developers/salutejs/pull/100) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps-dev): bump @babel/traverse from 7.12.13 to 7.23.2 [#99](https://github.com/salute-developers/salutejs/pull/99) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- `@salutejs/storage-adapter-firebase@0.40.0`
+  - chore(deps): bump node-fetch from 2.6.1 to 2.6.7 in /packages/storage-adapter-firebase [#105](https://github.com/salute-developers/salutejs/pull/105) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Ivan Ushatsky ([@ivan-ushatsky](https://github.com/ivan-ushatsky))
+
+---
+
 # (Tue Sep 05 2023)
 
 #### 🐛 Bug Fix

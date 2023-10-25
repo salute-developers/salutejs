@@ -1,3 +1,16 @@
+# v0.40.0 (Wed Oct 25 2023)
+
+#### 🚀 Enhancement
+
+- feat: Добавление иконки total в LocalImageIdentificator [#110](https://github.com/salute-developers/salutejs/pull/110) ([@ivan-ushatsky](https://github.com/ivan-ushatsky))
+- feat: Добавление иконки total в LocalImageIdentificator ([@ivan-ushatsky](https://github.com/ivan-ushatsky))
+
+#### Authors: 1
+
+- Ivan Ushatsky ([@ivan-ushatsky](https://github.com/ivan-ushatsky))
+
+---
+
 # v0.39.1 (Tue Sep 05 2023)
 
 #### 🐛 Bug Fix

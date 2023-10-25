@@ -1,3 +1,20 @@
+# v0.40.0 (Wed Oct 25 2023)
+
+#### 🐛 Bug Fix
+
+- chore(deps): bump node-fetch in /packages/storage-adapter-firebase ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### 🔩 Dependency Updates
+
+- chore(deps): bump node-fetch from 2.6.1 to 2.6.7 in /examples/payment-chatapp [#106](https://github.com/salute-developers/salutejs/pull/106) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps): bump node-fetch from 2.6.1 to 2.6.7 in /packages/storage-adapter-firebase [#105](https://github.com/salute-developers/salutejs/pull/105) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 1
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+
+---
+
 # v0.37.1 (Thu Aug 10 2023)
 
 #### 🐛 Bug Fix

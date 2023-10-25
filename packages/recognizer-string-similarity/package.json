@@ -1,6 +1,6 @@
 {
   "name": "@salutejs/recognizer-string-similarity",
-  "version": "0.39.1",
+  "version": "0.40.0",
   "description": "String Similarity recognizer for SaluteJS",
   "author": "Salute Frontend Team <salute.developers@gmail.com>",
   "main": "dist/index.js",
@@ -30,7 +30,7 @@
     "typescript": "4.1.3"
   },
   "dependencies": {
-    "@salutejs/scenario": "0.39.1",
+    "@salutejs/scenario": "0.40.0",
     "string-similarity": "4.0.4"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@salutejs/storage-adapter-firebase",
-  "version": "0.39.1",
+  "version": "0.40.0",
   "description": "Firebase database adapter for Salute family",
   "author": "Salute Frontend Team <salute.developers@gmail.com>",
   "main": "dist/index.js",
@@ -31,7 +31,7 @@
   "dependencies": {
     "@google-cloud/firestore": "6.6.0",
     "@google-cloud/storage": "6.9.5",
-    "@salutejs/scenario": "0.39.1",
+    "@salutejs/scenario": "0.40.0",
     "firebase-admin": "11.10.1"
   }
 }

@@ -1,7 +1,7 @@
 {
   "name": "audiotour",
   "private": "true",
-  "version": "1.38.1",
+  "version": "1.39.0",
   "author": "Salute Frontend Team <salute.developers@gmail.com>",
   "main": "index.js",
   "scripts": {
@@ -10,9 +10,9 @@
   },
   "description": "",
   "dependencies": {
-    "@salutejs/recognizer-smartapp-brain": "0.39.1",
-    "@salutejs/scenario": "0.39.1",
-    "@salutejs/storage-adapter-memory": "0.39.1",
+    "@salutejs/recognizer-smartapp-brain": "0.40.0",
+    "@salutejs/scenario": "0.40.0",
+    "@salutejs/storage-adapter-memory": "0.40.0",
     "dotenv": "8.2.0",
     "express": "4.18.2",
     "lossless-json": "2.0.8"

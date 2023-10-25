@@ -190,6 +190,7 @@ export type LocalImageIdentificator =
     | 'student_hat'
     | 'telephone'
     | 'thermometer'
+    | 'total'
     | 'trash'
     | 'tv_set'
     | 'umbrella'

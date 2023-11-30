@@ -29,8 +29,8 @@
     "typescript": "4.8.3"
   },
   "dependencies": {
-    "@google-cloud/firestore": "6.6.0",
-    "@google-cloud/storage": "6.9.5",
+    "@google-cloud/firestore": "6.7.0",
+    "@google-cloud/storage": "6.12.0",
     "@salutejs/scenario": "0.40.0",
     "firebase-admin": "11.10.1"
   }

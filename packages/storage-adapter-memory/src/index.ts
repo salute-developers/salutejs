@@ -16,7 +16,7 @@ export class SaluteMemoryStorage implements SaluteSessionStorage {
 
     async save({ id, session, lifetime = 0 }: { id: string; session: SaluteSession; lifetime?: number }) {
         this.sessions[id] = session;
-        if (lifetime) {
+        if (lifetime > 0) {
             this.sessions[id].expires = Date.now() + lifetime;
         }
 

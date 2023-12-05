@@ -3,6 +3,14 @@ import { SaluteSession, SaluteSessionStorage } from '@salutejs/scenario';
 export class SaluteMemoryStorage implements SaluteSessionStorage {
     private sessions: Record<string, SaluteSession> = {};
 
+    private lifetime: number;
+
+    constructor({ lifetime = 60 * 60 * 1000 }: { lifetime?: number } = {}) {
+        this.lifetime = lifetime;
+
+        setInterval(this.validate.bind(this), 60 * 1000);
+    }
+
     async resolve(id: string) {
         return Promise.resolve(
             this.sessions[id] || {
@@ -10,14 +18,16 @@ export class SaluteMemoryStorage implements SaluteSessionStorage {
                 variables: {},
                 slotFilling: false,
                 state: {},
+                expires: this.lifetime > 0 ? Date.now() + this.lifetime : undefined,
             },
         );
     }
 
-    async save({ id, session, lifetime = 0 }: { id: string; session: SaluteSession; lifetime?: number }) {
+    async save({ id, session }: { id: string; session: SaluteSession }) {
         this.sessions[id] = session;
-        if (lifetime > 0) {
-            this.sessions[id].expires = Date.now() + lifetime;
+
+        if (this.lifetime > 0) {
+            this.sessions[id].expires = Date.now() + this.lifetime;
         }
 
         return Promise.resolve();
@@ -29,6 +39,7 @@ export class SaluteMemoryStorage implements SaluteSessionStorage {
             variables: {},
             slotFilling: false,
             state: {},
+            expires: this.lifetime > 0 ? Date.now() + this.lifetime : undefined,
         };
 
         return Promise.resolve();
@@ -37,6 +48,7 @@ export class SaluteMemoryStorage implements SaluteSessionStorage {
     async validate() {
         Object.keys(this.sessions).forEach((sessionId) => {
             const { expires } = this.sessions[sessionId];
+
             if (expires && expires < Date.now()) {
                 delete this.sessions[sessionId];
             }

@@ -1,3 +1,16 @@
+# v0.41.0 (Tue Dec 05 2023)
+
+#### 🚀 Enhancement
+
+- feat: Срок действия сессии в памяти [#114](https://github.com/salute-developers/salutejs/pull/114) ([@sasha-tlt](https://github.com/sasha-tlt))
+- feat: Срок действия сессии в памяти ([@sasha-tlt](https://github.com/sasha-tlt))
+
+#### Authors: 1
+
+- Alexander Salmin ([@sasha-tlt](https://github.com/sasha-tlt))
+
+---
+
 # v0.40.0 (Wed Oct 25 2023)
 
 #### 🚀 Enhancement

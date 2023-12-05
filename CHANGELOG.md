@@ -1,3 +1,26 @@
+# (Tue Dec 05 2023)
+
+#### 🚀 Enhancement
+
+- `@salutejs/scenario@0.41.0`, `@salutejs/storage-adapter-memory@0.41.0`
+  - feat: Срок действия сессии в памяти [#114](https://github.com/salute-developers/salutejs/pull/114) ([@sasha-tlt](https://github.com/sasha-tlt))
+
+#### 🐛 Bug Fix
+
+- `@salutejs/storage-adapter-firebase@0.41.0`
+  - chore: bump firebase packages [#113](https://github.com/salute-developers/salutejs/pull/113) ([@sasha-tlt](https://github.com/sasha-tlt))
+
+#### 🔩 Dependency Updates
+
+- chore(deps-dev): bump axios from 1.4.0 to 1.6.1 [#111](https://github.com/salute-developers/salutejs/pull/111) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Alexander Salmin ([@sasha-tlt](https://github.com/sasha-tlt))
+
+---
+
 # (Wed Oct 25 2023)
 
 #### 🚀 Enhancement

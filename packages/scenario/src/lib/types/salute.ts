@@ -166,6 +166,7 @@ export interface SaluteSession {
     currentIntent?: string;
     state: Record<string, unknown>;
     missingVariableName?: string;
+    expires?: number;
 }
 
 export interface Recognizer {

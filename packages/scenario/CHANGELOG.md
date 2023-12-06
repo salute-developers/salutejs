@@ -1,3 +1,16 @@
+# v1.0.0 (Wed Dec 06 2023)
+
+#### 💥 Breaking Change
+
+- BREAKING: Добавлена автовалидация жизни сессии в StorageAdapter [#117](https://github.com/salute-developers/salutejs/pull/117) ([@evgeniysemin](https://github.com/evgeniysemin))
+- BREAKING: Добавлена автовалидация жизни сессии в StorageAdapter ([@evgeniysemin](https://github.com/evgeniysemin))
+
+#### Authors: 1
+
+- [@evgeniysemin](https://github.com/evgeniysemin)
+
+---
+
 # v0.41.0 (Tue Dec 05 2023)
 
 #### 🚀 Enhancement

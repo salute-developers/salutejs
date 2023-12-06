@@ -1,3 +1,16 @@
+# (Wed Dec 06 2023)
+
+#### 💥 Breaking Change
+
+- `@salutejs/scenario@1.0.0`, `@salutejs/storage-adapter-memory@1.0.0`
+  - BREAKING: Добавлена автовалидация жизни сессии в StorageAdapter [#117](https://github.com/salute-developers/salutejs/pull/117) ([@evgeniysemin](https://github.com/evgeniysemin))
+
+#### Authors: 1
+
+- [@evgeniysemin](https://github.com/evgeniysemin)
+
+---
+
 # (Tue Dec 05 2023)
 
 #### 🚀 Enhancement

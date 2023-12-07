@@ -1,17 +1,18 @@
 import { SaluteSession, SaluteSessionStorage } from '@salutejs/scenario';
 
-export class SaluteMemoryStorage implements SaluteSessionStorage {
-    private sessions: Record<string, SaluteSession> = {};
+export class SaluteMemoryStorage<S extends Record<string, unknown> = Record<string, unknown>>
+    implements SaluteSessionStorage {
+    private sessions: Record<string, SaluteSession<S>> = {};
 
     private lifetime: number;
 
     constructor({ lifetime = 60 * 60 * 1000 }: { lifetime?: number } = {}) {
         this.lifetime = lifetime;
-
-        setInterval(this.validate.bind(this), 60 * 1000);
     }
 
     async resolve(id: string) {
+        this.validate();
+
         return Promise.resolve(
             this.sessions[id] || {
                 path: [],
@@ -23,7 +24,7 @@ export class SaluteMemoryStorage implements SaluteSessionStorage {
         );
     }
 
-    async save({ id, session }: { id: string; session: SaluteSession }) {
+    async save({ id, session }: { id: string; session: SaluteSession<S> }) {
         this.sessions[id] = session;
 
         if (this.lifetime > 0) {

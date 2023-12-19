@@ -1,3 +1,16 @@
+# v1.0.1 (Tue Dec 19 2023)
+
+#### 🐛 Bug Fix
+
+- fix: Исправлены типы в Scenario [#118](https://github.com/salute-developers/salutejs/pull/118) ([@evgeniysemin](https://github.com/evgeniysemin))
+- fix: Исправлены типы в Scenario ([@evgeniysemin](https://github.com/evgeniysemin))
+
+#### Authors: 1
+
+- [@evgeniysemin](https://github.com/evgeniysemin)
+
+---
+
 # v1.0.0 (Wed Dec 06 2023)
 
 #### 💥 Breaking Change

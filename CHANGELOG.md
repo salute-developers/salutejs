@@ -1,3 +1,17 @@
+# (Tue Dec 19 2023)
+
+#### 🐛 Bug Fix
+
+- test: Исправлена нестабильная сборка в CI [#122](https://github.com/salute-developers/salutejs/pull/122) ([@evgeniysemin](https://github.com/evgeniysemin))
+- `@salutejs/scenario@1.0.1`, `@salutejs/storage-adapter-memory@1.0.1`
+  - fix: Исправлены типы в Scenario [#118](https://github.com/salute-developers/salutejs/pull/118) ([@evgeniysemin](https://github.com/evgeniysemin))
+
+#### Authors: 1
+
+- [@evgeniysemin](https://github.com/evgeniysemin)
+
+---
+
 # (Wed Dec 06 2023)
 
 #### 💥 Breaking Change

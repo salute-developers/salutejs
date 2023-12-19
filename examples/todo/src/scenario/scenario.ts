@@ -5,7 +5,6 @@ import {
     createSaluteResponse,
     createScenarioWalker,
     createMatchers,
-    SaluteRequest,
     NLPRequest,
     NLPResponse,
 } from '@salutejs/scenario';
@@ -20,10 +19,11 @@ import {
     noMatchHandler,
     runAppHandler,
 } from './handlers';
+import { Session, Request, Handler } from './types';
 
-const { action, regexp, text } = createMatchers<SaluteRequest>();
+const { action, regexp, text } = createMatchers<Request>();
 
-const userScenario = createUserScenario({
+const userScenario = createUserScenario<Request, Session, Handler>({
     Profile: {
         match: text('профиль'),
         handle: ({ res }) => {
@@ -79,7 +79,7 @@ const userScenario = createUserScenario({
     },
 });
 
-const scenarioWalker = createScenarioWalker({
+const scenarioWalker = createScenarioWalker<Request, Session, Handler>({
     systemScenario: createSystemScenario({
         RUN_APP: runAppHandler,
         NO_MATCH: noMatchHandler,
@@ -87,10 +87,10 @@ const scenarioWalker = createScenarioWalker({
     userScenario,
 });
 
-const storage = new SaluteMemoryStorage();
+const storage = new SaluteMemoryStorage<Session>();
 
 export const handleNlpRequest = async (request: NLPRequest): Promise<NLPResponse> => {
-    const req = createSaluteRequest(request);
+    const req = createSaluteRequest<Request>(request);
     const res = createSaluteResponse(request);
 
     const sessionId = request.uuid.userId;

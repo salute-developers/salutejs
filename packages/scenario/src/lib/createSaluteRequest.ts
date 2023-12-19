@@ -1,15 +1,12 @@
 import { i18n } from './i18n';
 import { KeysetDictionary } from './types/i18n';
 import { NLPRequest, NLPRequestMTS, NLPRequestSA } from './types/request';
-import { DeprecatedServerAction, Inference, SaluteRequest, SaluteRequestVariable, Variant } from './types/salute';
-import { AppState } from './types/systemMessage';
+import { DeprecatedServerAction, Inference, SaluteRequest, Variant } from './types/salute';
 
-export const createSaluteRequest = (
-    request: NLPRequest,
-): SaluteRequest<SaluteRequestVariable, AppState, DeprecatedServerAction> => {
+export const createSaluteRequest = <Rq extends SaluteRequest = SaluteRequest>(request: NLPRequest) => {
     let inference: Inference;
     let variant: Variant;
-    const variables: SaluteRequestVariable = {};
+    const variables: Record<string, unknown> = {};
 
     return {
         get character() {
@@ -69,5 +66,5 @@ export const createSaluteRequest = (
         setVariant(v) {
             variant = v;
         },
-    };
+    } as Rq;
 };

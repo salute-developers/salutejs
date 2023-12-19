@@ -124,7 +124,7 @@ export interface SaluteResponse<T extends NLPResponse = NLPResponseATU> {
 }
 
 export type SaluteHandler<
-    Rq extends SaluteRequest = SaluteRequest<SaluteRequestVariable, AppState, DeprecatedServerAction>,
+    Rq extends SaluteRequest = SaluteRequest,
     S extends Record<string, unknown> = Record<string, unknown>,
     Rs extends SaluteResponse = SaluteResponse,
     H extends Record<string, unknown> = Record<string, unknown>
@@ -157,31 +157,33 @@ export type SaluteIntent = (
 
 export type IntentsDict = Record<string, SaluteIntent>;
 
-export interface SaluteSession {
+export type SaluteSession<S extends Record<string, unknown> = Record<string, unknown>> = {
     path: string[];
     slotFilling: boolean;
     variables: {
         [key: string]: unknown;
     };
     currentIntent?: string;
-    state: Record<string, unknown>;
+    state: S;
     missingVariableName?: string;
     expires?: number;
-}
+};
 
 export interface Recognizer {
     inference: (options: { req: SaluteRequest; res: SaluteResponse; session: SaluteSession }) => void;
 }
 
+export type ScenarioSchemaItem<
+    Rq extends SaluteRequest = SaluteRequest,
+    Sh extends SaluteHandler<Rq> = SaluteHandler<Rq>
+> = {
+    match: (req: Rq) => boolean;
+    schema?: string;
+    handle: Sh;
+    children?: Record<string, ScenarioSchemaItem<Rq, Sh>>;
+};
+
 export type ScenarioSchema<
     Rq extends SaluteRequest = SaluteRequest,
-    Sh extends SaluteHandler = SaluteHandler<SaluteRequest>
-> = Record<
-    string,
-    {
-        match: (req: Rq) => boolean;
-        schema?: string;
-        handle: Sh;
-        children?: ScenarioSchema<Rq>;
-    }
->;
+    Sh extends SaluteHandler<Rq> = SaluteHandler<Rq>
+> = Record<string, ScenarioSchemaItem<Rq, Sh>>;

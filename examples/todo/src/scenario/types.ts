@@ -1,4 +1,4 @@
-import { SaluteCommand, SaluteRequestVariable } from '@salutejs/scenario';
+import { SaluteCommand, SaluteRequestVariable, SaluteRequest, SaluteHandler } from '@salutejs/scenario';
 
 export interface Note {
     id: string;
@@ -37,3 +37,10 @@ export interface DeleteNoteCommand extends SaluteCommand {
 export interface NoteVariable extends SaluteRequestVariable {
     note: string;
 }
+
+export type Session = {
+    itemId: string;
+};
+
+export type Request = SaluteRequest<NoteVariable>;
+export type Handler = SaluteHandler<Request, Session>;

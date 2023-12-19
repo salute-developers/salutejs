@@ -1,23 +1,23 @@
-import { createMatchers, SaluteHandler, SaluteRequest } from '@salutejs/scenario';
+import { createMatchers } from '@salutejs/scenario';
 
-import { AddNoteCommand, DeleteNoteCommand, DoneNoteCommand, NoteVariable } from './types';
+import { AddNoteCommand, DeleteNoteCommand, DoneNoteCommand, Request, Handler } from './types';
 
-const { selectItem } = createMatchers<SaluteRequest<NoteVariable>>();
+const { selectItem } = createMatchers<Request>();
 
 const capitalize = (string: string) => string.charAt(0).toUpperCase() + string.slice(1);
 
-export const runAppHandler: SaluteHandler = ({ res }) => {
+export const runAppHandler: Handler = ({ res }) => {
     res.appendSuggestions(['Запиши купить молоко', 'Добавь запись помыть машину']);
     res.setPronounceText('начнем');
     res.appendBubble('Начнем');
 };
 
-export const noMatchHandler: SaluteHandler = ({ res }) => {
+export const noMatchHandler: Handler = ({ res }) => {
     res.setPronounceText('Я не понимаю');
     res.appendBubble('Я не понимаю');
 };
 
-export const addNote: SaluteHandler<SaluteRequest<NoteVariable>> = ({ req, res }) => {
+export const addNote: Handler = ({ req, res }) => {
     const { note } = req.variables;
     res.appendCommand<AddNoteCommand>({ type: 'add_note', payload: { note: capitalize(note) } });
     res.appendSuggestions(['Запиши купить молоко', 'Добавь запись помыть машину']);
@@ -26,7 +26,7 @@ export const addNote: SaluteHandler<SaluteRequest<NoteVariable>> = ({ req, res }
     res.setAutoListening(true);
 };
 
-export const doneNote: SaluteHandler<SaluteRequest<NoteVariable>> = ({ req, res }) => {
+export const doneNote: Handler = ({ req, res }) => {
     const { note } = req.variables;
     const item = selectItem({ title: note })(req);
     if (note && item?.id) {
@@ -40,10 +40,7 @@ export const doneNote: SaluteHandler<SaluteRequest<NoteVariable>> = ({ req, res 
     }
 };
 
-export const deleteNoteApproved: SaluteHandler<SaluteRequest<NoteVariable>, { itemId: string }> = ({
-    res,
-    session,
-}) => {
+export const deleteNoteApproved: Handler = ({ res, session }) => {
     const { itemId } = session;
 
     res.appendCommand<DeleteNoteCommand>({
@@ -55,12 +52,12 @@ export const deleteNoteApproved: SaluteHandler<SaluteRequest<NoteVariable>, { it
     res.appendBubble('Удалено');
 };
 
-export const deleteNoteCancelled: SaluteHandler = ({ res }) => {
+export const deleteNoteCancelled: Handler = ({ res }) => {
     res.setPronounceText('Удаление отменено');
     res.appendBubble('Удаление отменено');
 };
 
-export const deleteNote: SaluteHandler<SaluteRequest<NoteVariable>, { itemId: string }> = ({ req, res, session }) => {
+export const deleteNote: Handler = ({ req, res, session }) => {
     const { note } = req.variables;
     const item = selectItem({ title: note })(req);
     if (note && item?.id) {

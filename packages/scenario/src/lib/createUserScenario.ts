@@ -1,6 +1,23 @@
-import { SaluteRequest, ScenarioSchema } from './types/salute';
+import { SaluteHandler, SaluteRequest, ScenarioSchema, ScenarioSchemaItem } from './types/salute';
 
-export function createUserScenario<R extends SaluteRequest = SaluteRequest>(scenarioSchema: ScenarioSchema) {
+export type UserScenario<Rq extends SaluteRequest, Sh extends SaluteHandler<Rq>> = {
+    getByPath: (path: string[]) => ScenarioSchemaItem<Rq, Sh> | undefined;
+    resolve: (
+        path: string[],
+        req: Rq,
+    ) => {
+        path: string[];
+        state: ScenarioSchemaItem<Rq, Sh>;
+    } | null;
+};
+
+export const createUserScenario = <
+    Rq extends SaluteRequest = SaluteRequest,
+    Session extends Record<string, unknown> = Record<string, unknown>,
+    Sh extends SaluteHandler<Rq, Session> = SaluteHandler<Rq, Session>
+>(
+    scenarioSchema: ScenarioSchema<Rq, Sh>,
+): UserScenario<Rq, Sh> => {
     /**
      * Возвращает вложенные обработчики для указанного пути в дереве диалогов
      * @param path путь в дереве диалога
@@ -8,6 +25,7 @@ export function createUserScenario<R extends SaluteRequest = SaluteRequest>(scen
      */
     const getByPath = (path: string[]) => {
         let obj = scenarioSchema[path[0]];
+
         for (const p of path.slice(1)) {
             if (obj.children) {
                 obj = obj.children[p];
@@ -25,10 +43,10 @@ export function createUserScenario<R extends SaluteRequest = SaluteRequest>(scen
      * @param req объект запроса
      * @returns Возвращает объект вида { path, state }, где state - обработчик, path - путь из дерева диалогов
      */
-    const resolve = (path: string[], req: R) => {
+    const resolve = (path: string[], req: Rq) => {
         let matchedState: {
             path: string[];
-            state: ScenarioSchema['string'];
+            state: ScenarioSchemaItem<Rq, Sh>;
         } | null = null;
 
         if (path.length > 0) {
@@ -62,4 +80,4 @@ export function createUserScenario<R extends SaluteRequest = SaluteRequest>(scen
         getByPath,
         resolve,
     };
-}
+};

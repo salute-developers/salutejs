@@ -1,6 +1,6 @@
 import { FC, useMemo } from 'react';
 import { createGlobalStyle } from 'styled-components';
-import type { CharacterId } from '@salutejs/scenario';
+import type { CharacterId } from '@salutejs/client';
 import { darkJoy, darkEva, darkSber } from '@salutejs/plasma-tokens/themes';
 import { text, background, gradient } from '@salutejs/plasma-tokens';
 

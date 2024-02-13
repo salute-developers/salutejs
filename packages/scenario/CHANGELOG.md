@@ -1,3 +1,16 @@
+# v1.0.2 (Tue Feb 13 2024)
+
+#### 🐛 Bug Fix
+
+- fix: athena вместо eva [#125](https://github.com/salute-developers/salutejs/pull/125) ([@sasha-tlt](https://github.com/sasha-tlt))
+- fix: athena вместо eva ([@sasha-tlt](https://github.com/sasha-tlt))
+
+#### Authors: 1
+
+- Alexander Salmin ([@sasha-tlt](https://github.com/sasha-tlt))
+
+---
+
 # v1.0.1 (Tue Dec 19 2023)
 
 #### 🐛 Bug Fix

@@ -1,3 +1,16 @@
+# (Tue Feb 13 2024)
+
+#### 🐛 Bug Fix
+
+- `@salutejs/scenario@1.0.2`
+  - fix: athena вместо eva [#125](https://github.com/salute-developers/salutejs/pull/125) ([@sasha-tlt](https://github.com/sasha-tlt))
+
+#### Authors: 1
+
+- Alexander Salmin ([@sasha-tlt](https://github.com/sasha-tlt))
+
+---
+
 # (Tue Dec 19 2023)
 
 #### 🐛 Bug Fix

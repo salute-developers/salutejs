@@ -227,7 +227,7 @@ export type Surface =
 /**
  * Идентификатор персонажа, которого выбрал пользователь.
  */
-export type CharacterId = 'sber' | 'eva' | 'joy';
+export type CharacterId = 'sber' | 'athena' | 'joy';
 /**
  * Имя персонажа.
  */

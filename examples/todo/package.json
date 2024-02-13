@@ -11,7 +11,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@salutejs/client": "1.21.5",
+    "@salutejs/client": "1.32.6",
     "@salutejs/plasma-icons": "1.150.0",
     "@salutejs/plasma-tokens": "1.55.0",
     "@salutejs/plasma-ui": "1.197.0",

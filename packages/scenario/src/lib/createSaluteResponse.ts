@@ -244,6 +244,9 @@ export const createSaluteResponse = <T extends NLPResponse = NLPResponseATU>(req
 
             message.payload.asr_hints = hints;
         },
+        setPayload: (payload, messageName) => {
+            message = { ...message, payload, messageName: messageName || message.messageName } as NLPResponse;
+        },
         overrideFrontendEndpoint: (frontendEndpoint: string) => {
             if (message.messageName !== 'ANSWER_TO_USER') {
                 throw new Error('Wrong message type');

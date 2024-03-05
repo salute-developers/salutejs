@@ -1,3 +1,15 @@
+# v1.1.0 (Tue Mar 05 2024)
+
+#### 🔩 Dependency Updates
+
+- chore(deps-dev): bump follow-redirects from 1.15.2 to 1.15.4 [#123](https://github.com/salute-developers/salutejs/pull/123) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 1
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+
+---
+
 # v1.0.1 (Tue Dec 19 2023)
 
 #### 🐛 Bug Fix

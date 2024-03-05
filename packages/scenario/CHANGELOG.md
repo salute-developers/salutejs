@@ -1,3 +1,21 @@
+# v1.1.0 (Tue Mar 05 2024)
+
+#### 🚀 Enhancement
+
+- feat: поддержка кастомных мессаджей в ответе сценария [#127](https://github.com/salute-developers/salutejs/pull/127) ([@sasha-tlt](https://github.com/sasha-tlt))
+- feat: поддержка кастомных мессаджей в ответе сценария ([@sasha-tlt](https://github.com/sasha-tlt))
+
+#### 🔩 Dependency Updates
+
+- chore(deps-dev): bump follow-redirects from 1.15.2 to 1.15.4 [#123](https://github.com/salute-developers/salutejs/pull/123) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Alexander Salmin ([@sasha-tlt](https://github.com/sasha-tlt))
+
+---
+
 # v1.0.2 (Tue Feb 13 2024)
 
 #### 🐛 Bug Fix

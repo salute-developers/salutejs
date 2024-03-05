@@ -1,3 +1,26 @@
+# (Tue Mar 05 2024)
+
+#### 🚀 Enhancement
+
+- `@salutejs/scenario@1.1.0`
+  - feat: поддержка кастомных мессаджей в ответе сценария [#127](https://github.com/salute-developers/salutejs/pull/127) ([@sasha-tlt](https://github.com/sasha-tlt))
+
+#### 🐛 Bug Fix
+
+- chore: bump auto [#128](https://github.com/salute-developers/salutejs/pull/128) ([@sasha-tlt](https://github.com/sasha-tlt))
+
+#### 🔩 Dependency Updates
+
+- chore(deps-dev): bump follow-redirects from 1.15.2 to 1.15.4 [#123](https://github.com/salute-developers/salutejs/pull/123) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps-dev): bump ip from 2.0.0 to 2.0.1 [#126](https://github.com/salute-developers/salutejs/pull/126) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Alexander Salmin ([@sasha-tlt](https://github.com/sasha-tlt))
+
+---
+
 # (Tue Feb 13 2024)
 
 #### 🐛 Bug Fix

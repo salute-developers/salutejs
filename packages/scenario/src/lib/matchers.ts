@@ -1,11 +1,5 @@
-import {
-    DeprecatedServerAction,
-    IntentsDict,
-    SaluteRequest,
-    SaluteRequestVariable,
-    ServerAction,
-} from './types/salute';
-import { AppState } from './types/systemMessage';
+import { IntentsDict, SaluteRequest, SaluteRequestVariable } from './types/salute';
+import { AppState, ServerAction, DeprecatedServerAction } from './types/systemMessage';
 
 export const compare = (expected, actual) => {
     if (typeof expected !== typeof actual) return false;
@@ -81,8 +75,7 @@ export function createMatchers<R extends SaluteRequest = SaluteRequest, I extend
 
     const regexp = (re: RegExp, { normalized = true }: { normalized: boolean } = { normalized: true }) => (req: R) => {
         const testText = normalized ? req.message?.human_normalized_text : req.message?.original_text;
-
-        const result = re.exec(testText);
+        const result = typeof testText === 'string' ? re.exec(testText) : null;
 
         if (result === null) {
             return false;

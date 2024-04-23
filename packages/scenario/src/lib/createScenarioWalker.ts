@@ -2,17 +2,15 @@ import { UserScenario } from './createUserScenario';
 import { SystemScenario } from './createSystemScenario';
 import { lookupMissingVariables } from './missingVariables';
 import {
-    DeprecatedServerAction,
     IntentsDict,
     Recognizer,
     SaluteRequest,
     SaluteHandler,
     SaluteResponse,
     SaluteSession,
-    ServerAction,
     SaluteRequestVariable,
 } from './types/salute';
-import { AppState } from './types/systemMessage';
+import { AppState, ServerAction, DeprecatedServerAction } from './types/systemMessage';
 import { NLPRequestMTS } from './types/request';
 import { PayDialogFinishedServerAction } from './types/payment';
 

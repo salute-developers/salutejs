@@ -1,7 +1,8 @@
 import { i18n } from './i18n';
 import { KeysetDictionary } from './types/i18n';
 import { NLPRequest, NLPRequestMTS, NLPRequestSA } from './types/request';
-import { DeprecatedServerAction, Inference, SaluteRequest, Variant } from './types/salute';
+import { Inference, SaluteRequest, Variant } from './types/salute';
+import { DeprecatedServerAction } from './types/systemMessage';
 
 export const createSaluteRequest = <Rq extends SaluteRequest = SaluteRequest>(request: NLPRequest) => {
     let inference: Inference;

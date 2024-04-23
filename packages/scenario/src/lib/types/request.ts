@@ -1,5 +1,10 @@
-import { DeprecatedServerAction, ServerAction } from './salute';
-import { SystemMessage, SystemMessageName, SystemMessagePayload } from './systemMessage';
+import {
+    SystemMessage,
+    SystemMessageName,
+    SystemMessagePayload,
+    ServerAction,
+    DeprecatedServerAction,
+} from './systemMessage';
 
 export type NLPRequestType =
     | Extract<SystemMessageName, 'MESSAGE_TO_SKILL' | 'SERVER_ACTION' | 'RUN_APP' | 'CLOSE_APP'>
@@ -17,7 +22,7 @@ export interface NLPRequestBody<T, P> extends Pick<SystemMessage, 'sessionId' | 
 
 export type SharedRequestPayload = Pick<
     SystemMessagePayload,
-    'app_info' | 'projectName' | 'strategies' | 'character' | 'feature_launcher' | 'meta'
+    'app_info' | 'projectName' | 'strategies' | 'character' | 'meta'
 > &
     Required<Pick<SystemMessagePayload, 'device' | 'new_session'>>;
 

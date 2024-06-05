@@ -12,6 +12,8 @@ import {
     Button,
     ASRHints,
     PolicyRunAppComand,
+    ServerAction,
+    DeprecatedServerAction,
 } from './systemMessage';
 import { NLPRequest, NLPRequestTPD } from './request';
 import { NLPResponse, NLPResponseATU, NLPResponseCPD, NLPResponseType } from './response';
@@ -55,20 +57,6 @@ export interface SaluteCommand {
 }
 
 export type SaluteRequestVariable = Record<string, string | string[] | undefined>;
-
-/**
- * @deprecated
- * Такой формат экшенов устарел, используй ServerAction
- */
-export interface DeprecatedServerAction {
-    payload: unknown;
-    type: string;
-}
-
-export interface ServerAction {
-    action_id: string;
-    parameters?: unknown;
-}
 
 export interface SaluteRequest<
     V = SaluteRequestVariable,

@@ -127,6 +127,7 @@ export const createSaluteResponse = <T extends NLPResponse = NLPResponseATU>(req
                 throw new Error('Wrong message type');
             }
 
+            // @ts-ignore
             message.payload.items.push({ command: { type: 'smart_app_data', smart_app_data: { ...command } } });
         },
         openDeepLink: (deepLink: string) => {

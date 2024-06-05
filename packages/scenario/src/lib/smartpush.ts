@@ -2,7 +2,7 @@ import fetch from 'node-fetch';
 import { v4 as uuidv4 } from 'uuid';
 
 import { DeliveryConfig, Destination, SmartPushRequest, SmartPushResponse } from './types/push';
-import { DefaultChannels } from './types/systemMessage';
+import { UserChannel, Surface } from './types/systemMessage';
 
 const URL = 'https://salute.online.sberbank.ru:9443/api/v2/smartpush/apprequest';
 const TOKEN_URL = 'https://salute.online.sberbank.ru:9443/api/v2/oauth';
@@ -36,6 +36,20 @@ export interface SendPushConfiguration {
         destinations: Omit<Destination, 'channel'>[];
     } & Omit<DeliveryConfig, 'destinations'>;
 }
+
+const DefaultChannels: Record<Surface, UserChannel> = {
+    SBERBOX: 'B2C',
+    SBERBOOM: 'B2C',
+    SBERBOOM_MINI: 'B2C',
+    SBERBOOM_R2: 'B2C',
+    STARGATE: 'B2C',
+    SATELLITE: 'B2C',
+    TIME: 'B2C',
+    TV: 'B2C',
+    TV_HUAWEI: 'B2C',
+    COMPANION: 'COMPANION_B2C',
+    SBOL: 'SBOL',
+};
 
 const sendPush = async (
     accessToken: string,

@@ -15,8 +15,8 @@ export {
     refundInvoice,
 } from './lib/smartpay';
 export { createSmartPushSender, SendPushConfiguration } from './lib/smartpush';
-export * from './lib/types/payment';
 
+export * from './lib/types/payment';
 export * from './lib/types/i18n';
 export * from './lib/types/payment';
 export * from './lib/types/push';

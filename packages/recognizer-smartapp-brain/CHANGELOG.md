@@ -1,3 +1,21 @@
+# v1.2.0 (Wed Jun 05 2024)
+
+#### 🐛 Bug Fix
+
+- Bump independent versions \[skip ci\] ([@Salute-Eva](https://github.com/Salute-Eva))
+- Update CHANGELOG.md \[skip ci\] ([@Salute-Eva](https://github.com/Salute-Eva))
+
+#### 🔩 Dependency Updates
+
+- chore(deps-dev): bump follow-redirects from 1.15.2 to 1.15.4 [#123](https://github.com/salute-developers/salutejs/pull/123) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- [@Salute-Eva](https://github.com/Salute-Eva)
+
+---
+
 # v1.1.0 (Tue Mar 05 2024)
 
 #### 🔩 Dependency Updates

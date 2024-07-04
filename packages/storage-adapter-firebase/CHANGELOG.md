@@ -1,3 +1,25 @@
+# v1.3.0 (Thu Jul 04 2024)
+
+#### 🐛 Bug Fix
+
+- Bump independent versions \[skip ci\] ([@Salute-Eva](https://github.com/Salute-Eva))
+- Update CHANGELOG.md \[skip ci\] ([@Salute-Eva](https://github.com/Salute-Eva))
+- chore(deps): bump protobufjs, @google-cloud/firestore and firebase-admin ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps): bump jose in /packages/storage-adapter-firebase ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### 🔩 Dependency Updates
+
+- chore(deps): bump protobufjs, @google-cloud/firestore and firebase-admin in /packages/storage-adapter-firebase [#135](https://github.com/salute-developers/salutejs/pull/135) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps): bump jose from 4.14.4 to 4.15.5 in /packages/storage-adapter-firebase [#129](https://github.com/salute-developers/salutejs/pull/129) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps-dev): bump follow-redirects from 1.15.2 to 1.15.4 [#123](https://github.com/salute-developers/salutejs/pull/123) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- [@Salute-Eva](https://github.com/Salute-Eva)
+
+---
+
 # v1.2.0 (Wed Jun 05 2024)
 
 #### 🐛 Bug Fix

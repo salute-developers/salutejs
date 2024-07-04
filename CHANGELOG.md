@@ -1,3 +1,41 @@
+# (Thu Jul 04 2024)
+
+#### 🚀 Enhancement
+
+- `@salutejs/scenario@1.3.0`
+  - feat: обновил типы для plasma_typeface [#146](https://github.com/salute-developers/salutejs/pull/146) ([@soulko](https://github.com/soulko))
+  - feat: Обновлён тип systemMessage [#138](https://github.com/salute-developers/salutejs/pull/138) ([@evgeniysemin](https://github.com/evgeniysemin))
+  - feat: поддержка кастомных мессаджей в ответе сценария [#127](https://github.com/salute-developers/salutejs/pull/127) ([@sasha-tlt](https://github.com/sasha-tlt))
+
+#### 🐛 Bug Fix
+
+- chore: bump auto [#128](https://github.com/salute-developers/salutejs/pull/128) ([@sasha-tlt](https://github.com/sasha-tlt))
+
+#### 🔩 Dependency Updates
+
+- chore(deps-dev): bump ejs from 3.1.9 to 3.1.10 [#139](https://github.com/salute-developers/salutejs/pull/139) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps): bump protobufjs from 7.2.4 to 7.2.6 in /examples/echo [#137](https://github.com/salute-developers/salutejs/pull/137) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps): bump protobufjs from 7.2.4 to 7.2.6 in /examples/todo [#136](https://github.com/salute-developers/salutejs/pull/136) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps-dev): bump follow-redirects from 1.15.4 to 1.15.6 [#130](https://github.com/salute-developers/salutejs/pull/130) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps): bump express from 4.18.2 to 4.19.2 in /examples/payment-chatapp [#131](https://github.com/salute-developers/salutejs/pull/131) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps): bump express from 4.18.2 to 4.19.2 in /examples/echo [#132](https://github.com/salute-developers/salutejs/pull/132) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps): bump express from 4.18.2 to 4.19.2 in /examples/audiotour [#133](https://github.com/salute-developers/salutejs/pull/133) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps): bump express from 4.18.2 to 4.19.2 in /examples/chatapp-brain [#134](https://github.com/salute-developers/salutejs/pull/134) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps-dev): bump follow-redirects from 1.15.2 to 1.15.4 [#123](https://github.com/salute-developers/salutejs/pull/123) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps-dev): bump ip from 2.0.0 to 2.0.1 [#126](https://github.com/salute-developers/salutejs/pull/126) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- `@salutejs/storage-adapter-firebase@1.3.0`
+  - chore(deps): bump protobufjs, @google-cloud/firestore and firebase-admin in /packages/storage-adapter-firebase [#135](https://github.com/salute-developers/salutejs/pull/135) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+  - chore(deps): bump jose from 4.14.4 to 4.15.5 in /packages/storage-adapter-firebase [#129](https://github.com/salute-developers/salutejs/pull/129) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 4
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- [@evgeniysemin](https://github.com/evgeniysemin)
+- Alexander Salmin ([@sasha-tlt](https://github.com/sasha-tlt))
+- Anton Kostenko ([@soulko](https://github.com/soulko))
+
+---
+
 # (Wed Jun 05 2024)
 
 #### 🚀 Enhancement

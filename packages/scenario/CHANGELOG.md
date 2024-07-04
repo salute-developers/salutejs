@@ -1,3 +1,33 @@
+# v1.3.0 (Thu Jul 04 2024)
+
+#### 🚀 Enhancement
+
+- feat: обновил типы для plasma_typeface [#146](https://github.com/salute-developers/salutejs/pull/146) ([@soulko](https://github.com/soulko))
+- feat: обновил типы для plasma_typeface ([@soulko](https://github.com/soulko))
+- feat: Обновлён тип systemMessage [#138](https://github.com/salute-developers/salutejs/pull/138) ([@evgeniysemin](https://github.com/evgeniysemin))
+- feat: Обновлены типы из JSON-схем ([@evgeniysemin](https://github.com/evgeniysemin))
+- feat: поддержка кастомных мессаджей в ответе сценария [#127](https://github.com/salute-developers/salutejs/pull/127) ([@sasha-tlt](https://github.com/sasha-tlt))
+- feat: поддержка кастомных мессаджей в ответе сценария ([@sasha-tlt](https://github.com/sasha-tlt))
+
+#### 🐛 Bug Fix
+
+- Bump independent versions \[skip ci\] ([@Salute-Eva](https://github.com/Salute-Eva))
+- Update CHANGELOG.md \[skip ci\] ([@Salute-Eva](https://github.com/Salute-Eva))
+
+#### 🔩 Dependency Updates
+
+- chore(deps-dev): bump follow-redirects from 1.15.2 to 1.15.4 [#123](https://github.com/salute-developers/salutejs/pull/123) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 5
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- [@evgeniysemin](https://github.com/evgeniysemin)
+- [@Salute-Eva](https://github.com/Salute-Eva)
+- Alexander Salmin ([@sasha-tlt](https://github.com/sasha-tlt))
+- Anton Kostenko ([@soulko](https://github.com/soulko))
+
+---
+
 # v1.2.0 (Wed Jun 05 2024)
 
 #### 🚀 Enhancement

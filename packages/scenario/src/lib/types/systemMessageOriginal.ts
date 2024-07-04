@@ -444,6 +444,44 @@ export type Typeface =
     | 'caption'
     | 'underline';
 /**
+ * Новый Plasma стиль текста, см https://www.figma.com/design/6d5rHWn3aYwEbNap01Nvp8/ASDK-Styles?node-id=1800-16853&m=dev
+ */
+export type PlasmaTypeface =
+    | 'display_l_bold'
+    | 'display_l_normal'
+    | 'display_m_bold'
+    | 'display_m_normal'
+    | 'display_s_bold'
+    | 'display_s_normal'
+    | 'header_h1_bold'
+    | 'header_h1_normal'
+    | 'header_h2_bold'
+    | 'header_h2_normal'
+    | 'header_h3_bold'
+    | 'header_h3_normal'
+    | 'header_h4_bold'
+    | 'header_h4_normal'
+    | 'header_h5_bold'
+    | 'header_h5_normal'
+    | 'body_l_bold'
+    | 'body_l_normal'
+    | 'body_m_bold'
+    | 'body_m_normal'
+    | 'body_s_bold'
+    | 'body_s_normal'
+    | 'body_xs_bold'
+    | 'body_xs_normal'
+    | 'body_xxs_bold'
+    | 'body_xxs_normal'
+    | 'text_l_bold'
+    | 'text_l_normal'
+    | 'text_m_bold'
+    | 'text_m_normal'
+    | 'text_s_bold'
+    | 'text_s_normal'
+    | 'text_xs_bold'
+    | 'text_xs_normal';
+/**
  * Цвет текста см https://www.figma.com/file/yaeE0lLDWMBKKLXuDHgq1p/SmartX-Styles?node-id=239%3A64
  */
 export type TypeColor = 'default' | 'secondary' | 'tertiary' | 'inverse' | 'brand' | 'warning' | 'critical' | 'link';
@@ -495,6 +533,44 @@ export type RoundedCorners = 'none' | 'rounded' | 'circle';
  * Размер кнопки (фактически - ее высота) из ДС (Плазмы)
  */
 export type ButtonSize = 'small' | 'medium';
+/**
+ * Новый Plasma стиль текста, см https://www.figma.com/design/6d5rHWn3aYwEbNap01Nvp8/ASDK-Styles?node-id=1800-16853&m=dev
+ */
+export type PlasmaTypeface1 =
+    | 'display_l_bold'
+    | 'display_l_normal'
+    | 'display_m_bold'
+    | 'display_m_normal'
+    | 'display_s_bold'
+    | 'display_s_normal'
+    | 'header_h1_bold'
+    | 'header_h1_normal'
+    | 'header_h2_bold'
+    | 'header_h2_normal'
+    | 'header_h3_bold'
+    | 'header_h3_normal'
+    | 'header_h4_bold'
+    | 'header_h4_normal'
+    | 'header_h5_bold'
+    | 'header_h5_normal'
+    | 'body_l_bold'
+    | 'body_l_normal'
+    | 'body_m_bold'
+    | 'body_m_normal'
+    | 'body_s_bold'
+    | 'body_s_normal'
+    | 'body_xs_bold'
+    | 'body_xs_normal'
+    | 'body_xxs_bold'
+    | 'body_xxs_normal'
+    | 'text_l_bold'
+    | 'text_l_normal'
+    | 'text_m_bold'
+    | 'text_m_normal'
+    | 'text_s_bold'
+    | 'text_s_normal'
+    | 'text_xs_bold'
+    | 'text_xs_normal';
 /**
  * Режим растягивания контента внутри контейнера
  */
@@ -1713,6 +1789,7 @@ export interface TextView {
      */
     text: string;
     typeface: Typeface;
+    plasma_typeface?: PlasmaTypeface;
     text_color: TypeColor;
     plasma_text_color?: PlasmsColor;
     text_attributes?: TextAttribute[];
@@ -1808,6 +1885,7 @@ export interface ButtonView {
      */
     plasma_button?: PlasmaButtonView;
     typeface?: Typeface & string;
+    plasma_typeface?: PlasmaTypeface1;
     /**
      * Стиль кнопки.
      */
@@ -2618,6 +2696,7 @@ export interface OperatorChatCellView {
  */
 export interface TextViewStyle {
     typeface: Typeface;
+    plasma_typeface?: PlasmaTypeface;
     text_color: TypeColor;
     plasma_text_color?: PlasmsColor;
     /**

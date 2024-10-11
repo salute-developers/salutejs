@@ -15,11 +15,11 @@
     "@salutejs/scenario": "1.3.0",
     "@salutejs/storage-adapter-memory": "1.3.0",
     "body-parser": "1.20.2",
-    "express": "4.19.2",
+    "express": "4.21.1",
     "next": "13.5.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "socket.io": "4.7.2",
+    "socket.io": "4.8.0",
     "socket.io-client": "4.7.2",
     "styled-components": "5.3.5"
   },
